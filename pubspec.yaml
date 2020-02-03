@@ -17,6 +17,9 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  getflutter: ^1.0.3
+  fluid_layout: ^0.1.0
+  flutter_shine: ^0.0.5
   flutter:
     sdk: flutter
 

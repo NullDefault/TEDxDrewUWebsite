@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["flutter|lib/rendering.dart","flutter|lib/widgets.dart","test_api|lib/src/frontend/async_matcher.dart","test_api|lib/test_api.dart","flutter_test|lib/src/binding.dart","flutter_test|lib/src/finders.dart","flutter_test|lib/src/goldens.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["async","ui"],"hasMain":false}

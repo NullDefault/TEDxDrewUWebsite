@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter_shine|lib/src/config.dart","flutter_shine|lib/src/light.dart","flutter_shine|lib/src/shine.dart","flutter_shine|lib/src/shine_shadow.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

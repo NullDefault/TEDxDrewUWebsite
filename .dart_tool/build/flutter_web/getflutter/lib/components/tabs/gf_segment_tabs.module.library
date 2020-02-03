@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","flutter|lib/foundation.dart","flutter|lib/rendering.dart","flutter|lib/widgets.dart","getflutter|lib/getflutter.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

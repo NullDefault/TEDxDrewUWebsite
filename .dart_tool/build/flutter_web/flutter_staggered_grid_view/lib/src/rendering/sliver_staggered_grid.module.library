@@ -1,0 +1,1 @@
+{"isEntrypoint":false,"deps":["flutter|lib/foundation.dart","flutter|lib/rendering.dart","flutter_staggered_grid_view|lib/src/widgets/staggered_tile.dart","flutter_staggered_grid_view|lib/src/rendering/sliver_variable_size_box_adaptor.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["collection","math"],"hasMain":false}

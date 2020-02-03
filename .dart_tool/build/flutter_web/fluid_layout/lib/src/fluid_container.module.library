@@ -1,0 +1,1 @@
+{"isEntrypoint":false,"deps":["flutter|lib/rendering.dart","flutter|lib/widgets.dart","fluid_layout|lib/src/fluid_layout.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

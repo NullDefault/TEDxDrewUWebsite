@@ -1,1 +1,1 @@
-{"p":["tedx","lib/landing_page.dart"],"s":[["tedx","lib/landing_page.dart"]],"d":[["flutter","lib/material.dart"]],"m":false,"is":true,"pf":"flutter_web"}
+{"p":["tedx","lib/landing_page.dart"],"s":[["tedx","lib/landing_page.dart"]],"d":[["fluid_layout","lib/fluid_layout.dart"],["flutter","lib/material.dart"],["flutter_shine","lib/flutter_shine.dart"],["getflutter","lib/components/appbar/gf_appbar.dart"]],"m":false,"is":true,"pf":"flutter_web"}

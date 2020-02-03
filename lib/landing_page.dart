@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:getflutter/getflutter.dart';
+import 'package:fluid_layout/fluid_layout.dart';
+import 'package:flutter_shine/flutter_shine.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -10,40 +13,89 @@ class LandingPageState extends State {
   Widget _officialLogo =
       Image(image: AssetImage('lib/assets/official_logo_vertical.png'));
 
+  static double buttonWidth = 180;
+  static double buttonHeight = 65;
+  static double buttonSeparation = 50;
+  static double buttonFontSize = 28;
+  static double iconSize = 36;
+  static GFButtonShape buttonShape = GFButtonShape.pills;
+
   var _navigationButtons = [
-    RaisedButton(
+    Container(
+      width: buttonWidth,
+      height: buttonHeight,
+      child: GFButton(
         onPressed: () {},
-        padding: EdgeInsets.all(20),
+        text: "About",
         color: Colors.red,
-        child:
-            Text('About', style: TextStyle(fontSize: 20, color: Colors.black))),
-    SizedBox(
-      width: 100,
+        icon: Icon(Icons.help, size: iconSize),
+        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
+        shape: buttonShape,
+      ),
     ),
-    RaisedButton(
-        onPressed: () {},
-        padding: EdgeInsets.all(20),
-        color: Colors.red,
-        child:
-            Text('Team', style: TextStyle(fontSize: 20, color: Colors.black))),
     SizedBox(
-      width: 100,
+      width: buttonSeparation,
     ),
-    RaisedButton(
-        onPressed: () {},
-        color: Colors.red,
-        padding: EdgeInsets.all(20),
-        child: Text('Catalog',
-            style: TextStyle(fontSize: 20, color: Colors.black))),
+    Container(
+      child: CustomPaint(painter: DrawCircle()),
+    ),
     SizedBox(
-      width: 100,
+      width: buttonSeparation,
     ),
-    RaisedButton(
+    Container(
+      width: buttonWidth,
+      height: buttonHeight,
+      child: GFButton(
         onPressed: () {},
+        text: "Team",
         color: Colors.red,
-        padding: EdgeInsets.all(20),
-        child: Text('Tickets',
-            style: TextStyle(fontSize: 20, color: Colors.black))),
+        icon: Icon(Icons.supervised_user_circle, size: iconSize),
+        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
+        shape: buttonShape,
+      ),
+    ),
+    SizedBox(
+      width: buttonSeparation,
+    ),
+    Container(
+      child: CustomPaint(painter: DrawCircle()),
+    ),
+    SizedBox(
+      width: buttonSeparation,
+    ),
+    Container(
+      width: buttonWidth,
+      height: buttonHeight,
+      child: GFButton(
+        onPressed: () {},
+        text: "Catalog",
+        color: Colors.red,
+        icon: Icon(Icons.local_library, size: iconSize),
+        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
+        shape: buttonShape,
+      ),
+    ),
+    SizedBox(
+      width: buttonSeparation,
+    ),
+    Container(
+      child: CustomPaint(painter: DrawCircle()),
+    ),
+    SizedBox(
+      width: buttonSeparation,
+    ),
+    Container(
+      width: buttonWidth,
+      height: buttonHeight,
+      child: GFButton(
+        onPressed: () {},
+        text: "Tickets",
+        color: Colors.red,
+        icon: Icon(Icons.local_play, size: iconSize),
+        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
+        shape: buttonShape,
+      ),
+    )
   ];
 
   @override
@@ -97,7 +149,7 @@ class LandingPageState extends State {
                 '2020',
                 style: TextStyle(fontSize: 70, color: Colors.red),
               ),
-            )
+            ),
           ],
         ),
         Container(
@@ -113,5 +165,26 @@ class LandingPageState extends State {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: _navigationButtons,
     );
+  }
+}
+
+class DrawCircle extends CustomPainter {
+  Paint _paint;
+
+  DrawCircle() {
+    _paint = Paint()
+      ..color = Colors.red
+      ..strokeWidth = 5.0
+      ..style = PaintingStyle.fill;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawCircle(Offset(0.0, 0.0), 10.0, _paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }
