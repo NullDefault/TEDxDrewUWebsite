@@ -1,190 +1,188 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
 import 'package:fluid_layout/fluid_layout.dart';
-import 'package:flutter_shine/flutter_shine.dart';
+
+import 'draw_circle.dart';
 
 class LandingPage extends StatefulWidget {
   @override
   LandingPageState createState() => LandingPageState();
 }
 
-class LandingPageState extends State {
-  Widget _tedxLogo = Image(image: AssetImage('lib/assets/ted_x_logo.png'));
-  Widget _officialLogo =
-      Image(image: AssetImage('lib/assets/official_logo_vertical.png'));
 
-  static double buttonWidth = 180;
-  static double buttonHeight = 65;
-  static double buttonSeparation = 50;
-  static double buttonFontSize = 28;
-  static double iconSize = 36;
-  static GFButtonShape buttonShape = GFButtonShape.pills;
+class LandingPageState extends State {
+
+  Widget _tedxLogo = Container(
+    width: 200,
+    height: 200,
+    child: Image(image: AssetImage('lib/assets/ted_x_logo.png'))
+  );
+  Widget _officialLogo = Container(
+      width: 400,
+      height: 100,
+      child: Image(image: AssetImage('lib/assets/official_logo_vertical.png'))
+  );
+
+  static double _buttonWidth = 180;
+  static double _buttonHeight = 65;
+  static double _buttonSeparation = 50;
+  static double _buttonFontSize = 28;
+  static double _iconSize = 36;
+
+  static GFButtonShape _buttonShape = GFButtonShape.pills;
+
+  static TextStyle _buttonStyle = TextStyle(fontSize: _buttonFontSize, color: Colors.black);
+
+  static Color _buttonColor = Colors.redAccent;
+  static Color _buttonHoverColor = Colors.red;
+  static Color _buttonHighlightColor = Colors.deepOrange;
+
+  static var _buttonText = ["About", "Team", "Catalog", "Tickets"];
+  static var _buttonIcons = [
+    Icon(Icons.help, size: _iconSize),
+    Icon(Icons.supervised_user_circle, size: _iconSize),
+    Icon(Icons.local_library, size: _iconSize),
+    Icon(Icons.local_play, size: _iconSize)
+  ];
 
   var _navigationButtons = [
     Container(
-      width: buttonWidth,
-      height: buttonHeight,
+      width: _buttonWidth,
+      height: _buttonHeight,
       child: GFButton(
         onPressed: () {},
-        text: "About",
-        color: Colors.red,
-        icon: Icon(Icons.help, size: iconSize),
-        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
-        shape: buttonShape,
+
+        color: _buttonColor,
+        hoverColor: _buttonHoverColor,
+        highlightColor: _buttonHighlightColor,
+
+        text: _buttonText[0],
+        icon: _buttonIcons[0],
+
+        textStyle: _buttonStyle,
+        shape: _buttonShape,
       ),
     ),
     SizedBox(
-      width: buttonSeparation,
+      width: _buttonSeparation,
     ),
     Container(
       child: CustomPaint(painter: DrawCircle()),
     ),
     SizedBox(
-      width: buttonSeparation,
+      width: _buttonSeparation,
     ),
     Container(
-      width: buttonWidth,
-      height: buttonHeight,
+      width: _buttonWidth,
+      height: _buttonHeight,
       child: GFButton(
         onPressed: () {},
-        text: "Team",
-        color: Colors.red,
-        icon: Icon(Icons.supervised_user_circle, size: iconSize),
-        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
-        shape: buttonShape,
+
+        color: _buttonColor,
+        hoverColor: _buttonHoverColor,
+        highlightColor: _buttonHighlightColor,
+
+        text: _buttonText[1],
+        icon: _buttonIcons[1],
+
+        textStyle: _buttonStyle,
+        shape: _buttonShape,
       ),
     ),
     SizedBox(
-      width: buttonSeparation,
+      width: _buttonSeparation,
     ),
     Container(
       child: CustomPaint(painter: DrawCircle()),
     ),
     SizedBox(
-      width: buttonSeparation,
+      width: _buttonSeparation,
     ),
     Container(
-      width: buttonWidth,
-      height: buttonHeight,
+      width: _buttonWidth,
+      height: _buttonHeight,
       child: GFButton(
         onPressed: () {},
-        text: "Catalog",
-        color: Colors.red,
-        icon: Icon(Icons.local_library, size: iconSize),
-        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
-        shape: buttonShape,
+
+        color: _buttonColor,
+        hoverColor: _buttonHoverColor,
+        highlightColor: _buttonHighlightColor,
+
+        text: _buttonText[2],
+        icon: _buttonIcons[2],
+
+        textStyle: _buttonStyle,
+        shape: _buttonShape,
       ),
     ),
     SizedBox(
-      width: buttonSeparation,
+      width: _buttonSeparation,
     ),
     Container(
       child: CustomPaint(painter: DrawCircle()),
     ),
     SizedBox(
-      width: buttonSeparation,
+      width: _buttonSeparation,
     ),
     Container(
-      width: buttonWidth,
-      height: buttonHeight,
+      width: _buttonWidth,
+      height: _buttonHeight,
       child: GFButton(
         onPressed: () {},
-        text: "Tickets",
-        color: Colors.red,
-        icon: Icon(Icons.local_play, size: iconSize),
-        textStyle: TextStyle(fontSize: buttonFontSize, color: Colors.black),
-        shape: buttonShape,
+
+        color: _buttonColor,
+        hoverColor: _buttonHoverColor,
+        highlightColor: _buttonHighlightColor,
+
+        text: _buttonText[3],
+        icon: _buttonIcons[3],
+
+        textStyle: _buttonStyle,
+        shape: _buttonShape,
       ),
     )
   ];
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: "TEDxDrewUniversity",
-      home: _renderLandingPage(),
-    );
+    return  _renderLandingPage();
   }
 
   Widget _renderLandingPage() {
-    return Material(
-      type: MaterialType.transparency,
-      child: new Container(
-          color: Colors.black,
-          child: FittedBox(
-            fit: BoxFit.contain,
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Container(
+        child: FluidLayout(
+          child: Fluid(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 _renderTopRow(),
-                _renderButtonRow(),
+                _renderButtonRow()
               ],
-            ),
-          )),
+            )
+          )
+        )
+      )
     );
   }
 
   Widget _renderTopRow() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Container(
-          width: 740,
-          height: 740,
-          child: Align(
-            alignment: Alignment.topLeft,
-            child: _officialLogo,
-          ),
-        ),
-        Column(
-          children: <Widget>[
+            _officialLogo,
+            _tedxLogo,
             Container(
-              width: 500,
-              height: 500,
-              child: _tedxLogo,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: Text(
-                '2020',
-                style: TextStyle(fontSize: 70, color: Colors.red),
-              ),
-            ),
-          ],
-        ),
-        Container(
-          width: 740,
-          height: 740,
-        )
+              width: 400,
+            )
       ],
     );
   }
 
   Widget _renderButtonRow() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: _navigationButtons,
     );
   }
 }
 
-class DrawCircle extends CustomPainter {
-  Paint _paint;
-
-  DrawCircle() {
-    _paint = Paint()
-      ..color = Colors.red
-      ..strokeWidth = 5.0
-      ..style = PaintingStyle.fill;
-  }
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawCircle(Offset(0.0, 0.0), 10.0, _paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
-  }
-}

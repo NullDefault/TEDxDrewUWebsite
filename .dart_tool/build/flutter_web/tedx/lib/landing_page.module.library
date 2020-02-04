@@ -1,1 +1,1 @@
-{"isEntrypoint":true,"deps":["flutter|lib/material.dart","getflutter|lib/getflutter.dart","fluid_layout|lib/fluid_layout.dart","flutter_shine|lib/flutter_shine.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","getflutter|lib/getflutter.dart","fluid_layout|lib/fluid_layout.dart","tedx|lib/draw_circle.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}
