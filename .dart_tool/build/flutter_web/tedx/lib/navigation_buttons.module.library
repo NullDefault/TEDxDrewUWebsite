@@ -1,0 +1,1 @@
+{"isEntrypoint":true,"deps":["flutter|lib/material.dart","getflutter|lib/getflutter.dart","tedx|lib/draw_circle.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}

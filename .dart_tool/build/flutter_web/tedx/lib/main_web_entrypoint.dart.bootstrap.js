@@ -102,6 +102,7 @@ let modulePaths = {
  "packages/tedx/landing_page": "packages/tedx/landing_page.ddc",
  "packages/tedx/main": "packages/tedx/main.ddc",
  "packages/tedx/main_web_entrypoint": "packages/tedx/main_web_entrypoint.ddc",
+ "packages/tedx/navigation_buttons": "packages/tedx/navigation_buttons.ddc",
  "packages/typed_data/typed_buffers": "packages/typed_data/typed_buffers.ddc",
  "packages/vector_math/hash": "packages/vector_math/hash.ddc",
  "packages/vector_math/vector_math_64": "packages/vector_math/vector_math_64.ddc"
