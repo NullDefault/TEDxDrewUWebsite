@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  font_awesome_flutter: ^8.5.0
   getflutter: ^1.0.3
   fluid_layout: ^0.1.0
   simple_animations: ^1.3.6

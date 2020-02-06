@@ -1,1 +1,0 @@
-{"isEntrypoint":false,"deps":["fluid_layout|lib/fluid_layout.dart","fluid_layout|lib/src/fluid_breakpoint.dart","flutter|lib/widgets.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":["math"],"hasMain":false}

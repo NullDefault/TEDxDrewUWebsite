@@ -9,7 +9,7 @@ class NavigationButtons extends StatelessWidget {
     Widget _circle = CustomPaint(painter: DrawCircle());
 
     double _buttonSeparation = 50;
-    double _buttonFontSize = 28;
+    double _buttonFontSize = 26;
     double _iconSize = 36;
     GFButtonShape _buttonShape = GFButtonShape.pills;
 

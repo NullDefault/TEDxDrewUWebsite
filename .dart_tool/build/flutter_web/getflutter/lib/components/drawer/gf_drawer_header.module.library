@@ -1,1 +1,0 @@
-{"isEntrypoint":true,"deps":["flutter|lib/widgets.dart","flutter|lib/foundation.dart","flutter|lib/material.dart","getflutter|lib/components/button/gf_icon_button.dart","getflutter|lib/getflutter.dart"],"parts":[],"conditionalDeps":[],"sdkDeps":[],"hasMain":false}
