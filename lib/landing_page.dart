@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluid_layout/fluid_layout.dart';
 import 'package:tedx/navigation_buttons.dart';
+import 'package:tedx/x_logo.dart';
 import 'footer.dart';
 import 'navigation_buttons.dart';
 
@@ -10,14 +11,10 @@ class LandingPage extends StatefulWidget {
 }
 
 class LandingPageState extends State {
-  Widget _tedxLogo = Container(
-      width: 350,
-      height: 350,
-      child: Image(image: AssetImage('lib/assets/ted_x_logo.png')));
-  Widget _officialLogo = Container(
-      width: 400,
-      height: 200,
-      child: Image(image: AssetImage('lib/assets/official_logo_vertical.png')));
+  var _topRowOffset = 150.0;
+  var _botRowOffset = 100.0;
+
+  var _xLogoDimensions = 400.0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +29,9 @@ class LandingPageState extends State {
                 child: Fluid(
                     child: ListView(
           children: <Widget>[
-            SizedBox(height: 150),
+            SizedBox(height: _topRowOffset),
             _renderTopRow(),
-            SizedBox(height: 100),
+            SizedBox(height: _botRowOffset),
             _renderButtonRow()
           ],
         )))),
@@ -46,11 +43,11 @@ class LandingPageState extends State {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          width: 400,
-          height: 400,
+          width: _xLogoDimensions,
+          height: _xLogoDimensions,
           child: Align(
             alignment: Alignment.center,
-            child: _tedxLogo,
+            child: XLogo(),
           ),
         ),
       ],

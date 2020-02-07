@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'footer_painter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Footer extends StatelessWidget{
+// Used to make the website Footer
+class Footer extends StatelessWidget {
+  var _footerHeight = 70.0;
+  var _textSocialSeparation = 80.0;
+  var _textSize = 26.0;
+  var _iconSize = 34.0;
+  static const _socialPadding = 8.0;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -18,7 +25,7 @@ class Footer extends StatelessWidget{
           ),
         ),
         Container(
-          height: 70.0,
+          height: _footerHeight,
           color: Colors.red,
           child: Center(
             child: Row(
@@ -27,38 +34,42 @@ class Footer extends StatelessWidget{
                 Text(
                   "This independent TEDx event is operated under license from TED. | tedx@drew.edu",
                   style: TextStyle(
-                      color: Colors.black, fontFamily: 'Helvetica', fontSize: 16),
+                      color: Colors.black,
+                      fontFamily: 'Helvetica',
+                      fontSize: _textSize),
                 ),
-                SizedBox(
-                    width: 80
-                ),
+                SizedBox(width: _textSocialSeparation),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(
+                      left: _socialPadding, right: _socialPadding),
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.twitter, size: 34, color: Colors.black)
-                  ),
+                      icon: Icon(FontAwesomeIcons.twitter,
+                          size: _iconSize, color: Colors.black)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(
+                      left: _socialPadding, right: _socialPadding),
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.facebook, size: 34, color: Colors.black)
-                  ),
+                      icon: Icon(FontAwesomeIcons.facebook,
+                          size: _iconSize, color: Colors.black)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(
+                      left: _socialPadding, right: _socialPadding),
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.instagram, size: 34, color: Colors.black)
-                  ),
+                      icon: Icon(FontAwesomeIcons.instagram,
+                          size: _iconSize, color: Colors.black)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  padding: const EdgeInsets.only(
+                      left: _socialPadding, right: _socialPadding),
                   child: IconButton(
                       onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.youtube, size: 34, color: Colors.black)
-                  ),
+                      icon: Icon(FontAwesomeIcons.youtube,
+                          size: _iconSize, color: Colors.black)),
                 ),
               ],
             ),

@@ -5,7 +5,6 @@ import 'draw_circle.dart';
 class NavigationButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     Widget _circle = CustomPaint(painter: DrawCircle());
 
     double _buttonSeparation = 50;
@@ -111,8 +110,6 @@ class NavigationButtons extends StatelessWidget {
       )
     ];
 
-    return Row(
-      children: _navigationButtons
-    );
+    return Row(children: _navigationButtons);
   }
 }

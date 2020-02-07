@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Draws the actual footer
 class FooterPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
