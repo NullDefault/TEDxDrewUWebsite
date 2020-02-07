@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'footer_painter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // Used to make the website Footer
 class Footer extends StatelessWidget {
   var _footerHeight = 70.0;
   var _textSocialSeparation = 80.0;
-  var _textSize = 26.0;
+  var _textSize = 16.0;
   var _iconSize = 34.0;
   static const _socialPadding = 8.0;
 
@@ -39,36 +40,58 @@ class Footer extends StatelessWidget {
                       fontSize: _textSize),
                 ),
                 SizedBox(width: _textSocialSeparation),
+                // Twitter
                 Padding(
                   padding: const EdgeInsets.only(
                       left: _socialPadding, right: _socialPadding),
                   child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.twitter,
+                      onPressed: () => launch('https://twitter.com/tedxdrewuni'),
+                      icon: Icon(FontAwesomeIcons.twitterSquare,
                           size: _iconSize, color: Colors.black)),
                 ),
+                // Facebook
                 Padding(
                   padding: const EdgeInsets.only(
                       left: _socialPadding, right: _socialPadding),
                   child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.facebook,
+                      onPressed:  () => launch('https://www.facebook.com/TEDxDrewU/'),
+                      icon: Icon(FontAwesomeIcons.facebookSquare,
                           size: _iconSize, color: Colors.black)),
                 ),
+                // Instagram
                 Padding(
                   padding: const EdgeInsets.only(
                       left: _socialPadding, right: _socialPadding),
                   child: IconButton(
-                      onPressed: () {},
+                      onPressed:  () => launch('https://www.instagram.com/tedxdrewuniversity/'),
                       icon: Icon(FontAwesomeIcons.instagram,
                           size: _iconSize, color: Colors.black)),
                 ),
+                // YouTube
                 Padding(
                   padding: const EdgeInsets.only(
                       left: _socialPadding, right: _socialPadding),
                   child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(FontAwesomeIcons.youtube,
+                      onPressed:  () => launch('https://www.youtube.com/playlist?list=PLsRNoUx8w3rOvVu1x8Vn5ECqMoYcYoJNw'),
+                      icon: Icon(FontAwesomeIcons.youtubeSquare,
+                          size: _iconSize, color: Colors.black)),
+                ),
+                // Flickr
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: _socialPadding, right: _socialPadding),
+                  child: IconButton(
+                      onPressed:  () => launch('https://www.flickr.com/photos/157641040@N04/albums/with/72157667913519498'),
+                      icon: Icon(FontAwesomeIcons.flickr,
+                          size: _iconSize, color: Colors.black)),
+                ),
+                // LinkedIn
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: _socialPadding, right: _socialPadding),
+                  child: IconButton(
+                      onPressed:  () => launch('https://www.linkedin.com/company/tedxdrewuniversity/'),
+                      icon: Icon(FontAwesomeIcons.linkedinIn,
                           size: _iconSize, color: Colors.black)),
                 ),
               ],
