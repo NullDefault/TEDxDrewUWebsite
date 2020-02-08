@@ -98,7 +98,9 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/tickets');
+          },
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
