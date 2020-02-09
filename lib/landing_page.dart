@@ -10,7 +10,7 @@ class LandingPage extends StatefulWidget {
 }
 
 class LandingPageState extends State {
-  var _topRowOffset = 150.0;
+  var _topRowOffset = 180.0;
   var _botRowOffset = 150.0;
 
   var _xLogoDimensions = 400.0;

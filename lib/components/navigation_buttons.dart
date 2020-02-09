@@ -24,7 +24,6 @@ class NavigationButtons extends StatelessWidget {
       Icon(Icons.help, size: _iconSize),
       Icon(Icons.supervised_user_circle, size: _iconSize),
       Icon(Icons.local_library, size: _iconSize),
-      Icon(Icons.local_play, size: _iconSize)
     ];
 
     double _buttonWidth = 180;
@@ -105,7 +104,10 @@ class NavigationButtons extends StatelessWidget {
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
           text: _buttonText[3],
-          icon: _buttonIcons[3],
+          icon: Hero(
+            tag: 'ticket_tag',
+            child: _buttonIcons[3]
+          ),
           textStyle: _buttonStyle,
           shape: _buttonShape,
         ),
