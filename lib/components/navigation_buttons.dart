@@ -24,6 +24,7 @@ class NavigationButtons extends StatelessWidget {
       Icon(Icons.help, size: _iconSize),
       Icon(Icons.supervised_user_circle, size: _iconSize),
       Icon(Icons.local_library, size: _iconSize),
+      Icon(Icons.local_play, size: _iconSize,)
     ];
 
     double _buttonWidth = 180;
@@ -34,7 +35,7 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: () {},
+          onPressed: null,
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
@@ -55,7 +56,7 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: () {},
+          onPressed: null,
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
@@ -76,7 +77,7 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: () {},
+          onPressed: null,
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_background/animated_background.dart';
 import 'package:getflutter/getflutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TicketPage extends StatefulWidget {
   @override
@@ -113,7 +114,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                                     height: 50,
                                     width: 100,
                                     child: GFButton(
-                                      onPressed: () {},
+                                      onPressed: () => launch('https://www.eventbrite.com/e/93687908055'),
                                       color: Colors.redAccent,
                                       hoverColor: Colors.red,
                                       text: "Purchase",
@@ -185,7 +186,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                                     height: 50,
                                     width: 100,
                                     child: GFButton(
-                                      onPressed: () {},
+                                      onPressed: () => launch('https://www.eventbrite.com/e/93687908055'),
                                       color: Colors.redAccent,
                                       hoverColor: Colors.red,
                                       text: "Purchase",
