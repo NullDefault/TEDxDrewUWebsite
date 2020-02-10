@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 
 class TedXLogo extends StatelessWidget {
   @override
@@ -10,6 +10,6 @@ class TedXLogo extends StatelessWidget {
         width: _logoWidth,
         height: _logoHeight,
         child:
-            Image(image: AssetImage('lib/assets/official_logo_vertical.png')));
+            Image(image: AssetImage('assets/official_logo_vertical.png')));
   }
 }

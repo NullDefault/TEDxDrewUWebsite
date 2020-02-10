@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluid_layout/fluid_layout.dart';
-import 'components/footer.dart';
-import 'components/navigation_buttons.dart';
-import 'components/image_components/x_logo.dart';
+import 'package:tedx/components/footer.dart';
+import 'package:tedx/components/image_components/x_logo.dart';
+import 'package:tedx/components/navigation_buttons.dart';
 
 class LandingPage extends StatefulWidget {
   @override

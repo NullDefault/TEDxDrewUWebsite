@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
-import 'draw_circle.dart';
+import 'package:tedx/components/draw_circle.dart';
 
 class NavigationButtons extends StatelessWidget {
   @override
@@ -35,7 +35,7 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: null,
+          onPressed: (){},
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
@@ -56,7 +56,7 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: null,
+          onPressed: (){},
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
@@ -77,7 +77,7 @@ class NavigationButtons extends StatelessWidget {
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: null,
+          onPressed: (){},
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
