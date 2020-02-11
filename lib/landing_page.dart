@@ -1,43 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:fluid_layout/fluid_layout.dart';
+import 'package:tedx/app_config.dart';
 import 'package:tedx/components/footer.dart';
 import 'package:tedx/components/image_components/x_logo.dart';
 import 'package:tedx/components/navigation_buttons.dart';
 
 class LandingPage extends StatefulWidget {
+  AppConfig screenData;
+
+  LandingPage(AppConfig screenData){
+    this.screenData = screenData;
+  }
+
   @override
-  LandingPageState createState() => LandingPageState();
+  LandingPageState createState() => LandingPageState(screenData);
 }
 
 class LandingPageState extends State {
-  var _topRowOffset = 180.0;
-  var _botRowOffset = 150.0;
+  AppConfig screenData;
 
-  var _xLogoDimensions = 400.0;
+  LandingPageState(AppConfig screenData){
+    this.screenData = screenData;
+  }
 
   @override
   Widget build(BuildContext context) {
+    this.screenData.rebuildUpdate(context);
     return _renderLandingPage();
   }
 
   Widget _renderLandingPage() {
+    var _topRowOffset = 18 * screenData.blockSizeVertical;
+    var _botRowOffset = 15 * screenData.blockSizeVertical;
+
     return Scaffold(
         backgroundColor: Colors.black,
         body: Container(
-            child: FluidLayout(
-                child: Fluid(
-                    child: ListView(
+            child: ListView(
           children: <Widget>[
             SizedBox(height: _topRowOffset),
             _renderTopRow(),
             SizedBox(height: _botRowOffset),
             _renderButtonRow()
           ],
-        )))),
-        bottomNavigationBar: Footer());
+        )),
+        bottomNavigationBar: Footer(screenData));
   }
 
   Widget _renderTopRow() {
+    var _xLogoDimensions = 40 * screenData.blockSizeVertical;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -54,6 +65,11 @@ class LandingPageState extends State {
   }
 
   Widget _renderButtonRow() {
-    return NavigationButtons();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        NavigationButtons(screenData)
+      ],
+    );
   }
 }

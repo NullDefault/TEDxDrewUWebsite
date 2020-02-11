@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:getflutter/getflutter.dart';
+import 'package:tedx/app_config.dart';
 import 'package:tedx/components/draw_circle.dart';
 
 class NavigationButtons extends StatelessWidget {
+  AppConfig screenData;
+
+  NavigationButtons(AppConfig screenData){
+    this.screenData = screenData;
+  }
+
+
   @override
   Widget build(BuildContext context) {
+    this.screenData.rebuildUpdate(context);
     Widget _circle = CustomPaint(painter: DrawCircle());
 
     double _buttonSeparation = 50;
-    double _buttonFontSize = 26;
-    double _iconSize = 36;
+    double _buttonFontSize = 2.6 * screenData.blockSizeVertical;
+    double _iconSize = 3.6 * screenData.blockSizeVertical;
     GFButtonShape _buttonShape = GFButtonShape.pills;
 
     TextStyle _buttonStyle =
@@ -27,8 +36,8 @@ class NavigationButtons extends StatelessWidget {
       Icon(Icons.local_play, size: _iconSize,)
     ];
 
-    double _buttonWidth = 180;
-    double _buttonHeight = 70;
+    double _buttonWidth = 10 * screenData.blockSize;
+    double _buttonHeight = 7 * screenData.blockSizeVertical;
 
     var _navigationButtons = [
       Container(

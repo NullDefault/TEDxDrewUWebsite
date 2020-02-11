@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tedx/app_config.dart';
 import 'package:tedx/components/footer_painter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Used to make the website Footer
 class Footer extends StatelessWidget {
-  var _footerHeight = 70.0;
-  var _textSocialSeparation = 80.0;
-  var _textSize = 16.0;
-  var _iconSize = 34.0;
-  static const _socialPadding = 8.0;
+  AppConfig screenData;
+
+  Footer(AppConfig screenData){
+    this.screenData = screenData;
+  }
 
   @override
   Widget build(BuildContext context) {
+    this.screenData.rebuildUpdate(context);
+    var _footerHeight = 7 * screenData.blockSizeVertical;
+    var _textSocialSeparation = 8 * screenData.blockSize;
+    var _textSize = 1.6 * screenData.blockSizeVertical;
+    var _iconSize = 3.4 * screenData.blockSizeVertical;
+    const _socialPadding = 8.0;
+
     return Stack(
       children: [
         Positioned(

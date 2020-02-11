@@ -1,20 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:animated_background/animated_background.dart';
 import 'package:getflutter/getflutter.dart';
+import 'package:tedx/app_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 class TicketPage extends StatefulWidget {
+  AppConfig screenData;
+
+  TicketPage(AppConfig screenData){
+    this.screenData = screenData;
+  }
+
   @override
   State<StatefulWidget> createState() {
-    return TicketPageState();
+    return TicketPageState(screenData);
   }
 }
 
 class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
+  AppConfig screenData;
+
+  TicketPageState(AppConfig screenData){
+    this.screenData = screenData;
+  }
+
   BoxDecoration ticketBGdecoration = BoxDecoration(color: Colors.red);
+  var boxHeight = 60;
+  var boxWidth = 100;
+  var textSizeSmall = 1.6;
+  var textSize = 2.8;
+  var textSizeCapital = 3.6;
+  var buttonHeight = 5;
+  var buttonWidth = 10;
 
   @override
   Widget build(BuildContext context) {
+    this.screenData.rebuildUpdate(context);
     return Scaffold(
       backgroundColor: Colors.black,
       body: AnimatedBackground(
@@ -25,12 +47,8 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
             children: <Widget>[
               Container(
                   color: Colors.redAccent,
-                  constraints: BoxConstraints(
-                    maxHeight: 600.0,
-                    maxWidth: 1000.0,
-                    minHeight: 300,
-                    minWidth: 500,
-                  ),
+                  height: boxHeight * screenData.blockSizeVertical,
+                  width: boxWidth * screenData.blockSize,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -38,18 +56,12 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Center(
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: Container(
-                                decoration: ticketBGdecoration,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20.0),
-                                  child: Text(
-                                    "Tickets",
-                                    style: TextStyle(
-                                        fontSize: 36, color: Colors.white),
-                                  ),
-                                ),
+                            child: Container(
+                              decoration: ticketBGdecoration,
+                              child: Text(
+                                "Tickets",
+                                style: TextStyle(
+                                    fontSize: textSizeCapital * screenData.blockSizeVertical, color: Colors.white),
                               ),
                             ),
                           )
@@ -64,69 +76,47 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                                 decoration: ticketBGdecoration,
                                 child: Column(
                                   children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "General Admission",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
+                                    Text(
+                                      "General Admission",
+                                      style: TextStyle(fontSize: textSize * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        '\u{0024} 20 (Early Bird Price)',
-                                        style: TextStyle(
-                                            fontSize: 24, color: Colors.white),
-                                      ),
+                                    Text(
+                                      '\u{0024} 20 (Early Bird Price)',
+                                      style: TextStyle(
+                                          fontSize: textSize * screenData.blockSizeVertical, color: Colors.white),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        'Full access to the event and all related activities.',
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      'Full access to the event and all related activities.',
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        'Includes refreshments and gift packages.',
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      'Includes refreshments and gift packages.',
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Available to all members of the general public.",
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      "Available to all members of the general public.",
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Transactions on Eventbrite are subject to additional taxes and fees.",
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      "Transactions on Eventbrite are subject to additional taxes and fees.",
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
                                     SizedBox(
-                                      height: 51,
+                                      height: 5.1 * screenData.blockSizeVertical,
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 30),
-                                      child: Container(
-                                        height: 50,
-                                        width: 100,
-                                        child: GFButton(
-                                          onPressed: () => launch(
-                                              'https://www.eventbrite.com/e/93687908055'),
-                                          color: Colors.redAccent,
-                                          hoverColor: Colors.red,
-                                          text: "Purchase",
-                                          icon:
-                                              Icon(Icons.local_play, size: 16),
-                                          textStyle:
-                                              TextStyle(color: Colors.black),
-                                        ),
+                                    Container(
+                                      height: buttonHeight * screenData.blockSizeVertical,
+                                      width: buttonWidth * screenData.blockSize,
+                                      child: GFButton(
+                                        onPressed: () => launch(
+                                            'https://www.eventbrite.com/e/93687908055'),
+                                        color: Colors.redAccent,
+                                        hoverColor: Colors.red,
+                                        text: "Purchase",
+                                        icon:
+                                            Icon(Icons.local_play, size: textSizeSmall * screenData.blockSizeVertical),
+                                        textStyle:
+                                            TextStyle(color: Colors.black),
                                       ),
                                     )
                                   ],
@@ -140,69 +130,47 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                                 decoration: ticketBGdecoration,
                                 child: Column(
                                   children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Student",
-                                        style: TextStyle(fontSize: 20),
-                                      ),
+                                    Text(
+                                      "Student",
+                                      style: TextStyle(fontSize: textSize * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        '\u{0024} 5 (Early Bird Price)',
-                                        style: TextStyle(
-                                            fontSize: 24, color: Colors.white),
-                                      ),
+                                    Text(
+                                      '\u{0024} 5 (Early Bird Price)',
+                                      style: TextStyle(
+                                          fontSize: textSize * screenData.blockSizeVertical, color: Colors.white),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        'Full access to the event and all related activities.',
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      'Full access to the event and all related activities.',
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        'Includes refreshments and gift packages.',
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      'Includes refreshments and gift packages.',
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Available to all college and high school students with valid ID",
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      "Available to all college and high school students with valid ID",
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Text(
-                                        "Transactions on Eventbrite are subject to additional taxes and fees.",
-                                        style: TextStyle(fontSize: 14),
-                                      ),
+                                    Text(
+                                      "Transactions on Eventbrite are subject to additional taxes and fees.",
+                                      style: TextStyle(fontSize: textSizeSmall * screenData.blockSizeVertical),
                                     ),
                                     SizedBox(
-                                      height: 50,
+                                      height: 5 * screenData.blockSizeVertical,
                                     ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(bottom: 30),
-                                      child: Container(
-                                        height: 50,
-                                        width: 100,
-                                        child: GFButton(
-                                          onPressed: () => launch(
-                                              'https://www.eventbrite.com/e/93687908055'),
-                                          color: Colors.redAccent,
-                                          hoverColor: Colors.red,
-                                          text: "Purchase",
-                                          icon:
-                                              Icon(Icons.local_play, size: 16),
-                                          textStyle:
-                                              TextStyle(color: Colors.black),
-                                        ),
+                                    Container(
+                                      height: buttonHeight * screenData.blockSizeVertical,
+                                      width: buttonWidth * screenData.blockSize,
+                                      child: GFButton(
+                                        onPressed: () => launch(
+                                            'https://www.eventbrite.com/e/93687908055'),
+                                        color: Colors.redAccent,
+                                        hoverColor: Colors.red,
+                                        text: "Purchase",
+                                        icon:
+                                            Icon(Icons.local_play, size: textSizeSmall * screenData.blockSizeVertical),
+                                        textStyle:
+                                            TextStyle(color: Colors.black),
                                       ),
                                     )
                                   ],
@@ -213,15 +181,15 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                         ],
                       ),
                       SizedBox(
-                        height: 100,
+                        height: 10 * screenData.blockSizeVertical,
                       )
                     ],
                   )),
               Positioned(
-                top: 10,
-                right: 10,
+                top: 1 * screenData.blockSizeVertical,
+                right: 1 * screenData.blockSize,
                 child: IconButton(
-                  icon: Icon(Icons.cancel, color: Colors.black, size: 30),
+                  icon: Icon(Icons.cancel, color: Colors.black, size: 3 * screenData.blockSizeVertical),
                   onPressed: () {
                     Navigator.pop(context);
                   },
