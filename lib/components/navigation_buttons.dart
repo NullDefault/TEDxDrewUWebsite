@@ -3,41 +3,42 @@ import 'package:getflutter/getflutter.dart';
 import 'package:tedx/app_config.dart';
 import 'package:tedx/components/draw_circle.dart';
 
-class NavigationButtons extends StatelessWidget {
+// ignore: must_be_immutable
+class NavigationButtons{
+
   AppConfig screenData;
+  Widget _circle = CustomPaint(painter: DrawCircle());
+  GFButtonShape _buttonShape = GFButtonShape.pills;
+  Color _buttonColor = Colors.redAccent;
+  Color _buttonHoverColor = Colors.red;
+  Color _buttonHighlightColor = Colors.deepOrange;
+  var _buttonText = ["About", "Team", "Catalog", "Tickets"];
 
   NavigationButtons(AppConfig screenData){
     this.screenData = screenData;
   }
 
+  // TODO: IMPLEMENT VERTICAL LAYOUT
+  Widget verticalLayout(){
 
-  @override
-  Widget build(BuildContext context) {
+  }
+
+  Widget horizontalLayout(BuildContext context){
     this.screenData.rebuildUpdate(context);
-    Widget _circle = CustomPaint(painter: DrawCircle());
 
-    double _buttonSeparation = 50;
-    double _buttonFontSize = 2.6 * screenData.blockSizeVertical;
+    double _buttonSeparation = 5 * screenData.blockSizeVertical;
+    double _buttonFontSize = 2.8 * screenData.blockSizeVertical;
     double _iconSize = 3.6 * screenData.blockSizeVertical;
-    GFButtonShape _buttonShape = GFButtonShape.pills;
+    double _buttonWidth = 10 * screenData.blockSize;
+    double _buttonHeight = 7 * screenData.blockSizeVertical;
 
-    TextStyle _buttonStyle =
-        TextStyle(fontSize: _buttonFontSize, color: Colors.black);
-
-    Color _buttonColor = Colors.redAccent;
-    Color _buttonHoverColor = Colors.red;
-    Color _buttonHighlightColor = Colors.deepOrange;
-
-    var _buttonText = ["About", "Team", "Catalog", "Tickets"];
+    TextStyle _buttonStyle = TextStyle(fontSize: _buttonFontSize, color: Colors.black);
     var _buttonIcons = [
       Icon(Icons.help, size: _iconSize),
       Icon(Icons.supervised_user_circle, size: _iconSize),
       Icon(Icons.local_library, size: _iconSize),
       Icon(Icons.local_play, size: _iconSize,)
     ];
-
-    double _buttonWidth = 10 * screenData.blockSize;
-    double _buttonHeight = 7 * screenData.blockSizeVertical;
 
     var _navigationButtons = [
       Container(
@@ -115,8 +116,8 @@ class NavigationButtons extends StatelessWidget {
           highlightColor: _buttonHighlightColor,
           text: _buttonText[3],
           icon: Hero(
-            tag: 'ticket_tag',
-            child: _buttonIcons[3]
+              tag: 'ticket_tag',
+              child: _buttonIcons[3]
           ),
           textStyle: _buttonStyle,
           shape: _buttonShape,

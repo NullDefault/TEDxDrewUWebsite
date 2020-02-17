@@ -5,6 +5,7 @@ import 'package:tedx/components/footer_painter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // Used to make the website Footer
+// ignore: must_be_immutable
 class Footer extends StatelessWidget {
   AppConfig screenData;
 

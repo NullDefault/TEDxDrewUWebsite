@@ -59,34 +59,27 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
             children: <Widget>[
               Text(
                 "General Admission",
-                style: TextStyle(
-                    fontSize: midSize),
+                style: TextStyle(fontSize: midSize),
               ),
               Text(
                 '\u{0024} 20 (Early Bird Price)',
-                style: TextStyle(
-                    fontSize: midSize,
-                    color: Colors.white),
+                style: TextStyle(fontSize: midSize, color: Colors.white),
               ),
               Text(
                 'Full access to the event and all related activities.',
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               Text(
                 'Includes refreshments and gift packages.',
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               Text(
                 "Available to all members of the general public.",
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               Text(
                 "Transactions on Eventbrite are subject to additional taxes and fees.",
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               SizedBox(
                 height: 5.1 * screenData.blockSizeVertical,
@@ -100,8 +93,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                   color: Colors.redAccent,
                   hoverColor: Colors.red,
                   text: "Purchase",
-                  icon: Icon(Icons.local_play,
-                      size: smallSize),
+                  icon: Icon(Icons.local_play, size: smallSize),
                   textStyle: TextStyle(color: Colors.black),
                 ),
               )
@@ -124,34 +116,27 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
             children: <Widget>[
               Text(
                 "Student",
-                style: TextStyle(
-                    fontSize: midSize),
+                style: TextStyle(fontSize: midSize),
               ),
               Text(
                 '\u{0024} 5 (Early Bird Price)',
-                style: TextStyle(
-                    fontSize: midSize,
-                    color: Colors.white),
+                style: TextStyle(fontSize: midSize, color: Colors.white),
               ),
               Text(
                 'Full access to the event and all related activities.',
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               Text(
                 'Includes refreshments and gift packages.',
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               Text(
                 "Available to all college and high school students with valid ID",
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               Text(
                 "Transactions on Eventbrite are subject to additional taxes and fees.",
-                style: TextStyle(
-                    fontSize: smallSize),
+                style: TextStyle(fontSize: smallSize),
               ),
               SizedBox(
                 height: 5 * screenData.blockSizeVertical,
@@ -181,48 +166,67 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     this.screenData.rebuildUpdate(context);
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: AnimatedBackground(
-        behaviour: RacingLinesBehaviour(),
-        vsync: this,
-        child: Container(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                  color: Colors.redAccent,
-                  height: boxHeight * screenData.blockSizeVertical,
-                  width: boxWidth * screenData.blockSize,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[buildTicketBox()],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[buildLeftBox(), buildRightBox()],
-                      ),
-                      SizedBox(
-                        height: 10 * screenData.blockSizeVertical,
-                      )
-                    ],
-                  )),
-              Positioned(
-                  top: 1 * screenData.blockSizeVertical,
-                  right: 1 * screenData.blockSize,
-                  child: IconButton(
-                    icon: Icon(Icons.cancel,
-                        color: Colors.black,
-                        size: 3 * screenData.blockSizeVertical),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ))
-            ],
-          ),
-          alignment: Alignment(0.0, 0.0),
+        backgroundColor: Colors.black,
+        body: OrientationBuilder(
+          builder: (context, orientation) {
+            return orientation == Orientation.portrait
+                ? _buildVerticalLayout()
+                : _buildHorizontalLayout();
+          },
+        ));
+  }
+
+  // TODO: IMPLEMENT VERTICAL LAYOUT
+  Widget _buildVerticalLayout() {
+    return Center(
+      child: Text(
+        "Mobile Version Coming Soon",
+        style: TextStyle(color: Colors.red),
+      ),
+    );
+  }
+
+  Widget _buildHorizontalLayout(){
+    return AnimatedBackground(
+      behaviour: RacingLinesBehaviour(),
+      vsync: this,
+      child: Container(
+        child: Stack(
+          children: <Widget>[
+            Container(
+                color: Colors.redAccent,
+                height: boxHeight * screenData.blockSizeVertical,
+                width: boxWidth * screenData.blockSize,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[buildTicketBox()],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[buildLeftBox(), buildRightBox()],
+                    ),
+                    SizedBox(
+                      height: 10 * screenData.blockSizeVertical,
+                    )
+                  ],
+                )),
+            Positioned(
+                top: 1 * screenData.blockSizeVertical,
+                right: 1 * screenData.blockSize,
+                child: IconButton(
+                  icon: Icon(Icons.cancel,
+                      color: Colors.black,
+                      size: 3 * screenData.blockSizeVertical),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ))
+          ],
         ),
+        alignment: Alignment(0.0, 0.0),
       ),
     );
   }
