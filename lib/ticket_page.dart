@@ -26,7 +26,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
 
   BoxDecoration ticketBGdecoration = BoxDecoration(color: Colors.red);
   var boxHeight = 60;
-  var boxWidth = 100;
+  var boxWidth = 60;
   var textSizeSmall = 1.6;
   var textSize = 2.8;
   var textSizeCapital = 3.6;
@@ -37,128 +37,161 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
     return Center(
       child: Container(
         decoration: ticketBGdecoration,
-        child: Text(
-          "Tickets",
-          style: TextStyle(
-              fontSize: textSizeCapital * screenData.blockSizeVertical,
-              color: Colors.white),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Text(
+            "Tickets",
+            style: TextStyle(
+                fontSize: textSizeCapital * screenData.blockSizeVertical,
+                color: Colors.white),
+          ),
         ),
       ),
     );
   }
 
-  Column buildLeftBox() {
+  Container buildLeftBox() {
     var smallSize = textSizeSmall * screenData.blockSizeVertical;
     var midSize = textSize * screenData.blockSizeVertical;
 
-    return Column(
-      children: <Widget>[
-        Container(
-          decoration: ticketBGdecoration,
-          child: Column(
-            children: <Widget>[
-              Text(
-                "General Admission",
-                style: TextStyle(fontSize: midSize),
-              ),
-              Text(
-                '\u{0024} 20 (Early Bird Price)',
-                style: TextStyle(fontSize: midSize, color: Colors.white),
-              ),
-              Text(
-                'Full access to the event and all related activities.',
-                style: TextStyle(fontSize: smallSize),
-              ),
-              Text(
-                'Includes refreshments and gift packages.',
-                style: TextStyle(fontSize: smallSize),
-              ),
-              Text(
-                "Available to all members of the general public.",
-                style: TextStyle(fontSize: smallSize),
-              ),
-              Text(
-                "Transactions on Eventbrite are subject to additional taxes and fees.",
-                style: TextStyle(fontSize: smallSize),
-              ),
-              SizedBox(
-                height: 5.1 * screenData.blockSizeVertical,
-              ),
-              Container(
-                height: buttonHeight * screenData.blockSizeVertical,
-                width: buttonWidth * screenData.blockSize,
-                child: GFButton(
-                  onPressed: () =>
-                      launch('https://www.eventbrite.com/e/93687908055'),
-                  color: Colors.redAccent,
-                  hoverColor: Colors.red,
-                  text: "Purchase",
-                  icon: Icon(Icons.local_play, size: smallSize),
-                  textStyle: TextStyle(color: Colors.black),
-                ),
-              )
-            ],
+    return Container(
+      decoration: ticketBGdecoration,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "General Admission",
+              style: TextStyle(fontSize: midSize),
+            ),
           ),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              '\u{0024} 20 (Early Bird Price)',
+              style: TextStyle(fontSize: midSize, color: Colors.white),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Full access to the event and all related activities.',
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Includes refreshments and gift packages.',
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Available to all members of the general public.",
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Transactions on Eventbrite are subject to additional taxes and fees.",
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 14.0, right: 14.0, top: 30, bottom: 30),
+            child: Container(
+              height: buttonHeight * screenData.blockSizeVertical,
+              width: buttonWidth * screenData.blockSize,
+              child: GFButton(
+                onPressed: () =>
+                    launch('https://www.eventbrite.com/e/93687908055'),
+                color: Colors.redAccent,
+                hoverColor: Colors.red,
+                text: "Purchase",
+                icon: Icon(Icons.local_play, size: smallSize),
+                textStyle: TextStyle(color: Colors.black),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 
-  Column buildRightBox() {
+  Container buildRightBox() {
     var smallSize = textSizeSmall * screenData.blockSizeVertical;
     var midSize = textSize * screenData.blockSizeVertical;
 
-    return Column(
-      children: <Widget>[
-        Container(
-          decoration: ticketBGdecoration,
-          child: Column(
-            children: <Widget>[
-              Text(
-                "Student",
-                style: TextStyle(fontSize: midSize),
-              ),
-              Text(
-                '\u{0024} 5 (Early Bird Price)',
-                style: TextStyle(fontSize: midSize, color: Colors.white),
-              ),
-              Text(
-                'Full access to the event and all related activities.',
-                style: TextStyle(fontSize: smallSize),
-              ),
-              Text(
-                'Includes refreshments and gift packages.',
-                style: TextStyle(fontSize: smallSize),
-              ),
-              Text(
-                "Available to all college and high school students with valid ID",
-                style: TextStyle(fontSize: smallSize),
-              ),
-              Text(
-                "Transactions on Eventbrite are subject to additional taxes and fees.",
-                style: TextStyle(fontSize: smallSize),
-              ),
-              SizedBox(
-                height: 5 * screenData.blockSizeVertical,
-              ),
-              Container(
-                height: buttonHeight * screenData.blockSizeVertical,
-                width: buttonWidth * screenData.blockSize,
-                child: GFButton(
-                  onPressed: () =>
-                      launch('https://www.eventbrite.com/e/93687908055'),
-                  color: Colors.redAccent,
-                  hoverColor: Colors.red,
-                  text: "Purchase",
-                  icon: Icon(Icons.local_play,
-                      size: textSizeSmall * screenData.blockSizeVertical),
-                  textStyle: TextStyle(color: Colors.black),
-                ),
-              )
-            ],
+    return Container(
+      decoration: ticketBGdecoration,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Student",
+              style: TextStyle(fontSize: midSize),
+            ),
           ),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              '\u{0024} 5 (Early Bird Price)',
+              style: TextStyle(fontSize: midSize, color: Colors.white),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Full access to the event and all related activities.',
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Includes refreshments and gift packages.',
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Available to all college and high school students with valid ID",
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "Transactions on Eventbrite are subject to additional taxes and fees.",
+              style: TextStyle(fontSize: smallSize),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 14.0, right: 14.0, top: 30, bottom: 30),
+            child: Container(
+              height: buttonHeight * screenData.blockSizeVertical,
+              width: buttonWidth * screenData.blockSize,
+              child: GFButton(
+                onPressed: () =>
+                    launch('https://www.eventbrite.com/e/93687908055'),
+                color: Colors.redAccent,
+                hoverColor: Colors.red,
+                text: "Purchase",
+                icon: Icon(Icons.local_play,
+                    size: textSizeSmall * screenData.blockSizeVertical),
+                textStyle: TextStyle(color: Colors.black),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 
@@ -187,6 +220,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
   }
 
   Widget _buildHorizontalLayout(){
+
     return AnimatedBackground(
       behaviour: RacingLinesBehaviour(),
       vsync: this,
@@ -202,7 +236,9 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                   children: <Widget>[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[buildTicketBox()],
+                      children: <Widget>[
+                        buildTicketBox()
+                      ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

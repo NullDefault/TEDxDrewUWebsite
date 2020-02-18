@@ -45,7 +45,7 @@ class NavigationButtons{
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: (){},
+          onPressed: null,
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
@@ -66,7 +66,7 @@ class NavigationButtons{
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: (){},
+          onPressed: null,
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
@@ -87,7 +87,7 @@ class NavigationButtons{
         width: _buttonWidth,
         height: _buttonHeight,
         child: GFButton(
-          onPressed: (){},
+          onPressed: null,
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,

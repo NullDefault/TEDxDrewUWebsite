@@ -49,15 +49,6 @@ class Footer extends StatelessWidget {
                       fontSize: _textSize),
                 ),
                 SizedBox(width: _textSocialSeparation),
-                // Twitter
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: _socialPadding, right: _socialPadding),
-                  child: IconButton(
-                      onPressed: () => launch('https://twitter.com/tedxdrewuni'),
-                      icon: Icon(FontAwesomeIcons.twitterSquare,
-                          size: _iconSize, color: Colors.black)),
-                ),
                 // Facebook
                 Padding(
                   padding: const EdgeInsets.only(
@@ -92,15 +83,6 @@ class Footer extends StatelessWidget {
                   child: IconButton(
                       onPressed:  () => launch('https://www.flickr.com/photos/157641040@N04/albums/with/72157667913519498'),
                       icon: Icon(FontAwesomeIcons.flickr,
-                          size: _iconSize, color: Colors.black)),
-                ),
-                // LinkedIn
-                Padding(
-                  padding: const EdgeInsets.only(
-                      left: _socialPadding, right: _socialPadding),
-                  child: IconButton(
-                      onPressed:  () => launch('https://www.linkedin.com/company/tedxdrewuniversity/'),
-                      icon: Icon(FontAwesomeIcons.linkedinIn,
                           size: _iconSize, color: Colors.black)),
                 ),
               ],
