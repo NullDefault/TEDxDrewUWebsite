@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tedx/landing_page.dart';
+import 'package:tedx/ticket_page.dart';
 import 'package:tedx/size_config.dart';
 //----------------------------------------------------------------------------//
 void main() => runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       home: LandingPage(screenSizeData),
       routes: <String, WidgetBuilder>{
         '/tickets': (BuildContext context) {
-          return Column(); // TODO: REWRITE TICKET PAGE
+          return TicketPage(screenSizeData);
         }
       },
     );

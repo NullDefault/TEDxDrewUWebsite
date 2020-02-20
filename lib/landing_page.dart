@@ -54,7 +54,7 @@ class LandingPageState extends State {
         OfficialTextLogo(_officialLogoWidth, _officialLogoHeight);
     var _buttons = NavigationButtons();
     Widget _mobileNavigationButtons = _buttons.getMobileLayout(
-        _individualButtonWidth, _individualButtonHeight);
+        _individualButtonWidth, _individualButtonHeight, context);
 
     return Center(
       child: Container(
@@ -99,7 +99,7 @@ class LandingPageState extends State {
         OfficialTextLogo(_officialLogoWidth, _officialLogoHeight);
     var _buttons = NavigationButtons();
     Widget _desktopNavigationButtons = _buttons.getDesktopLayout(
-        _individualButtonWidth, _individualButtonHeight);
+        sizeConfig.screenWidth, _individualButtonWidth, _individualButtonHeight, context);
 
     return Center(
       child: Container(
@@ -133,7 +133,7 @@ class LandingPageState extends State {
   }
 //----------------------------------------------------------------------------//
   Widget _makeFooter() {
-    if (sizeConfig.screenWidth < sizeConfig.screenHeight) {     //Desktop Footer
+    if (sizeConfig.screenWidth < sizeConfig.screenHeight) {     //Mobile Layout
       return Container(
         height: sizeConfig.blockSizeVertical * 8,
         color: Color(0xEEE62B1E),
@@ -192,7 +192,7 @@ class LandingPageState extends State {
       );
     }
 //----------------------------------------------------------------------------//
-    else if (sizeConfig.screenHeight < sizeConfig.screenWidth) {// Mobile Footer
+    else if (sizeConfig.screenHeight < sizeConfig.screenWidth) {// Desktop Footer
       return Container(
         height: sizeConfig.blockSizeVertical * 8,
         color: Color(0xEEE62B1E),
@@ -204,7 +204,7 @@ class LandingPageState extends State {
               style: TextStyle(
                   color: Color(0xFFFFF7e6),
                   fontFamily: 'Helvetica',
-                  fontSize: 18),
+                  fontSize: 19 * (sizeConfig.screenWidth / 1980)),
             ),
             SizedBox(width: sizeConfig.blockSizeHorizontal * 10),
             IconButton(

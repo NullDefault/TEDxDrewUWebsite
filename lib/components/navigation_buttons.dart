@@ -9,13 +9,15 @@ class NavigationButtons {
   Color _buttonHoverColor = Colors.red;
   Color _buttonHighlightColor = Colors.red;
   List<String> _buttonText = ["About", "Team", "Catalog", "Tickets"];
+
 //----------------------------------------------------------------------------//
-  Widget getDesktopLayout(buttonWidth, buttonHeight) {
+  Widget getDesktopLayout(screenWidth, buttonWidth, buttonHeight, context) {
     var _buttonSeparation = buttonWidth / 8;
+    var _iconSize = buttonWidth / 10;
     TextStyle _buttonStyle = TextStyle(
         color: Colors.white,
         fontFamily: 'Raleway',
-        fontSize: 28,
+        fontSize: 28 * (screenWidth / 1980),
         height: 2,
         fontWeight: FontWeight.bold);
     var _buttons = [
@@ -30,7 +32,7 @@ class NavigationButtons {
           text: _buttonText[0],
           textStyle: _buttonStyle,
           shape: _buttonShape,
-          icon: Icon(FontAwesomeIcons.questionCircle),
+          icon: Icon(FontAwesomeIcons.questionCircle, size: _iconSize),
         ),
       ),
       SizedBox(
@@ -47,7 +49,7 @@ class NavigationButtons {
           text: _buttonText[1],
           textStyle: _buttonStyle,
           shape: _buttonShape,
-          icon: Icon(FontAwesomeIcons.users),
+          icon: Icon(Icons.face, size: _iconSize),
         ),
       ),
       SizedBox(
@@ -64,7 +66,7 @@ class NavigationButtons {
           text: _buttonText[2],
           textStyle: _buttonStyle,
           shape: _buttonShape,
-          icon: Icon(FontAwesomeIcons.calendarAlt),
+          icon: Icon(FontAwesomeIcons.clock, size: _iconSize),
         ),
       ),
       SizedBox(
@@ -74,14 +76,16 @@ class NavigationButtons {
         width: buttonWidth,
         height: buttonHeight,
         child: GFButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/tickets');
+          },
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
           text: _buttonText[3],
           textStyle: _buttonStyle,
           shape: _buttonShape,
-          icon: Icon(FontAwesomeIcons.ticketAlt),
+          icon: Icon(Icons.monetization_on, size: _iconSize),
         ),
       ),
     ];
@@ -91,8 +95,9 @@ class NavigationButtons {
       children: _buttons,
     ));
   }
+
 //----------------------------------------------------------------------------//
-  Widget getMobileLayout(buttonWidth, buttonHeight) {
+  Widget getMobileLayout(buttonWidth, buttonHeight, context) {
     var _buttonSeparation = buttonWidth / 8;
     TextStyle _buttonStyle = TextStyle(
         color: Colors.white,
@@ -155,7 +160,9 @@ class NavigationButtons {
         width: buttonWidth,
         height: buttonHeight,
         child: GFButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/tickets');
+          },
           color: _buttonColor,
           hoverColor: _buttonHoverColor,
           highlightColor: _buttonHighlightColor,
