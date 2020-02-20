@@ -8,6 +8,7 @@ import 'components/navigation_buttons.dart';
 // ignore: must_be_immutable
 class LandingPage extends StatefulWidget {
   SizeConfig sizeConfig;
+
   LandingPage(SizeConfig sizeConfig) {
     this.sizeConfig = sizeConfig;
   }
@@ -15,6 +16,7 @@ class LandingPage extends StatefulWidget {
   @override
   LandingPageState createState() => LandingPageState(sizeConfig);
 }
+
 //----------------------------------------------------------------------------//
 class LandingPageState extends State {
   SizeConfig sizeConfig;
@@ -40,6 +42,7 @@ class LandingPageState extends State {
         ),
         bottomNavigationBar: _makeFooter());
   }
+
 //----------------------------------------------------------------------------//
   Widget _buildMobileLayout() {
     var _solveForXLogoWidth = 150 * sizeConfig.blockSizeHorizontal;
@@ -49,7 +52,7 @@ class LandingPageState extends State {
     var _individualButtonWidth = 40 * sizeConfig.blockSizeHorizontal;
     var _individualButtonHeight = 12 * sizeConfig.blockSizeVertical;
     var _solveForXLogo =
-        SolveForXLogo(_solveForXLogoWidth, _solveForXLogoHeight);
+        SolveForXLogoWithText(_solveForXLogoWidth, _solveForXLogoHeight);
     var _officialLogo =
         OfficialTextLogo(_officialLogoWidth, _officialLogoHeight);
     var _buttons = NavigationButtons();
@@ -84,6 +87,7 @@ class LandingPageState extends State {
       ),
     );
   }
+
 //----------------------------------------------------------------------------//
   Widget _buildDesktopLayout() {
     var _solveForXLogoWidth = 150 * sizeConfig.blockSizeHorizontal;
@@ -94,12 +98,15 @@ class LandingPageState extends State {
     var _individualButtonHeight = 8 * sizeConfig.blockSizeVertical;
 
     var _solveForXLogo =
-        SolveForXLogo(_solveForXLogoWidth, _solveForXLogoHeight);
+        SolveForXLogoWithText(_solveForXLogoWidth, _solveForXLogoHeight);
     var _officialLogo =
         OfficialTextLogo(_officialLogoWidth, _officialLogoHeight);
     var _buttons = NavigationButtons();
     Widget _desktopNavigationButtons = _buttons.getDesktopLayout(
-        sizeConfig.screenWidth, _individualButtonWidth, _individualButtonHeight, context);
+        sizeConfig.screenWidth,
+        _individualButtonWidth,
+        _individualButtonHeight,
+        context);
 
     return Center(
       child: Container(
@@ -131,9 +138,11 @@ class LandingPageState extends State {
       ),
     );
   }
+
 //----------------------------------------------------------------------------//
   Widget _makeFooter() {
-    if (sizeConfig.screenWidth < sizeConfig.screenHeight) {     //Mobile Layout
+    if (sizeConfig.screenWidth < sizeConfig.screenHeight) {
+      //Mobile Layout
       return Container(
         height: sizeConfig.blockSizeVertical * 8,
         color: Color(0xEEE62B1E),
@@ -192,7 +201,8 @@ class LandingPageState extends State {
       );
     }
 //----------------------------------------------------------------------------//
-    else if (sizeConfig.screenHeight < sizeConfig.screenWidth) {// Desktop Footer
+    else if (sizeConfig.screenHeight < sizeConfig.screenWidth) {
+      // Desktop Footer
       return Container(
         height: sizeConfig.blockSizeVertical * 8,
         color: Color(0xEEE62B1E),
@@ -204,7 +214,7 @@ class LandingPageState extends State {
               style: TextStyle(
                   color: Color(0xFFFFF7e6),
                   fontFamily: 'Helvetica',
-                  fontSize: 19 * (sizeConfig.screenWidth / 1980)),
+                  fontSize: 19 * sizeConfig.sizeFactor),
             ),
             SizedBox(width: sizeConfig.blockSizeHorizontal * 10),
             IconButton(
