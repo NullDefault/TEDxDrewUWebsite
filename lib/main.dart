@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tedx/landing_page.dart';
-import 'package:tedx/ticket_page.dart';
-import 'package:tedx/size_config.dart';
+import 'landing_page.dart';
+import 'size_config.dart';
+import 'ticket_page.dart';
 
 //----------------------------------------------------------------------------//
 void main() => runApp(MyApp());

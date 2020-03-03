@@ -2,8 +2,8 @@ import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getflutter/getflutter.dart';
-import 'package:tedx/components/logo_widgets.dart';
-import 'package:tedx/size_config.dart';
+import 'components/logo_widgets.dart';
+import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
@@ -46,85 +46,96 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
-        fontSize: sizeConfig.blockSizeVertical * 7);
+        fontSize: 80);
     TextStyle _mobileSubHeaderStyle = TextStyle(
-        color: Color(0xFFFFF7e6),
-        fontFamily: 'Raleway',
-        fontSize: sizeConfig.blockSizeVertical * 5);
+        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 60);
     TextStyle _mobileMainParagraphStyle = TextStyle(
-        color: Color(0xFFFFF7e6),
-        fontFamily: 'Raleway',
-        fontSize: sizeConfig.blockSizeVertical * 3);
+        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 24);
     TextStyle _mobileButtonTextStyle = TextStyle(
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
-        fontSize: sizeConfig.blockSizeVertical * 6,
+        fontSize: 40,
         fontWeight: FontWeight.bold);
 
     Widget _ticketBoxTop = Container(
       height: sizeConfig.screenHeight / 1.9,
       color: Color(0xEEE62B1E),
-      child: Text.rich(
-        TextSpan(
-            text: '\n\u{0024}15\n\n',
-            style: _mobileHeaderStyle,
-            children: [
-              TextSpan(
-                  text: 'general admission\n',
-                  style: _mobileSubHeaderStyle,
-                  children: [
-                    TextSpan(
-                        text:
-                            "- Early bird price valid until 2/29\n normal price \u{0024}20\n",
-                        style: _mobileMainParagraphStyle),
-                    TextSpan(
-                        text:
-                            "- Full access to the event\n and all related activities\n",
-                        style: _mobileMainParagraphStyle),
-                    TextSpan(
-                        text: "- Includes refreshments and gift packages\n",
-                        style: _mobileMainParagraphStyle),
-                    TextSpan(
-                        text:
-                            "- Available to all members of the general public\n",
-                        style: _mobileMainParagraphStyle),
-                    TextSpan(
-                        text:
-                            "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n\n",
-                        style: _mobileMainParagraphStyle)
-                  ])
-            ]),
-        textAlign: TextAlign.center,
+      child: ListView(
+        children: <Widget>[
+          Text.rich(
+            TextSpan(
+                text: '\n\u{0024}15\n\n',
+                style: _mobileHeaderStyle,
+                children: [
+                  TextSpan(
+                      text: 'general admission\n',
+                      style: _mobileSubHeaderStyle,
+                      children: [
+                        TextSpan(
+                            text:
+                                "- Early bird price valid until 2/29\n normal price \u{0024}20\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text:
+                                "- Full access to the event\n and all related activities\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text: "- Includes refreshments and gift packages\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text:
+                                "- Available to all members of the general public\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text:
+                                "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n\n",
+                            style: _mobileMainParagraphStyle)
+                      ])
+                ]),
+            textAlign: TextAlign.center,
+          )
+        ],
       ),
     );
 
     Widget _ticketBoxBot = Container(
       height: sizeConfig.screenHeight / 1.9,
       color: Color(0xEEE62B1E),
-      child: Text.rich(
-        TextSpan(text: '\n\u{0024}5\n\n', style: _mobileHeaderStyle, children: [
-          TextSpan(text: 'student\n', style: _mobileSubHeaderStyle, children: [
+      child: ListView(
+        children: <Widget>[
+          Text.rich(
             TextSpan(
-                text:
-                    "- Early bird price valid until 2/29\n normal price \u{0024}10\n",
-                style: _mobileMainParagraphStyle),
-            TextSpan(
-                text: "- Full access to the event and all related activities\n",
-                style: _mobileMainParagraphStyle),
-            TextSpan(
-                text: "- Includes refreshments and gift packages\n",
-                style: _mobileMainParagraphStyle),
-            TextSpan(
-                text:
-                    "- Available to all college and high school students with valid ID\n",
-                style: _mobileMainParagraphStyle),
-            TextSpan(
-                text:
-                    "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n\n",
-                style: _mobileMainParagraphStyle)
-          ])
-        ]),
-        textAlign: TextAlign.center,
+                text: '\n\u{0024}5\n\n',
+                style: _mobileHeaderStyle,
+                children: [
+                  TextSpan(
+                      text: 'student\n',
+                      style: _mobileSubHeaderStyle,
+                      children: [
+                        TextSpan(
+                            text:
+                                "- Early bird price valid until 2/29\n normal price \u{0024}10\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text:
+                                "- Full access to the event and all related activities\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text: "- Includes refreshments and gift packages\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text:
+                                "- Available to all college and high school students with valid ID\n",
+                            style: _mobileMainParagraphStyle),
+                        TextSpan(
+                            text:
+                                "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n\n",
+                            style: _mobileMainParagraphStyle)
+                      ])
+                ]),
+            textAlign: TextAlign.center,
+          )
+        ],
       ),
     );
 
@@ -149,8 +160,13 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
           child: ListView(
             children: <Widget>[
               Center(
-                  child: SolveForXLogo(sizeConfig.blockSizeHorizontal * 17,
-                      sizeConfig.blockSizeVertical * 15)),
+                  child: IconButton(
+                icon: SolveForXLogo(sizeConfig.blockSizeHorizontal * 17,
+                    sizeConfig.blockSizeVertical * 15),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )),
               SizedBox(
                 height: sizeConfig.blockSizeVertical * 7,
               ),
@@ -217,38 +233,42 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 width: sizeConfig.screenWidth / 2.5,
                 height: sizeConfig.screenHeight / 1.75 -
                     sizeConfig.blockSizeVertical * 10,
-                child: Text.rich(
-                  TextSpan(
-                      text: '\n\u{0024}15\n\n',
-                      style: _headerStyle,
-                      children: [
-                        TextSpan(
-                            text: 'general admission\n',
-                            style: _subHeaderStyle,
-                            children: [
-                              TextSpan(
-                                  text:
-                                      "- Early bird price valid until 2/29; normal price \u{0024}20\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Full access to the event and all related activities\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Includes refreshments and gift packages\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Available to all members of the general public\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Note: Transactions on Eventbrite are subject to\n additional taxes and fees\n\n",
-                                  style: _mainParagraphStyle)
-                            ])
-                      ]),
-                  textAlign: TextAlign.center,
+                child: ListView(
+                  children: <Widget>[
+                    Text.rich(
+                      TextSpan(
+                          text: '\n\u{0024}15\n\n',
+                          style: _headerStyle,
+                          children: [
+                            TextSpan(
+                                text: 'general admission\n',
+                                style: _subHeaderStyle,
+                                children: [
+                                  TextSpan(
+                                      text:
+                                          "- Early bird price valid until 2/29; normal price \u{0024}20\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Full access to the event and all related activities\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Includes refreshments and gift packages\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Available to all members of the general public\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Note: Transactions on Eventbrite are subject to\n additional taxes and fees\n\n",
+                                      style: _mainParagraphStyle)
+                                ])
+                          ]),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 )),
           ),
           Positioned(
@@ -281,38 +301,42 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 width: sizeConfig.screenWidth / 2.5,
                 height: sizeConfig.screenHeight / 1.75 -
                     sizeConfig.blockSizeVertical * 10,
-                child: Text.rich(
-                  TextSpan(
-                      text: '\n\u{0024}5\n\n',
-                      style: _headerStyle,
-                      children: [
-                        TextSpan(
-                            text: 'student\n',
-                            style: _subHeaderStyle,
-                            children: [
-                              TextSpan(
-                                  text:
-                                      "- Early bird price valid until 2/29; normal price \u{0024}10\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Full access to the event and all related activities\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Includes refreshments and gift packages\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Available to all college and high school students with valid ID\n",
-                                  style: _mainParagraphStyle),
-                              TextSpan(
-                                  text:
-                                      "- Note: Transactions on Eventbrite are subject to\n additional taxes and fees\n\n",
-                                  style: _mainParagraphStyle)
-                            ])
-                      ]),
-                  textAlign: TextAlign.center,
+                child: ListView(
+                  children: <Widget>[
+                    Text.rich(
+                      TextSpan(
+                          text: '\n\u{0024}5\n\n',
+                          style: _headerStyle,
+                          children: [
+                            TextSpan(
+                                text: 'student\n',
+                                style: _subHeaderStyle,
+                                children: [
+                                  TextSpan(
+                                      text:
+                                          "- Early bird price valid until 2/29; normal price \u{0024}10\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Full access to the event and all related activities\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Includes refreshments and gift packages\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Available to all college and high school students with valid ID\n",
+                                      style: _mainParagraphStyle),
+                                  TextSpan(
+                                      text:
+                                          "- Note: Transactions on Eventbrite are subject to\n additional taxes and fees\n\n",
+                                      style: _mainParagraphStyle)
+                                ])
+                          ]),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 )),
           ),
           Positioned(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tedx/size_config.dart';
+import 'package:getflutter/getflutter.dart';
+import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'components/logo_widgets.dart';
 import 'components/navigation_buttons.dart';
@@ -69,8 +70,27 @@ class LandingPageState extends State {
             children: <Widget>[
               _solveForXLogo,
               _mobileNavigationButtons,
-              SizedBox(
-                height: _officialLogoHeight * 2,
+              Padding(
+                padding: const EdgeInsets.only(top: 20, bottom: 20),
+                child: Center(
+                    child: Container(
+                      width: _individualButtonWidth,
+                      height: _individualButtonHeight,
+                      child: GFButton(
+                        text: "Play Teaser Video",
+                        textStyle: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Raleway',
+                            fontSize: 18,
+                            height: 2,
+                            fontWeight: FontWeight.bold),
+                        color: Colors.red,
+                        shape: GFButtonShape.pills,
+                        icon: Icon(FontAwesomeIcons.playCircle, color: Colors.white, size: _individualButtonWidth / 10),
+                        onPressed: () => launch("https://www.youtube.com/watch?v=M_Ei_AmQDEs"),
+                      ),
+                    )
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -130,9 +150,27 @@ class LandingPageState extends State {
               ],
             ),
             SizedBox(
-              height: _solveForXLogoHeight,
+              height: _solveForXLogoHeight * .8,
             ),
-            _desktopNavigationButtons
+            _desktopNavigationButtons,
+            SizedBox(height: sizeConfig.blockSizeVertical * 6),
+            Container(
+              width: _individualButtonWidth,
+              height: _individualButtonHeight,
+              child: GFButton(
+                text: "Play Teaser Video",
+                textStyle: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Raleway',
+                    fontSize: 23 * (sizeConfig.screenWidth / 1980),
+                    height: 2,
+                    fontWeight: FontWeight.bold),
+                color: Colors.red,
+                shape: GFButtonShape.pills,
+                icon: Icon(FontAwesomeIcons.playCircle, color: Colors.white, size: _individualButtonWidth / 10),
+                onPressed: () => launch("https://www.youtube.com/watch?v=M_Ei_AmQDEs"),
+              ),
+            )
           ],
         ),
       ),
@@ -158,7 +196,7 @@ class LandingPageState extends State {
                 style: TextStyle(
                     color: Color(0xFFFFF7e6),
                     fontFamily: 'Helvetica',
-                    fontSize: 12),
+                    fontSize: 10),
               ),
             ),
             SizedBox(
