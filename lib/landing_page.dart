@@ -74,23 +74,24 @@ class LandingPageState extends State {
                 padding: const EdgeInsets.only(top: 20, bottom: 20),
                 child: Center(
                     child: Container(
-                      width: _individualButtonWidth,
-                      height: _individualButtonHeight,
-                      child: GFButton(
-                        text: "Play Teaser Video",
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Raleway',
-                            fontSize: 18,
-                            height: 2,
-                            fontWeight: FontWeight.bold),
-                        color: Colors.red,
-                        shape: GFButtonShape.pills,
-                        icon: Icon(FontAwesomeIcons.playCircle, color: Colors.white, size: _individualButtonWidth / 10),
-                        onPressed: () => launch("https://www.youtube.com/watch?v=M_Ei_AmQDEs"),
-                      ),
-                    )
-                ),
+                  width: _individualButtonWidth,
+                  height: _individualButtonHeight,
+                  child: GFButton(
+                    text: "Play Teaser",
+                    textStyle: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Raleway',
+                        fontSize: 18,
+                        height: 2,
+                        fontWeight: FontWeight.bold),
+                    color: Colors.red,
+                    shape: GFButtonShape.pills,
+                    icon: Icon(FontAwesomeIcons.playCircle,
+                        color: Colors.white, size: _individualButtonWidth / 10),
+                    onPressed: () =>
+                        launch("https://www.youtube.com/watch?v=M_Ei_AmQDEs"),
+                  ),
+                )),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -158,7 +159,7 @@ class LandingPageState extends State {
               width: _individualButtonWidth,
               height: _individualButtonHeight,
               child: GFButton(
-                text: "Play Teaser Video",
+                text: "Play Teaser",
                 textStyle: TextStyle(
                     color: Colors.white,
                     fontFamily: 'Raleway',
@@ -167,8 +168,10 @@ class LandingPageState extends State {
                     fontWeight: FontWeight.bold),
                 color: Colors.red,
                 shape: GFButtonShape.pills,
-                icon: Icon(FontAwesomeIcons.playCircle, color: Colors.white, size: _individualButtonWidth / 10),
-                onPressed: () => launch("https://www.youtube.com/watch?v=M_Ei_AmQDEs"),
+                icon: Icon(FontAwesomeIcons.playCircle,
+                    color: Colors.white, size: _individualButtonWidth / 10),
+                onPressed: () =>
+                    launch("https://www.youtube.com/watch?v=M_Ei_AmQDEs"),
               ),
             )
           ],
@@ -179,6 +182,32 @@ class LandingPageState extends State {
 
 //----------------------------------------------------------------------------//
   Widget _makeFooter() {
+
+    String _disclaimerText =
+        "This independent TEDx event is operated under license from TED. | tedx@drew.edu";
+
+    List<String> _socialMediaLinks = [
+      'https://www.facebook.com/TEDxDrewU/',
+      // Facebook
+      'https://www.instagram.com/tedxdrewuniversity/',
+      // Instagram
+      'https://www.youtube.com/playlist?list=PLsRNoUx8w3rOvVu1x8Vn5ECqMoYcYoJNw',
+      // YouTube
+      'https://www.flickr.com/photos/157641040@N04/albums/with/72157667913519498',
+      // Flickr
+    ];
+
+    List<Icon> _socialMediaIcons = [
+      Icon(FontAwesomeIcons.facebookSquare,
+          size: sizeConfig.blockSizeVertical * 3.5, color: Colors.black),
+      Icon(FontAwesomeIcons.instagram,
+          size: sizeConfig.blockSizeVertical * 3.5, color: Colors.black),
+      Icon(FontAwesomeIcons.youtubeSquare,
+          size: sizeConfig.blockSizeVertical * 3.5, color: Colors.black),
+      Icon(FontAwesomeIcons.flickr,
+          size: sizeConfig.blockSizeVertical * 3.5, color: Colors.black)
+    ];
+
     if (sizeConfig.screenWidth < sizeConfig.screenHeight) {
       //Mobile Layout
       return Container(
@@ -192,7 +221,7 @@ class LandingPageState extends State {
             ),
             Center(
               child: Text(
-                "This independent TEDx event is operated under license from TED. | tedx@drew.edu",
+                _disclaimerText,
                 style: TextStyle(
                     color: Color(0xFFFFF7e6),
                     fontFamily: 'Helvetica',
@@ -205,35 +234,20 @@ class LandingPageState extends State {
             Icon(FontAwesomeIcons.arrowsAltH,
                 size: sizeConfig.blockSizeHorizontal * 2),
             IconButton(
-                // FACEBOOK
-                onPressed: () => launch('https://www.facebook.com/TEDxDrewU/'),
-                icon: Icon(FontAwesomeIcons.facebookSquare,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[0]),
+                icon: _socialMediaIcons[0]),
             SizedBox(width: sizeConfig.blockSizeHorizontal),
             IconButton(
-                // INSTAGRAM
-                onPressed: () =>
-                    launch('https://www.instagram.com/tedxdrewuniversity/'),
-                icon: Icon(FontAwesomeIcons.instagram,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[1]),
+                icon: _socialMediaIcons[1]),
             SizedBox(width: sizeConfig.blockSizeHorizontal),
             IconButton(
-                // YOUTUBE
-                onPressed: () => launch(
-                    'https://www.youtube.com/playlist?list=PLsRNoUx8w3rOvVu1x8Vn5ECqMoYcYoJNw'),
-                icon: Icon(FontAwesomeIcons.youtubeSquare,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[2]),
+                icon: _socialMediaIcons[2]),
             SizedBox(width: sizeConfig.blockSizeHorizontal),
             IconButton(
-                // FLICKR
-                onPressed: () => launch(
-                    'https://www.flickr.com/photos/157641040@N04/albums/with/72157667913519498'),
-                icon: Icon(FontAwesomeIcons.flickr,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[3]),
+                icon: _socialMediaIcons[3]),
           ],
         ),
       );
@@ -248,7 +262,7 @@ class LandingPageState extends State {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              "This independent TEDx event is operated under license from TED. | tedx@drew.edu",
+              _disclaimerText,
               style: TextStyle(
                   color: Color(0xFFFFF7e6),
                   fontFamily: 'Helvetica',
@@ -257,34 +271,23 @@ class LandingPageState extends State {
             SizedBox(width: sizeConfig.blockSizeHorizontal * 10),
             IconButton(
                 // FACEBOOK
-                onPressed: () => launch('https://www.facebook.com/TEDxDrewU/'),
-                icon: Icon(FontAwesomeIcons.facebookSquare,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[0]),
+                icon: _socialMediaIcons[0]),
             SizedBox(width: sizeConfig.blockSizeHorizontal),
             IconButton(
                 // INSTAGRAM
-                onPressed: () =>
-                    launch('https://www.instagram.com/tedxdrewuniversity/'),
-                icon: Icon(FontAwesomeIcons.instagram,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[1]),
+                icon: _socialMediaIcons[1]),
             SizedBox(width: sizeConfig.blockSizeHorizontal),
             IconButton(
                 // YOUTUBE
-                onPressed: () => launch(
-                    'https://www.youtube.com/playlist?list=PLsRNoUx8w3rOvVu1x8Vn5ECqMoYcYoJNw'),
-                icon: Icon(FontAwesomeIcons.youtubeSquare,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[2]),
+                icon: _socialMediaIcons[2]),
             SizedBox(width: sizeConfig.blockSizeHorizontal),
             IconButton(
                 // FLICKR
-                onPressed: () => launch(
-                    'https://www.flickr.com/photos/157641040@N04/albums/with/72157667913519498'),
-                icon: Icon(FontAwesomeIcons.flickr,
-                    size: sizeConfig.blockSizeVertical * 3.5,
-                    color: Colors.black)),
+                onPressed: () => launch(_socialMediaLinks[3]),
+                icon: _socialMediaIcons[3]),
           ],
         ),
       );

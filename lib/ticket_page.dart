@@ -22,6 +22,22 @@ class TicketPage extends StatefulWidget {
 class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
   SizeConfig sizeConfig;
 
+  List<String> generalAdmissionText = [
+    "- Early bird price valid until 2/29 normal price \u{0024}20\n",
+    "- Full access to the event and all related activities\n",
+    "- Includes refreshments\n",
+    "- Available to all members of the general public\n",
+    "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n"
+  ];
+
+  List<String> studentAdmissionText = [
+    "- Early bird price valid until 2/29 normal price \u{0024}10\n",
+    "- Full access to the event and all related activities\n",
+    "- Includes refreshments\n",
+    "- Available to all college and high school students with valid ID\n",
+    "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n"
+  ];
+
   TicketPageState(SizeConfig sizeConfig) {
     this.sizeConfig = sizeConfig;
   }
@@ -46,11 +62,12 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
-        fontSize: 80);
+        fontSize: 64
+    );
     TextStyle _mobileSubHeaderStyle = TextStyle(
-        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 60);
+        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 48);
     TextStyle _mobileMainParagraphStyle = TextStyle(
-        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 24);
+        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 16);
     TextStyle _mobileButtonTextStyle = TextStyle(
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
@@ -72,23 +89,19 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                       style: _mobileSubHeaderStyle,
                       children: [
                         TextSpan(
-                            text:
-                                "- Early bird price valid until 2/29\n normal price \u{0024}20\n",
+                            text: generalAdmissionText[0],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text:
-                                "- Full access to the event\n and all related activities\n",
+                            text: generalAdmissionText[1],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text: "- Includes refreshments and gift packages\n",
+                            text: generalAdmissionText[2],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text:
-                                "- Available to all members of the general public\n",
+                            text: generalAdmissionText[3],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text:
-                                "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n\n",
+                            text: generalAdmissionText[4],
                             style: _mobileMainParagraphStyle)
                       ])
                 ]),
@@ -113,23 +126,19 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                       style: _mobileSubHeaderStyle,
                       children: [
                         TextSpan(
-                            text:
-                                "- Early bird price valid until 2/29\n normal price \u{0024}10\n",
+                            text: studentAdmissionText[0],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text:
-                                "- Full access to the event and all related activities\n",
+                            text: studentAdmissionText[1],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text: "- Includes refreshments and gift packages\n",
+                            text: studentAdmissionText[2],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text:
-                                "- Available to all college and high school students with valid ID\n",
+                            text: studentAdmissionText[3],
                             style: _mobileMainParagraphStyle),
                         TextSpan(
-                            text:
-                                "- Note: Transactions on Eventbrite are subject to additional taxes and fees\n\n",
+                            text: studentAdmissionText[4],
                             style: _mobileMainParagraphStyle)
                       ])
                 ]),
@@ -214,7 +223,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
     TextStyle _mainParagraphStyle = TextStyle(
         color: Colors.white,
         fontFamily: 'Raleway',
-        fontSize: 24 * sizeConfig.sizeFactor);
+        fontSize: 20 * sizeConfig.sizeFactor);
     TextStyle _buttonTextStyle = TextStyle(
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
@@ -233,7 +242,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 width: sizeConfig.screenWidth / 2.5,
                 height: sizeConfig.screenHeight / 1.75 -
                     sizeConfig.blockSizeVertical * 10,
-                child: ListView(
+                child: PageView(
                   children: <Widget>[
                     Text.rich(
                       TextSpan(
@@ -245,24 +254,19 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                                 style: _subHeaderStyle,
                                 children: [
                                   TextSpan(
-                                      text:
-                                          "- Early bird price valid until 2/29; normal price \u{0024}20\n",
+                                      text: generalAdmissionText[0],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Full access to the event and all related activities\n",
+                                      text: generalAdmissionText[1],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Includes refreshments and gift packages\n",
+                                      text: generalAdmissionText[2],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Available to all members of the general public\n",
+                                      text: generalAdmissionText[3],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Note: Transactions on Eventbrite are subject to\n additional taxes and fees\n\n",
+                                      text: generalAdmissionText[4],
                                       style: _mainParagraphStyle)
                                 ])
                           ]),
@@ -301,7 +305,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 width: sizeConfig.screenWidth / 2.5,
                 height: sizeConfig.screenHeight / 1.75 -
                     sizeConfig.blockSizeVertical * 10,
-                child: ListView(
+                child: PageView(
                   children: <Widget>[
                     Text.rich(
                       TextSpan(
@@ -313,24 +317,19 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                                 style: _subHeaderStyle,
                                 children: [
                                   TextSpan(
-                                      text:
-                                          "- Early bird price valid until 2/29; normal price \u{0024}10\n",
+                                      text: studentAdmissionText[0],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Full access to the event and all related activities\n",
+                                      text: studentAdmissionText[1],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Includes refreshments and gift packages\n",
+                                      text: studentAdmissionText[2],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Available to all college and high school students with valid ID\n",
+                                      text: studentAdmissionText[3],
                                       style: _mainParagraphStyle),
                                   TextSpan(
-                                      text:
-                                          "- Note: Transactions on Eventbrite are subject to\n additional taxes and fees\n\n",
+                                      text: studentAdmissionText[4],
                                       style: _mainParagraphStyle)
                                 ])
                           ]),
