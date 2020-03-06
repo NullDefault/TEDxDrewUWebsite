@@ -62,26 +62,26 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
         fontWeight: FontWeight.bold,
-        fontSize: 64
+        fontSize: 36
     );
     TextStyle _mobileSubHeaderStyle = TextStyle(
-        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 48);
+        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 24);
     TextStyle _mobileMainParagraphStyle = TextStyle(
-        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 16);
+        color: Color(0xFFFFF7e6), fontFamily: 'Raleway', fontSize: 12);
     TextStyle _mobileButtonTextStyle = TextStyle(
         color: Color(0xFFFFF7e6),
         fontFamily: 'Raleway',
-        fontSize: 40,
+        fontSize: 36,
         fontWeight: FontWeight.bold);
 
     Widget _ticketBoxTop = Container(
-      height: sizeConfig.screenHeight / 1.9,
+      height: sizeConfig.screenHeight / 1.4,
       color: Color(0xEEE62B1E),
       child: ListView(
         children: <Widget>[
           Text.rich(
             TextSpan(
-                text: '\n\u{0024}15\n\n',
+                text: '\n\u{0024}15\n',
                 style: _mobileHeaderStyle,
                 children: [
                   TextSpan(
@@ -112,13 +112,13 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
     );
 
     Widget _ticketBoxBot = Container(
-      height: sizeConfig.screenHeight / 1.9,
+      height: sizeConfig.screenHeight / 1.4,
       color: Color(0xEEE62B1E),
       child: ListView(
         children: <Widget>[
           Text.rich(
             TextSpan(
-                text: '\n\u{0024}5\n\n',
+                text: '\n\u{0024}5\n',
                 style: _mobileHeaderStyle,
                 children: [
                   TextSpan(
@@ -242,7 +242,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 width: sizeConfig.screenWidth / 2.5,
                 height: sizeConfig.screenHeight / 1.75 -
                     sizeConfig.blockSizeVertical * 10,
-                child: PageView(
+                child: ListView(
                   children: <Widget>[
                     Text.rich(
                       TextSpan(
@@ -305,7 +305,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                 width: sizeConfig.screenWidth / 2.5,
                 height: sizeConfig.screenHeight / 1.75 -
                     sizeConfig.blockSizeVertical * 10,
-                child: PageView(
+                child: ListView(
                   children: <Widget>[
                     Text.rich(
                       TextSpan(
