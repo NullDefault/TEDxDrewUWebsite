@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:getflutter/getflutter.dart';
 
+// Navigation Buttons - Buttons used in the landing page to go to other pages
+
 class NavigationButtons {
 //----------------------------------------------------------------------------//
   GFButtonShape _buttonShape = GFButtonShape.standard;

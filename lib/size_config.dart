@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 
+// Size Config - used to maintain element sizes between different resolutions
+
 class SizeConfig {
   var screenWidth;
   var screenHeight;

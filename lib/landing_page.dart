@@ -6,6 +6,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'components/logo_widgets.dart';
 import 'components/navigation_buttons.dart';
 
+// Landing Page - first page the user sees that navigates to all other parts of the website
+
 // ignore: must_be_immutable
 class LandingPage extends StatefulWidget {
   SizeConfig sizeConfig;

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,6 +7,8 @@ import 'package:getflutter/getflutter.dart';
 import 'components/logo_widgets.dart';
 import 'size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+// Ticket Page - used to purchase tickets
 
 // ignore: must_be_immutable
 class TicketPage extends StatefulWidget {
@@ -246,7 +250,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                   children: <Widget>[
                     Text.rich(
                       TextSpan(
-                          text: '\n\u{0024}15\n\n',
+                          text: '\n\u{0024}15\n',
                           style: _headerStyle,
                           children: [
                             TextSpan(
@@ -309,7 +313,7 @@ class TicketPageState extends State<TicketPage> with TickerProviderStateMixin {
                   children: <Widget>[
                     Text.rich(
                       TextSpan(
-                          text: '\n\u{0024}5\n\n',
+                          text: '\n\u{0024}5\n',
                           style: _headerStyle,
                           children: [
                             TextSpan(

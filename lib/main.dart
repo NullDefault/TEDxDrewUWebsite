@@ -3,6 +3,8 @@ import 'landing_page.dart';
 import 'size_config.dart';
 import 'ticket_page.dart';
 
+// Main - classic main stuff, gets the whole website running n all that jazz
+
 //----------------------------------------------------------------------------//
 void main() => runApp(MyApp());
 

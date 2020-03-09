@@ -1,5 +1,7 @@
 import 'package:flutter/widgets.dart';
 
+// Logo Widgets - Collection of Various Images in Widget format
+
 //----------------------------------------------------------------------------//
 // ignore: must_be_immutable
 class OfficialTextLogo extends StatelessWidget {
