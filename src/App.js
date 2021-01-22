@@ -5,7 +5,6 @@ import {
   Text,
   Link,
   VStack,
-  Code,
   Grid,
   theme,
 } from '@chakra-ui/react';
