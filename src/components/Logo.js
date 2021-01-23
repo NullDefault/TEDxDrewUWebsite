@@ -1,18 +1,23 @@
 import React from 'react';
-import { Image, keyframes, usePrefersReducedMotion } from '@chakra-ui/react';
-import logo from '../assets/circleLogo.png';
+import { Box } from '@chakra-ui/react';
+import spaceBg from '../assets/GIF/space.gif';
+import logo from '../assets/SVG/swooshX.svg';
 
-const spin = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
 
 export const Logo = props => {
-  const prefersReducedMotion = usePrefersReducedMotion();
+  return <Box
+    style={{
+      width: `60vw`,
+      height: `60vh`,
+      backgroundImage: `url(${spaceBg})`,
+      backgroundSize: `fill`,
+      backgroundPosition: `center`,
+      backgroundRepeat: `no-repeat`,
+      maskImage: `url(${logo})`,
+      maskSize: `50vmin`,
+      maskRepeat: `no-repeat`,
+      maskPosition: `center`,
+    }}
+  />;
 
-  const animation = prefersReducedMotion
-    ? undefined
-    : `${spin} infinite 20s linear`;
-
-  return <Image animation={animation} src={logo} {...props} />;
 };
