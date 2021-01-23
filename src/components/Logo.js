@@ -14,9 +14,13 @@ export const Logo = props => {
       backgroundPosition: `center`,
       backgroundRepeat: `no-repeat`,
       maskImage: `url(${logo})`,
+      webkitMask: `url(${logo})`,
       maskSize: `50vmin`,
+      webkitMaskSize: `50vmin`,
       maskRepeat: `no-repeat`,
+      webkitMaskRepeat: `no-repeat`,
       maskPosition: `center`,
+      webkitMaskPosition: `center`
     }}
   />;
 

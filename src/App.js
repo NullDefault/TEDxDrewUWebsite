@@ -6,8 +6,9 @@ import {
   Link,
   VStack,
   Grid,
-  theme,
+  theme
 } from '@chakra-ui/react';
+import {ExternalLinkIcon} from '@chakra-ui/icons';
 import { ColorModeSwitcher } from './components/ColorModeSwitcher';
 import { Logo } from './components/Logo';
 
@@ -20,7 +21,7 @@ function App() {
           <VStack spacing={8}>
             <Logo h="40vmin" pointerEvents="none" />
             <Text>
-              TEDxDrewUniversity website is currently in development.
+              This website is currently under development.
             </Text>
             <Link
               color="blue.800"
@@ -29,7 +30,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Drew University
+              Drew University <ExternalLinkIcon mx="4px" />
             </Link>
           </VStack>
         </Grid>
