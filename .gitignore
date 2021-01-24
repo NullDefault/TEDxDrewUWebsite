@@ -12,6 +12,7 @@
 
 # misc
 .firebase
+.eslintcache
 .idea
 /.idea
 .DS_Store
