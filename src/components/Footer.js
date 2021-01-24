@@ -1,4 +1,4 @@
-import { Flex, VStack, Image, HStack, Text, Link, Divider, Box, Icon } from '@chakra-ui/react';
+import { Flex, VStack, Image, Stack, Text, Link, Divider, Box, Icon } from '@chakra-ui/react';
 import { AiFillHome, AiFillInfoCircle, AiFillVideoCamera, AiFillMessage, AiFillFacebook, AiFillInstagram} from 'react-icons/ai';
 import { ImBlog } from 'react-icons/im';
 import { MdGroup } from 'react-icons/md';
@@ -11,7 +11,7 @@ import tedxTextLogo from '../assets/PNG/tedxDrewUTextLogo.png';
 export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="white" {...props}>
   <VStack spacing="24px">
     <Image src={tedxTextLogo} w="60vmin" pb="4%" />
-    <HStack>
+    <Stack direction={["column", "row"]} align="center">
       <VStack w={'50%'}>
         <Text pl="8%" fontSize="lg">
           <Text fontSize="3xl" color="#e62b1e">
@@ -26,7 +26,7 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
           self-organized.
         </Text>
       </VStack>
-      <VStack w={'50%'} align="left" pl="12%" pb="2%">
+      <VStack w={'50%'} align={["center", "left"]} pb="2%">
         <Text fontSize="2xl" color="#e62b1e">Navigation</Text>
 
         <NavLink href="/">Home <Icon as={AiFillHome} /></NavLink>
@@ -49,7 +49,7 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
         <NavLink href="/">Facebook <Icon as={AiFillFacebook}/></NavLink>
         <NavLink href="/">Instagram <Icon as={AiFillInstagram}/></NavLink>
       </VStack>
-    </HStack>
+    </Stack>
     <Divider />
     <Text pt="2%" px="4%" textAlign="center">
       This independent TEDx event is operated under license from TED. Learn more at{' '}
