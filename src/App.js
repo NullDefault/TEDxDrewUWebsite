@@ -6,6 +6,7 @@ import {
 } from '@chakra-ui/react';
 import { Landing } from './pages/landing';
 import { Footer } from './components/Footer';
+import { PageNotFound } from './pages/404';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" exact>
             <Landing />
           </Route>
+          <Route component={PageNotFound} />
         </Switch>
         <Footer />
       </Router>
