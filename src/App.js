@@ -7,12 +7,14 @@ import {
 import { Landing } from './pages/landing';
 import { Footer } from './components/Footer';
 import { PageNotFound } from './pages/404';
+import { TopNavBar } from './components/TopNav/TopNavBar';
 
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
+        <TopNavBar/>
         <Switch>
           <Route path="/" exact>
             <Landing />
