@@ -1,8 +1,8 @@
-import {Flex, useColorMode} from "@chakra-ui/react";
+import { Flex, useColorMode } from '@chakra-ui/react';
 
-export const NavContainer = ({children, ...props}) => {
-  const {colorMode} = useColorMode();
-  const color = {light: 'black', dark: 'white'};
+export const NavContainer = ({ children, ...props }) => {
+  const { colorMode } = useColorMode();
+  const color = { light: 'black', dark: 'white' };
 
   return (
     <Flex

@@ -5,7 +5,7 @@ import React from 'react';
 
 export const PageNotFound = () => {
   return (
-    <Box height="100vh" bg={tedxRed} color="white">
+    <Box minH="100vh" bg={tedxRed} color="white">
       <Center>
         <VStack>
           <Image src={pnfArt} pt="25%" w={'50vmin'} />

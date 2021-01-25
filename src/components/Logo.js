@@ -1,19 +1,16 @@
 import React from 'react';
-import { Box, useColorModeValue } from '@chakra-ui/react';
-import minimalistBg from '../assets/GIF/space.gif';
+import { Box } from '@chakra-ui/react';
 import spaceBg from '../assets/GIF/minimalistGifBg.gif';
 import logo from '../assets/SVG/swooshX.svg';
 
 
-export const Logo = props => {
-
-  const bg = useColorModeValue(spaceBg, minimalistBg);
-
+export const Logo = (props) => {
   return <Box
+    {...props}
     style={{
       width: `60vw`,
       height: `60vh`,
-      backgroundImage: `url(${bg})`,
+      backgroundImage: `url(${spaceBg})`,
       backgroundSize: `fill`,
       backgroundPosition: `center`,
       backgroundRepeat: `no-repeat`,
@@ -27,5 +24,4 @@ export const Logo = props => {
       webkitMaskPosition: `center`,
     }}
   />;
-
 };
