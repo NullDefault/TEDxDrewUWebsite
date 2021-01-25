@@ -1,20 +1,37 @@
-import { Flex, VStack, Image, Stack, Text, Link, Divider, Box, Icon } from '@chakra-ui/react';
-import { AiFillHome, AiFillInfoCircle, AiFillVideoCamera, AiFillMessage, AiFillFacebook, AiFillInstagram} from 'react-icons/ai';
+import {
+  Box,
+  Divider,
+  Flex,
+  Icon,
+  Image,
+  Link,
+  Stack,
+  Text,
+  VStack
+} from '@chakra-ui/react';
+import {
+  AiFillFacebook,
+  AiFillHome,
+  AiFillInfoCircle,
+  AiFillInstagram,
+  AiFillMessage,
+  AiFillVideoCamera,
+} from 'react-icons/ai';
 import { ImBlog } from 'react-icons/im';
 import { MdGroup } from 'react-icons/md';
-
 import { GiTeamIdea } from 'react-icons/gi';
-import {RiMoneyDollarCircleFill} from 'react-icons/ri';
+import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 import { NavLink } from './NavLink';
 import tedxTextLogo from '../assets/PNG/tedxDrewUTextLogo.png';
+import { tedxRed } from '../utils/tedxColors';
 
 export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="white" {...props}>
   <VStack spacing="24px">
     <Image src={tedxTextLogo} w="60vmin" pb="4%" />
-    <Stack direction={["column", "row"]} align="center">
+    <Stack direction={['column', 'row']} align="center">
       <VStack w={'50%'}>
         <Text pl="8%" fontSize="lg">
-          <Text fontSize="3xl" color="#e62b1e">
+          <Text fontSize="3xl" color={tedxRed}>
             What is TEDx?</Text>
           <br />
           In the spirit of ideas worth spreading, TED has created a program called TEDx. TEDx is a program
@@ -26,8 +43,8 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
           self-organized.
         </Text>
       </VStack>
-      <VStack w={'50%'} align={["center", "left"]} pb="2%">
-        <Text fontSize="2xl" color="#e62b1e">Navigation</Text>
+      <VStack w={'50%'} align={['center', 'left']} py="10%">
+        <Text fontSize="3xl" color={tedxRed}>Navigation</Text>
 
         <NavLink href="/">Home <Icon as={AiFillHome} /></NavLink>
         <NavLink href="/">About <Icon as={AiFillInfoCircle} /></NavLink>
@@ -46,14 +63,14 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
 
         <Box h="12px" />
 
-        <NavLink href="/">Facebook <Icon as={AiFillFacebook}/></NavLink>
-        <NavLink href="/">Instagram <Icon as={AiFillInstagram}/></NavLink>
+        <NavLink href="/">Facebook <Icon as={AiFillFacebook} /></NavLink>
+        <NavLink href="/">Instagram <Icon as={AiFillInstagram} /></NavLink>
       </VStack>
     </Stack>
     <Divider />
     <Text pt="2%" px="4%" textAlign="center">
       This independent TEDx event is operated under license from TED. Learn more at{' '}
-      <Link color="#e62b1e" href="ted.com/tedx">ted.com/tedx</Link>
+      <Link color={tedxRed} href="ted.com/tedx">ted.com/tedx</Link>
     </Text>
   </VStack>
 </Flex>;

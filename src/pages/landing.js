@@ -4,10 +4,10 @@ import { Logo } from '../components/Logo';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import React from 'react';
 
-export const InDevLanding = () => {
+export const Landing = () => {
 
-  const bg = useColorModeValue("red.500", "red.100");
-  const color = useColorModeValue("white", "gray.800");
+  const bg = useColorModeValue("white", "red.500");
+  const color = useColorModeValue("black", "white");
 
 
   return (
