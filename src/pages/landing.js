@@ -3,13 +3,10 @@ import { Logo } from '../components/Logo';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 export const Landing = () => {
-
-  const bg = useColorModeValue("white", "red.500");
   const color = useColorModeValue("black", "white");
 
-
   return (
-    <Box textAlign="center" fontSize="xl" bg={bg} color={color}>
+    <Box textAlign="center" fontSize="xl" bg="primary.600" color={color}>
       <Grid minH="100vh" p={3}>
         <VStack spacing={8}>
           <Logo h="40vmin" pointerEvents="none" />

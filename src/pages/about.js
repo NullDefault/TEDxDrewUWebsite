@@ -1,13 +1,11 @@
 import { Box, useColorModeValue, Grid, Text, Heading, Link } from '@chakra-ui/react';
 
 export const About = () => {
-
-  const bg = useColorModeValue('white', 'red.500');
   const color = useColorModeValue('black', 'white');
-  const linkColor = useColorModeValue('blue.600', 'blue.200')
+  const linkColor = useColorModeValue('blue.600', 'blue.200');
 
   return (
-    <Box textAlign="left" fontSize="xl" bg={bg} color={color}>
+    <Box textAlign="left" fontSize="xl" bg="primary.600" color={color}>
       <Grid minH="100vh" py='12vmin' px='10vmin'>
         <Heading as="h1" size="3xl">
           About TEDx
@@ -50,7 +48,7 @@ export const About = () => {
           helping world-changing innovators from around the globe to amplify the
           impact of their remarkable projects and activities.
           <br /><br />
-          Follow TED on Twitter at <Link color={linkColor}href="http://twitter.com/TEDTalks">
+          Follow TED on Twitter at <Link color={linkColor} href="http://twitter.com/TEDTalks">
           http://twitter.com/TEDTalks</Link>, or on Facebook
           at <Link color={linkColor} href="http://www.facebook.com/TED">
           http://www.facebook.com/TED</Link>.

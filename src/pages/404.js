@@ -1,10 +1,9 @@
 import { Box, Center, Text, VStack, Image, Link } from '@chakra-ui/react';
-import { tedxRed } from '../utils/tedxColors';
 import pnfArt from '../assets/WebP/404art.webp';
 
 export const PageNotFound = () => {
   return (
-    <Box minH="100vh" bg={tedxRed} color="white">
+    <Box minH="100vh" bg="primary.500" color="white">
       <Center>
         <VStack>
           <Image src={pnfArt} pt="25%" w={'50vmin'} />
