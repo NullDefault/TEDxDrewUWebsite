@@ -1,9 +1,11 @@
-import { Box, Center, Text, VStack, Image, Link } from '@chakra-ui/react';
+import { Box, Center, Text, VStack, Image, Link, useColorModeValue } from '@chakra-ui/react';
 import pnfArt from '../assets/WebP/404art.webp';
 
 export const PageNotFound = () => {
+  const color = useColorModeValue('black', 'white');
+
   return (
-    <Box minH="100vh" bg="primary.500" color="white">
+    <Box minH="100vh" bg="primary.500" color={color}>
       <Center>
         <VStack>
           <Image src={pnfArt} pt="25%" w={'50vmin'} />

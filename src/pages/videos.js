@@ -1,29 +1,28 @@
-import { Box, useColorModeValue, Grid, Text, Heading, Link } from '@chakra-ui/react';
+import { Box, useColorModeValue, Heading, VStack, Container } from '@chakra-ui/react';
 import ReactPlayer from 'react-player';
 
 export const Videos = () => {
   const color = useColorModeValue('black', 'white');
-  const linkColor = useColorModeValue('blue.600', 'blue.200');
 
   return (
-    <Box textAlign="left" fontSize="xl" bg="primary.600" color={color}>
-      <Grid minH="100vh" py='12vmin' px='10vmin'>
+    <Box bg="primary.600" textAlign="center" color={color}>
+      <VStack spacing={24} pb="48px" pl="12px">
         <Heading as="h1" size="3xl">
-          TEDx at Drew University on previous years
+          TEDxDrew University Video Gallery
         </Heading>
-        <Heading as="h3" size="lg" pt='10vmin'>
-          TEDx Drew University 2020 - Solve for X
-        </Heading>
-        <Text>
-          <ReactPlayer url='https://www.youtube.com/watch?v=M_Ei_AmQDEs'></ReactPlayer>
-        </Text>
-        <Heading as="h3" size="lg" pt='10vmin'>
-          TEDx Drew University 2019 - The Nature of Being
-        </Heading>
-        <Text>
-          <ReactPlayer url='https://www.youtube.com/watch?v=uQ4GTVLGi9k'></ReactPlayer>
-        </Text>
-      </Grid>
+        <Container>
+          <Heading as="h3" size="lg" textAlign="left" pb="12px">
+            TEDx Drew University 2020 -<br/> Solve for X
+          </Heading>
+          <ReactPlayer width='100%' url='https://www.youtube.com/watch?v=M_Ei_AmQDEs' />
+        </Container>
+        <Container>
+          <Heading as="h3" size="lg" textAlign="left" pb="12px">
+            TEDx Drew University 2019 -<br/> The Nature of Being
+          </Heading>
+          <ReactPlayer width='100%' url='https://www.youtube.com/watch?v=uQ4GTVLGi9k' />
+        </Container>
+      </VStack>
     </Box>
   );
 };

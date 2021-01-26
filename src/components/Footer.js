@@ -47,19 +47,19 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
         <Text fontSize="3xl" color={tedxRed}>Navigation</Text>
 
         <NavLink href="/">Home <Icon as={AiFillHome} /></NavLink>
-        <NavLink href="/">About <Icon as={AiFillInfoCircle} /></NavLink>
-        <NavLink href="/">Blog <Icon as={ImBlog} /></NavLink>
+        <NavLink href="/about">About <Icon as={AiFillInfoCircle} /></NavLink>
+        <NavLink href="/blog">Blog <Icon as={ImBlog} /></NavLink>
 
         <Box h="12px" />
 
-        <NavLink href="https://www.youtube.com/watch?v=M_Ei_AmQDEs/">Videos <Icon as={AiFillVideoCamera} /></NavLink>
-        <NavLink href="/">Speakers <Icon as={MdGroup} /></NavLink>
-        <NavLink href="/">Sponsors <Icon as={RiMoneyDollarCircleFill} /></NavLink>
+        <NavLink href="/videos">Videos <Icon as={AiFillVideoCamera} /></NavLink>
+        <NavLink href="/speakers">Speakers <Icon as={MdGroup} /></NavLink>
+        <NavLink href="/sponsors">Sponsors <Icon as={RiMoneyDollarCircleFill} /></NavLink>
 
         <Box h="12px" />
 
-        <NavLink href="/">Join the Team <Icon as={GiTeamIdea} /></NavLink>
-        <NavLink href="/">Get in Touch <Icon as={AiFillMessage} /></NavLink>
+        <NavLink href="/team">Join the Team <Icon as={GiTeamIdea} /></NavLink>
+        <NavLink href="/contact">Get in Touch <Icon as={AiFillMessage} /></NavLink>
 
         <Box h="12px" />
 
