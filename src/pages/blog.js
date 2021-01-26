@@ -1,4 +1,4 @@
-import { Box, Grid, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
+import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import BlogCard from '../components/BlogCard';
 import { tedxRed } from '../utils/tedxColors';
 

@@ -53,7 +53,7 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
         <Box h="12px" />
 
         <NavLink href="/videos">Videos <Icon as={AiFillVideoCamera} /></NavLink>
-        <NavLink href="/speakers">Speakers <Icon as={MdGroup} /></NavLink>
+        <NavLink href="/talks">Talks <Icon as={MdGroup} /></NavLink>
         <NavLink href="/sponsors">Sponsors <Icon as={RiMoneyDollarCircleFill} /></NavLink>
 
         <Box h="12px" />

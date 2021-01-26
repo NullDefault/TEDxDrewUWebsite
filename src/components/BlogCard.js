@@ -24,7 +24,7 @@ const BlogCard = ({ slug, publishDate, summary, title }) => {
         bg={useColorModeValue('white', 'gray.800')}
         rounded="xl"
         borderWidth="1px"
-        borderColor={useColorModeValue('gray.100', 'gray.700')}
+        borderColor={useColorModeValue('gray.200', 'gray.700')}
         spacing={0}
       >
         <HStack>
@@ -35,7 +35,7 @@ const BlogCard = ({ slug, publishDate, summary, title }) => {
           >
             {title}{' '}
             {new Date() - new Date(publishDate) < 1000 * 60 * 60 * 24 * 7 ? (
-              <Tag size="md" mt={1} ml={1} colorScheme="purple">
+              <Tag size="md" mt={1} ml={1} colorScheme="green">
                 New
               </Tag>
             ) : undefined}
