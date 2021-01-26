@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box } from '@chakra-ui/react';
 import spaceBg from '../assets/GIF/minimalistGifBg.gif';
 import logo from '../assets/SVG/swooshX.svg';
@@ -8,8 +7,8 @@ export const Logo = (props) => {
   return <Box
     {...props}
     style={{
-      width: `60vw`,
-      height: `60vh`,
+      width: `60vmin`,
+      height: `60vmin`,
       backgroundImage: `url(${spaceBg})`,
       backgroundSize: `fill`,
       backgroundPosition: `center`,

@@ -8,16 +8,20 @@ import { Landing } from './pages/landing';
 import { Footer } from './components/Footer';
 import { PageNotFound } from './pages/404';
 import { TopNavBar } from './components/TopNav/TopNavBar';
+import { About } from './pages/about';
 
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <Router>
-        <TopNavBar/>
+        <TopNavBar />
         <Switch>
           <Route path="/" exact>
             <Landing />
+          </Route>
+          <Route path="/about">
+            <About />
           </Route>
           <Route component={PageNotFound} />
         </Switch>

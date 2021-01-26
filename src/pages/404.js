@@ -1,7 +1,6 @@
 import { Box, Center, Text, VStack, Image, Link } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import pnfArt from '../assets/WebP/404art.webp';
-import React from 'react';
 
 export const PageNotFound = () => {
   return (

@@ -1,7 +1,6 @@
 import { Box, Grid, Link, Text, VStack, useColorModeValue } from '@chakra-ui/react';
 import { Logo } from '../components/Logo';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
-import React from 'react';
 
 export const Landing = () => {
 
