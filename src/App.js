@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import { PageNotFound } from './pages/404';
 import { TopNavBar } from './components/TopNav/TopNavBar';
 import { About } from './pages/about';
+import { Videos} from './pages/videos';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/videos">
+            <Videos />
           </Route>
           <Route component={PageNotFound} />
         </Switch>
