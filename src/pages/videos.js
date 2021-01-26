@@ -11,7 +11,7 @@ export const Videos = () => {
     <Box bg="primary.600" textAlign="center" color={color}>
       <VStack spacing={24} pb="48px" mx='auto'>
         <Heading as="h1" size="3xl">
-          TEDxDrew University Video Gallery
+          Video Gallery
         </Heading>
         <Center w='100%'>
           <Container>
