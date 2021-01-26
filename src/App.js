@@ -10,6 +10,7 @@ import { PageNotFound } from './pages/404';
 import { TopNavBar } from './components/TopNav/TopNavBar';
 import { About } from './pages/about';
 import { Videos} from './pages/videos';
+import { Blog } from './pages/blog';
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/videos">
             <Videos />
+          </Route>
+          <Route path="/blog">
+            <Blog/>
           </Route>
           <Route component={PageNotFound} />
         </Switch>
