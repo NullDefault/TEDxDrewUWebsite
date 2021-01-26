@@ -3,6 +3,7 @@ import {
   useColorModeValue,
   Heading, VStack, Container, Center } from '@chakra-ui/react';
 import ReactPlayer from 'react-player';
+import { tedxRed } from '../utils/tedxColors';
 
 export const Videos = () => {
   const color = useColorModeValue('black', 'white');
@@ -10,7 +11,7 @@ export const Videos = () => {
   return (
     <Box bg="primary.600" textAlign="center" color={color}>
       <VStack spacing={24} pb="48px" mx='auto'>
-        <Heading as="h1" size="3xl">
+        <Heading as="h1" size="3xl" color={tedxRed}>
           Video Gallery
         </Heading>
         <Center w='100%'>

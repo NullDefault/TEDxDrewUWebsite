@@ -8,7 +8,7 @@ export const PageNotFound = () => {
   return (
     <Box minH="100vh" bg="primary.500" color={color}>
       <Center>
-        <VStack>
+        <VStack textAlign='center'>
           <Image src={fourOhFourArt} pt="15%" w={'60vmin'} />
           <Text fontSize="48px">
             Sorry, Page Not Found

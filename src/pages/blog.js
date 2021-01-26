@@ -1,5 +1,6 @@
-import { Box, useColorModeValue, VStack } from '@chakra-ui/react';
+import { Box, Grid, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import BlogCard from '../components/BlogCard';
+import { tedxRed } from '../utils/tedxColors';
 
 export const Blog = () => {
   const color = useColorModeValue('black', 'white');
@@ -13,6 +14,9 @@ export const Blog = () => {
         mx='auto'
         spacing={12}
         w={['100%', '70%']}>
+        <Heading as="h1" size="3xl" color={tedxRed}>
+          Blog
+        </Heading>
         <BlogCard
           slug={'test'}
           publishDate={new Date('December 26, 2021 03:24:00')}

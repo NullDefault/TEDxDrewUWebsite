@@ -1,4 +1,5 @@
 import { Box, useColorModeValue, Grid, Text, Heading, Link } from '@chakra-ui/react';
+import { tedxRed } from '../utils/tedxColors';
 
 export const About = () => {
   const color = useColorModeValue('black', 'white');
@@ -7,7 +8,7 @@ export const About = () => {
   return (
     <Box textAlign="left" fontSize="xl" bg="primary.600" color={color}>
       <Grid minH="100vh" py='12vmin' px='10vmin'>
-        <Heading as="h1" size="3xl">
+        <Heading as="h1" size="3xl" color={tedxRed}>
           About TEDx
         </Heading>
         <Heading as="h3" size="lg" pt='10vmin'>
