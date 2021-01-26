@@ -52,7 +52,7 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
 
         <Box h="12px" />
 
-        <NavLink href="/">Videos <Icon as={AiFillVideoCamera} /></NavLink>
+        <NavLink href="https://www.youtube.com/watch?v=M_Ei_AmQDEs/">Videos <Icon as={AiFillVideoCamera} /></NavLink>
         <NavLink href="/">Speakers <Icon as={MdGroup} /></NavLink>
         <NavLink href="/">Sponsors <Icon as={RiMoneyDollarCircleFill} /></NavLink>
 
@@ -63,8 +63,8 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
 
         <Box h="12px" />
 
-        <NavLink href="/">Facebook <Icon as={AiFillFacebook} /></NavLink>
-        <NavLink href="/">Instagram <Icon as={AiFillInstagram} /></NavLink>
+        <NavLink href="https://www.facebook.com/TEDxDrewU/">Facebook <Icon as={AiFillFacebook} /></NavLink>
+        <NavLink href="https://www.instagram.com/tedxdrewuniversity/">Instagram <Icon as={AiFillInstagram} /></NavLink>
       </VStack>
     </Stack>
     <Divider />
