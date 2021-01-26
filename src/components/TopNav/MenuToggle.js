@@ -4,9 +4,10 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 export const MenuToggle = ({ toggle, isOpen }) => {
   return (
-    <Box display={{ base: 'block', md: 'none' }} onClick={toggle}>
-      <ColorModeSwitcher mx={6}/>
-      {isOpen ? <CloseIcon /> : <HamburgerIcon />}
+    <Box display={{ base: 'block', md: 'none' }}>
+      <ColorModeSwitcher mx={6} />
+      {isOpen ? <CloseIcon onClick={toggle} /> :
+        <HamburgerIcon onClick={toggle} />}
     </Box>
   );
 };

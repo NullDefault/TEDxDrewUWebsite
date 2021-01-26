@@ -5,12 +5,12 @@ import { MenuToggle } from './MenuToggle';
 import { MenuLinks } from './MenuLinks';
 import { MenuItem } from './MenuItem';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { useBreakpointValue } from "@chakra-ui/react"
+import { useBreakpointValue } from '@chakra-ui/react';
 
 export const TopNavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-  const colorSwitch = useBreakpointValue({base: null, md:         <ColorModeSwitcher />})
+  const colorSwitch = useBreakpointValue({ base: null, md: <ColorModeSwitcher /> });
 
 
   return (
@@ -22,7 +22,7 @@ export const TopNavBar = (props) => {
         <MenuItem to="/about">About</MenuItem>,
         <MenuItem to="/blog">Blog</MenuItem>,
         <MenuItem to="/videos">Videos</MenuItem>,
-        colorSwitch
+        colorSwitch,
       ]} />
     </NavContainer>
   );
