@@ -10,6 +10,8 @@ export const Blog = () => {
         minH="100vh"
         py='12vmin'
         px='10vmin'
+        mx='auto'
+        spacing={12}
         w={['100%', '70%']}>
         <BlogCard
           slug={'test'}
