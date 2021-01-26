@@ -4,6 +4,7 @@ export const About = () => {
 
   const bg = useColorModeValue('white', 'red.500');
   const color = useColorModeValue('black', 'white');
+  const linkColor = useColorModeValue('blue.600', 'blue.200')
 
   return (
     <Box textAlign="left" fontSize="xl" bg={bg} color={color}>
@@ -51,7 +52,7 @@ export const About = () => {
           <br /><br />
           Follow TED on Twitter at <Link color="blue.200" href="http://twitter.com/TEDTalks">
           http://twitter.com/TEDTalks</Link>, or on Facebook
-          at <Link color="blue.200" href="http://www.facebook.com/TED">
+          at <Link color={linkColor} href="http://www.facebook.com/TED">
           http://www.facebook.com/TED</Link>.
         </Text>
       </Grid>
