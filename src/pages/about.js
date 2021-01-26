@@ -10,7 +10,7 @@ export const About = () => {
         <Heading as="h1" size="3xl">
           About TEDx
         </Heading>
-        <Heading as="h3" size="lg">
+        <Heading as="h3" size="lg" pt='10vmin'>
           About TEDx, x = independently organized event
         </Heading>
         <Text>
@@ -23,7 +23,7 @@ export const About = () => {
           individual TEDx events are self-organized. (Subject to certain rules
           and regulations.)
         </Text>
-        <Heading as="h3" size="xl">
+        <Heading as="h3" size="xl" pt='10vmin'>
           About TED
         </Heading>
         <Text>
