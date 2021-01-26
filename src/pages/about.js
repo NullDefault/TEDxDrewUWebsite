@@ -50,7 +50,7 @@ export const About = () => {
           helping world-changing innovators from around the globe to amplify the
           impact of their remarkable projects and activities.
           <br /><br />
-          Follow TED on Twitter at <Link color="blue.200" href="http://twitter.com/TEDTalks">
+          Follow TED on Twitter at <Link color={linkColor}href="http://twitter.com/TEDTalks">
           http://twitter.com/TEDTalks</Link>, or on Facebook
           at <Link color={linkColor} href="http://www.facebook.com/TED">
           http://www.facebook.com/TED</Link>.
