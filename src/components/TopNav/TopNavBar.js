@@ -16,10 +16,10 @@ export const TopNavBar = (props) => {
       <NavLogo />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} children={[
+        <MenuItem to="/">Home</MenuItem>,
         <MenuItem to="/about">About</MenuItem>,
         <MenuItem to="/blog">Blog</MenuItem>,
         <MenuItem to="/videos">Videos</MenuItem>,
-        <MenuItem to="/">Home</MenuItem>,
         <ColorModeSwitcher />,
       ]} />
     </NavContainer>
