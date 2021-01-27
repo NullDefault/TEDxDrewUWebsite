@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import spaceBg from '../assets/GIF/minimalistGifBg.gif';
+import spaceBg from '../assets/WEBM/minimalistGifBg.webm';
 import logo from '../assets/SVG/swooshX.svg';
 
 
