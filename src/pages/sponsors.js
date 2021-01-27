@@ -12,9 +12,11 @@ export const Sponsors = () => {
           Our Sponsors
         </Heading>
         <SimpleGrid columns={[2, null, 3]} spacing="40px">
-          <SponsorCard url={"https://ih0.redbubble.net/image.538431154.1686/flat,1000x1000,075,f.u2.jpg"}/>
-          <SponsorCard url={"https://www.dafont.com/forum/attach/orig/6/3/636175.png?1"}/>
-          <SponsorCard url={"https://i.pinimg.com/originals/48/57/58/48575898784b74834f564cb1c163dc93.jpg"}/>
+          <SponsorCard url={"https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/258_Pied_Piper_logo-512.png"}/>
+          <SponsorCard url={"https://cdn4.iconfinder.com/data/icons/logos-and-brands-1/512/163_Hooli_logo_logos-512.png"}/>
+          <SponsorCard url={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fcyberpunk2044%2Fimages%2Ff%2Ffa%2FArasakaLogo.jpg%2Frevision%2Flatest%2Fscale-to-width-down%2F250%3Fcb%3D20140716040515&f=1&nofb=1"}/>
+          <SponsorCard url={"https://i.pinimg.com/originals/bb/60/b1/bb60b1377e4eb244e5667daf09ce50d2.png"}/>
+          <SponsorCard url={"https://vignette.wikia.nocookie.net/cyberpunk/images/b/b6/Militech_Logotype_Yellow.png/revision/latest?cb=20200408033128"}/>
         </SimpleGrid>
       </VStack>
     </Box>
