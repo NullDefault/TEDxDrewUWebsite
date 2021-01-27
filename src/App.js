@@ -12,6 +12,7 @@ import { About } from './pages/about';
 import { Videos } from './pages/videos';
 import { Blog } from './pages/blog';
 import { Talks } from './pages/talks';
+import { Contact } from './pages/contact';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/talks">
             <Talks />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route component={PageNotFound} />
         </Switch>
