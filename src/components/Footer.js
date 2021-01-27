@@ -7,7 +7,7 @@ import {
   Link,
   Stack,
   Text,
-  VStack
+  VStack,
 } from '@chakra-ui/react';
 import {
   AiFillFacebook,
@@ -17,6 +17,7 @@ import {
   AiFillMessage,
   AiFillVideoCamera,
 } from 'react-icons/ai';
+import { FaHandsHelping } from 'react-icons/fa';
 import { ImBlog } from 'react-icons/im';
 import { MdGroup } from 'react-icons/md';
 import { GiTeamIdea } from 'react-icons/gi';
@@ -58,7 +59,8 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
 
         <Box h="12px" />
 
-        <NavLink href="/team">Join the Team <Icon as={GiTeamIdea} /></NavLink>
+        <NavLink href="/team">Our Team <Icon as={GiTeamIdea} /></NavLink>
+        <NavLink href="/join">Join TEDx <Icon as={FaHandsHelping} /></NavLink>
         <NavLink href="/contact">Get in Touch <Icon as={AiFillMessage} /></NavLink>
 
         <Box h="12px" />

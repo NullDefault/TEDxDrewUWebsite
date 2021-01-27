@@ -13,6 +13,7 @@ import { Videos } from './pages/videos';
 import { Blog } from './pages/blog';
 import { Talks } from './pages/talks';
 import { Contact } from './pages/contact';
+import { Sponsors } from './pages/sponsors';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/sponsors">
+            <Sponsors />
           </Route>
           <Route component={PageNotFound} />
         </Switch>
