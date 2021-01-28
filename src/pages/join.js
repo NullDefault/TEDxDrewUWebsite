@@ -22,7 +22,7 @@ export const JoinUs = () => {
   const color = useColorModeValue('black', 'white');
 
   return (
-    <Box textAlign="left" bg="primary.600" color={color}>
+    <Box bg="primary.600" color={color}>
       <VStack py='12vmin' mx='auto' w={['80%', '60%']} minH="100vh" spacing={8}>
         <Heading as="h1" size="3xl" color={tedxRed}>
           Join Our Team
