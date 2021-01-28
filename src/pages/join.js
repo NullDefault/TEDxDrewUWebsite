@@ -22,12 +22,12 @@ export const JoinUs = () => {
   const color = useColorModeValue('black', 'white');
 
   return (
-    <Box bg="primary.600" color={color}>
+    <Box align="center" bg="primary.600" color={color}>
       <VStack py='12vmin' mx='auto' w={['80%', '60%']} minH="100vh" spacing={8}>
         <Heading as="h1" size="3xl" color={tedxRed}>
           Join Our Team
         </Heading>
-        <Text align="center" pb={12} px={6}>
+        <Text pb={12} px={6}>
           We are looking for fun, hardworking individuals with strong communication and teamwork skills to join us in
           planning our biggest annual conference.
           Applicants should be ready for weekly team meetings and a commitment of between 1 to 4 hours of work per week,
