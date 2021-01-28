@@ -14,6 +14,7 @@ import { Blog } from './pages/blog';
 import { Talks } from './pages/talks';
 import { Contact } from './pages/contact';
 import { Sponsors } from './pages/sponsors';
+import { JoinUs } from './pages/join';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route path="/sponsors">
             <Sponsors />
+          </Route>
+          <Route path="/join">
+            <JoinUs />
           </Route>
           <Route component={PageNotFound} />
         </Switch>
