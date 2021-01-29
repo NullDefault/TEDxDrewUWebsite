@@ -3,6 +3,7 @@
 /build
 
 # dependencies
+functions/node_modules
 /node_modules
 /.pnp
 .pnp.js
