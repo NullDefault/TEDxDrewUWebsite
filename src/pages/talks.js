@@ -1,13 +1,33 @@
 import {
   Box,
   useColorModeValue,
-  Heading, VStack
+  Heading, VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { VideoCard } from '../components/VideoCard';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 
 export const Talks = () => {
   const color = useColorModeValue('black', 'white');
+  const [talks, setTalks] = useState([]);
+
+  const fetchTalks = async () => {
+    axios
+      .get('https://us-central1-tedxdrewuniversitywebsite.cloudfunctions.net/api/talks')
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchTalks();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <Box bg="primary.600" textAlign="center" color={color}>
@@ -15,18 +35,16 @@ export const Talks = () => {
         <Heading as="h1" size="3xl" color={tedxRed}>
           Past Talks
         </Heading>
-        <VideoCard
-          title={'How \'traveling like a local\' can help cities fight overtourism | Janek Rubes'}
-          url={'https://www.youtube.com/watch?v=36A5bOSP334'}
-        />
-        <VideoCard
-          title={'Take a Deep Breath... | Laurel Kearns'}
-          url={'https://www.youtube.com/watch?v=YRu0VUHoxSg'}
-        />
-        <VideoCard
-          title={'Colonies of change | Olivia Blondheim'}
-          url={'https://www.youtube.com/watch?v=UZShktU009Y'}
-        />
+        {
+          talks && talks.map(talk=>{
+            return(
+              <VideoCard
+                title={talk.title}
+                url={talk.url}
+              />
+            )
+          })
+        }
       </VStack>
     </Box>
   );

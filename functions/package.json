@@ -20,5 +20,5 @@
   "devDependencies": {
     "firebase-functions-test": "^0.2.0"
   },
-  "private": true
+  "private": false
 }
