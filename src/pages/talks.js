@@ -14,10 +14,12 @@ export const Talks = () => {
   const [talks, setTalks] = useState([]);
 
   const fetchTalks = async () => {
-    axios
-      .get('https://us-central1-tedxdrewuniversitywebsite.cloudfunctions.net/api/talks')
+    axios({
+        method: 'get',
+        url: 'https://us-central1-tedxdrewuniversitywebsite.cloudfunctions.net/api/talks'
+      })
       .then((response) => {
-        console.log(response);
+        setTalks(response.data);
       })
       .catch((error) => {
         console.log(error);
