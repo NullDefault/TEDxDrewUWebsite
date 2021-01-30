@@ -1,7 +1,7 @@
 import {
   Box,
   useColorModeValue,
-  Heading, VStack,
+  Heading, VStack, Spinner,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { VideoCard } from '../components/VideoCard';
@@ -12,12 +12,40 @@ import axios from 'axios';
 export const Talks = () => {
   const color = useColorModeValue('black', 'white');
   const [talks, setTalks] = useState([]);
+  const body = () => {
+    if (talks.length !== 0) {
+      return (
+        talks.map(talk => {
+          return (
+            <VideoCard
+              title={talk.title}
+              url={talk.url}
+            />
+          );
+        })
+      );
+    } else {
+      return (
+        <Box minH="80vh">
+          <Spinner
+            mt="20vh"
+            thickness="10px"
+            speed="0.60s"
+            emptyColor={color}
+            color={tedxRed}
+            size="xl"
+          />
+        </Box>
+      );
+    }
+  };
+
 
   const fetchTalks = async () => {
     axios({
-        method: 'get',
-        url: 'https://us-central1-tedxdrewuniversitywebsite.cloudfunctions.net/api/talks'
-      })
+      method: 'get',
+      url: 'https://us-central1-tedxdrewuniversitywebsite.cloudfunctions.net/api/talks',
+    })
       .then((response) => {
         setTalks(response.data);
       })
@@ -38,14 +66,7 @@ export const Talks = () => {
           Past Talks
         </Heading>
         {
-          talks && talks.map(talk=>{
-            return(
-              <VideoCard
-                title={talk.title}
-                url={talk.url}
-              />
-            )
-          })
+          body()
         }
       </VStack>
     </Box>
