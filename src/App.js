@@ -15,6 +15,7 @@ import { Talks } from './pages/talks';
 import { Contact } from './pages/contact';
 import { Sponsors } from './pages/sponsors';
 import { JoinUs } from './pages/join';
+import { Admin } from './pages/admin';
 
 
 function App() {
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route path="/join">
             <JoinUs />
+          </Route>
+          <Route path="/admin">
+            <Admin />
           </Route>
           <Route component={PageNotFound} />
         </Switch>
