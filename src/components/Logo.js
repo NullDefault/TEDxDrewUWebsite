@@ -1,9 +1,11 @@
-import { Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import spaceBg from '../assets/GIF/minimalistGifBg.gif';
 import logo from '../assets/SVG/swooshX.svg';
 
 
 export const Logo = (props) => {
+  const filter = useColorModeValue(`brightness(1)`, `brightness(.75)`);
+
   return <Box
     {...props}
     style={{
@@ -21,6 +23,7 @@ export const Logo = (props) => {
       webkitMaskRepeat: `no-repeat`,
       maskPosition: `center`,
       webkitMaskPosition: `center`,
+      filter: filter,
     }}
   />;
 };

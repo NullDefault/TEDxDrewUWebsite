@@ -1,6 +1,6 @@
-import { Box, Grid, Link, Text, VStack, useColorModeValue } from '@chakra-ui/react';
+import { Box, Grid, VStack, useColorModeValue, Heading } from '@chakra-ui/react';
 import { Logo } from '../components/Logo';
-import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { tedxRed } from '../utils/tedxColors';
 
 export const Landing = () => {
   const color = useColorModeValue('black', 'white');
@@ -8,19 +8,11 @@ export const Landing = () => {
   return (
     <Box textAlign="center" fontSize="xl" bg="primary" color={color}>
       <Grid minH="100vh" p={3}>
-        <VStack spacing={8}>
+        <VStack spacing={4}>
           <Logo h="40vmin" pointerEvents="none" />
-          <Text>
-            This website is currently under development.
-          </Text>
-          <Link
-            href="https://www.drew.edu/"
-            fontSize="2xl"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Drew University <ExternalLinkIcon mx="4px" />
-          </Link>
+          <Heading as="h1" size="2xl" color={tedxRed} pb={12}>
+            Coming Soon
+          </Heading>
         </VStack>
       </Grid>
     </Box>
