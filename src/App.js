@@ -16,6 +16,7 @@ import { Contact } from './pages/contact';
 import { Sponsors } from './pages/sponsors';
 import { JoinUs } from './pages/join';
 import { Admin } from './pages/admin';
+import { Login } from './pages/login';
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path="/join">
             <JoinUs />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route path="/admin">
             <Admin />

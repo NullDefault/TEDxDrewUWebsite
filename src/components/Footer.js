@@ -8,7 +8,9 @@ import {
   Stack,
   Text,
   VStack,
+  IconButton
 } from '@chakra-ui/react';
+import {LockIcon} from '@chakra-ui/icons';
 import {
   AiFillFacebook,
   AiFillHome,
@@ -70,9 +72,15 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
       </VStack>
     </Stack>
     <Divider />
-    <Text pt="2%" px="4%" textAlign="center">
+    <Text pt="2%" px="4%" textAlign="center" pb="2%">
       This independent TEDx event is operated under license from TED. Learn more at{' '}
       <Link color={tedxRed} href="ted.com/tedx">ted.com/tedx</Link>
     </Text>
+    <Link href="/login">
+      <IconButton colorScheme="red"
+                  variant="outline"
+                  aria-label="Admin Login"
+                  icon={<LockIcon />} />
+    </Link>
   </VStack>
 </Flex>;

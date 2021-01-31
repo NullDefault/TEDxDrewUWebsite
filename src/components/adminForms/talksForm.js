@@ -14,7 +14,7 @@ export const TalksForm = () => {
   const color = useColorModeValue('black', 'white');
 
   return (
-    <Box p={6} borderTopRadius="xl" textAlign="left" color={color} border="2px" borderColor="gray.300">
+    <Box p={6} borderRadius="xl" textAlign="left" color={color} border="2px" borderColor="gray.300">
       <VStack>
         <Heading as="h1" size="lg" color={tedxRed} pb={4}>
           Add New Talk
