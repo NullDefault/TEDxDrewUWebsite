@@ -11,7 +11,7 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { TalksForm } from '../components/adminForms/TalksForm';
+import { TalksInterface } from '../components/adminInterfaces/TalksInterface';
 import { useEffect } from 'react';
 import {auth} from '../firebase';
 import { useHistory } from 'react-router-dom';
@@ -64,7 +64,7 @@ export const Admin = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              <TalksForm/>
+              <TalksInterface/>
             </AccordionPanel>
           </AccordionItem>
 

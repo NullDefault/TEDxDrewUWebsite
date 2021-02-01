@@ -26,7 +26,7 @@ import { useState } from 'react';
 import { db } from '../../firebase';
 import { FirebaseDocumentList } from './FirebaseDocumentList';
 
-export const TalksForm = () => {
+export const TalksInterface = () => {
   const color = useColorModeValue('black', 'white');
   const [status, setStatus] = useState(<div/>);
   const [refreshTrigger, updateTrigger] = useState(0);
