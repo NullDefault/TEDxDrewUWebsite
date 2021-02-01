@@ -11,11 +11,11 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { TalksInterface } from '../components/adminInterfaces/TalksInterface';
+import { TalksInterface } from '../components/AdminInterfaces/TalksInterface';
 import { useEffect } from 'react';
 import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
-import { VideosInterface } from '../components/adminInterfaces/VideosInterface';
+import { VideosInterface } from '../components/AdminInterfaces/VideosInterface';
 
 export const Admin = () => {
   const color = useColorModeValue('black', 'white');
