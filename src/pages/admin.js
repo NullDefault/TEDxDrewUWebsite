@@ -11,7 +11,7 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { TalksForm } from '../components/adminForms/talksForm';
+import { TalksForm } from '../components/adminForms/TalksForm';
 import { useEffect } from 'react';
 import {auth} from '../firebase';
 import { useHistory } from 'react-router-dom';
