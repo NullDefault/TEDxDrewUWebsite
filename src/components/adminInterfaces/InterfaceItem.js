@@ -17,7 +17,7 @@ export const InterfaceItem = (props) => {
   const cancelRef = useRef();
 
   const parseItem = (item) => {
-    if (props.type === 'talks') {
+    if (props.type === 'talks' || props.type === 'videos') {
       return item.title;
     }
   };
@@ -26,6 +26,7 @@ export const InterfaceItem = (props) => {
     // DOES NOT WORK
     console.log(item.id)
     const res = await db.collection(props.type).doc(item.id).delete();
+    console.log(res);
     setIsOpen(false);
     await props.fetchData();
 

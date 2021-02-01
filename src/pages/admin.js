@@ -13,8 +13,9 @@ import {
 import { tedxRed } from '../utils/tedxColors';
 import { TalksInterface } from '../components/adminInterfaces/TalksInterface';
 import { useEffect } from 'react';
-import {auth} from '../firebase';
+import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
+import { VideosInterface } from '../components/adminInterfaces/VideosInterface';
 
 export const Admin = () => {
   const color = useColorModeValue('black', 'white');
@@ -22,17 +23,17 @@ export const Admin = () => {
 
   const logOut = () => {
     auth.signOut().then(function() {
-      history.push('/')
+      history.push('/');
     }, function(error) {
       console.log(error);
     });
-  }
+  };
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-      if (!user) history.push('/login')
-    })
-  }, [])
+      if (!user) history.push('/login');
+    });
+  }, []);
 
   return (
     <Box bg="primary.600" color={color}>
@@ -44,7 +45,7 @@ export const Admin = () => {
           <AccordionItem>
             <AccordionButton>
               <Box>
-                Videos
+                Tickets
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -59,12 +60,39 @@ export const Admin = () => {
           <AccordionItem>
             <AccordionButton>
               <Box>
+                Blog
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat.
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <AccordionButton>
+              <Box>
+                Videos
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+            <AccordionPanel pb={4}>
+              <VideosInterface />
+            </AccordionPanel>
+          </AccordionItem>
+
+          <AccordionItem>
+            <AccordionButton>
+              <Box>
                 Talks
               </Box>
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              <TalksInterface/>
+              <TalksInterface />
             </AccordionPanel>
           </AccordionItem>
 
@@ -125,5 +153,5 @@ export const Admin = () => {
         </Button>
       </VStack>
     </Box>
-  )
-}
+  );
+};

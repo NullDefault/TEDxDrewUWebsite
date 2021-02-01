@@ -4,10 +4,27 @@ import {
   Heading, VStack
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { VideoCard } from '../components/VideoCard';
+import { VideoDisplay } from '../components/VideoDisplay';
+import { useEffect, useState } from 'react';
+import { db } from '../firebase';
 
 export const Videos = () => {
   const color = useColorModeValue('black', 'white');
+  const [videos, setVideos] = useState([]);
+
+  const fetchVideos = async () => {
+    const response = db.collection('videos').orderBy('addedAt');
+    const data = await response.get();
+    data.docs.forEach(item => {
+      setVideos(videos => ([...videos, item.data()]))
+    });
+  };
+
+  useEffect(() => {
+    fetchVideos();
+    // eslint-disable-next-line
+  }, []);
+
 
   return (
     <Box bg="primary.600" textAlign="center" color={color}>
@@ -15,12 +32,7 @@ export const Videos = () => {
         <Heading as="h1" size="3xl" color={tedxRed}>
           Video Gallery
         </Heading>
-        <VideoCard
-          title={"TEDx Drew University 2020 - Solve for X"}
-          url={"https://www.youtube.com/watch?v=M_Ei_AmQDEs"}/>
-        <VideoCard
-          title={"TEDx Drew University 2019 - The Nature of Being"}
-          url={"https://www.youtube.com/watch?v=uQ4GTVLGi9k"}/>
+        <VideoDisplay data={videos}/>
       </VStack>
     </Box>
   );
