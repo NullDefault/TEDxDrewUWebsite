@@ -63,11 +63,12 @@ export const JoinUs = () => {
         </FormControl>
         <FormControl id="teamInterest">
           <FormLabel>What teams are you interested in?</FormLabel>
-          <CheckboxGroup colorScheme="red" defaultValue={['naruto', 'kakashi']}>
+          <CheckboxGroup colorScheme="red">
             <Stack direction={['column', 'row']}>
               <Checkbox value="creative">Creative</Checkbox>
               <Checkbox value="marketing">Marketing</Checkbox>
-              <Checkbox value="technical">Technical</Checkbox>
+              <Checkbox value="curation">Curation</Checkbox>
+              <Checkbox value="technical">Production</Checkbox>
               <Checkbox value="logistics">Logistics</Checkbox>
               <Checkbox value="finance">Finance</Checkbox>
             </Stack>
