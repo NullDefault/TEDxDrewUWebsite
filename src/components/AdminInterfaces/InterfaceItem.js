@@ -20,6 +20,7 @@ import {
 import { DeleteIcon, EmailIcon, InfoIcon, StarIcon } from '@chakra-ui/icons';
 import { db } from '../../firebase';
 import { useRef, useState } from 'react';
+import { parseInterestIcon } from '../../utils/parseInterestIcon';
 
 export const InterfaceItem = (props) => {
   const [alertIsOpen, setAlertOpen] = useState(false);
@@ -45,7 +46,14 @@ export const InterfaceItem = (props) => {
 
   const deleteItem = async (item) => {
     console.log(item.id);
-    const res = await db.collection(props.type).doc(item.id).delete();
+    let type;
+    if(props.type === 'inbox'){
+      type = item.msgType + 's';
+    }else{
+      type = props.type
+    }
+
+    const res = await db.collection(type).doc(item.id).delete();
     console.log(res);
     setAlertOpen(false);
     await props.fetchData();
@@ -97,6 +105,35 @@ export const InterfaceItem = (props) => {
                 <ListItem>
                   Email: {props.item.email}
                 </ListItem>
+                {
+                  props.item.year && <ListItem>Year: {props.item.year}</ListItem>
+                }
+                {
+                  props.item.teamInterest &&
+                  <ListItem>
+                    Team Interest:
+                    <UnorderedList spacing={3}>
+                      <ListItem>
+                        Creative: {parseInterestIcon(props.item.teamInterest.creative)}
+                      </ListItem>
+                      <ListItem>
+                        Marketing: {parseInterestIcon(props.item.teamInterest.marketing)}
+                      </ListItem>
+                      <ListItem>
+                        Curation: {parseInterestIcon(props.item.teamInterest.curation)}
+                      </ListItem>
+                      <ListItem>
+                        Production: {parseInterestIcon(props.item.teamInterest.production)}
+                      </ListItem>
+                      <ListItem>
+                        Logistics: {parseInterestIcon(props.item.teamInterest.logistics)}
+                      </ListItem>
+                      <ListItem>
+                        Finance: {parseInterestIcon(props.item.teamInterest.finance)}
+                      </ListItem>
+                    </UnorderedList>
+                  </ListItem>
+                }
                 <ListItem>
                   Message: <p>{props.item.message}</p>
                 </ListItem>

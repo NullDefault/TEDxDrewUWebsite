@@ -59,7 +59,6 @@ export const FirebaseDocumentList = (props) => {
             <Divider mb={6}/>
             <InterfaceItem type={props.type} item={item} index={i} fetchData={fetchData}/>
           </Box>
-
         ))
       }
     </VStack>
