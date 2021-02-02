@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
 import { VideosInterface } from '../components/AdminInterfaces/VideosInterface';
+import { InboxInterface } from '../components/AdminInterfaces/InboxInterface';
 
 export const Admin = () => {
   const color = useColorModeValue('black', 'white');
@@ -134,10 +135,7 @@ export const Admin = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
+              <InboxInterface />
             </AccordionPanel>
           </AccordionItem>
         </Accordion>
