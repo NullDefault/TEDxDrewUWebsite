@@ -17,6 +17,8 @@ import { Sponsors } from './pages/sponsors';
 import { JoinUs } from './pages/join';
 import { Admin } from './pages/admin';
 import { Login } from './pages/login';
+import { SuccessPage } from './pages/successPage';
+import { ErrorPage } from './pages/errorPage';
 
 
 function App() {
@@ -51,6 +53,12 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/success">
+            <SuccessPage />
+          </Route>
+          <Route path="/error">
+            <ErrorPage />
           </Route>
           <Route path="/admin">
             <Admin />

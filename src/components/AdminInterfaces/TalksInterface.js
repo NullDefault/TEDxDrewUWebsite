@@ -60,8 +60,6 @@ export const TalksInterface = () => {
 
   const cancel = () => {
     onClose();
-    setTitle('');
-    setUrl('');
   }
 
   const openModal = () => {
