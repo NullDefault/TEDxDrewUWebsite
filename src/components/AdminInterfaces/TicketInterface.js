@@ -7,6 +7,7 @@ import {
   Link,
   Button,
   FormControl,
+  Container,
   FormLabel,
   Input,
 } from '@chakra-ui/react';
@@ -72,9 +73,13 @@ export const TicketInterface = (props) => {
           Ticket sales enabled: {parseInterestIcon(ticketToggle)}
         </Text>
         <Text fontSize="xl">
-          Ticket sales url link: <Link isExternal href={link} fontSize="2xl" color={tedxRed}>
-          {link}
-        </Link>
+          Ticket sales url link:
+          <Container w="60vw" overflow='hidden'>
+            <Link isExternal href={link} fontSize="xl" color={tedxRed}>
+              {link}
+            </Link>
+          </Container>
+
         </Text>
 
         <FormControl id="nextLink" isInvalid={nextLink === ''} w={['80%', '50%']} pt={'8vmin'} >
