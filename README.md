@@ -1,4 +1,4 @@
-# TEDxDrewUniversity Website
+<img src="https://github.com/NullDefault/TEDxDrewUWebsite/blob/master/src/assets/PNG/ogLogo.png" alt="Girl in a jacket" width="128" height="118"> <h1>TEDxDrewUniversity Website</h1>
 Website for the Drew University Chapter of TEDx. Made with React and Chakra UI. Deployed and hosted on Firebase.
 
 ## Version History
