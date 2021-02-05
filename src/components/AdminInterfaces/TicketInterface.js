@@ -9,6 +9,7 @@ import {
   FormControl,
   Container,
   FormLabel,
+  FormHelperText,
   Input,
 } from '@chakra-ui/react';
 import { tedxRed } from '../../utils/tedxColors';
@@ -85,6 +86,7 @@ export const TicketInterface = (props) => {
         <FormControl id="nextLink" isInvalid={nextLink === ''} w={['80%', '50%']} pt={'8vmin'} >
           <FormLabel>New Link</FormLabel>
           <Input value={nextLink} onChange={e => setNextLink(e.currentTarget.value)} />
+          <FormHelperText>The link won't work unless it has the https:// part.</FormHelperText>
         </FormControl>
         <Button
           isLoading={updating}

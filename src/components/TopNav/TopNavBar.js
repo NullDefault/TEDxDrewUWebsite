@@ -29,13 +29,14 @@ export const TopNavBar = (props) => {
     // eslint-disable-next-line
   }, []);
 
+  const ticketLink = ticketToggle ? <MenuItem color={tedxRed} to={link}>Tickets</MenuItem> : <div/>;
 
   return (
     <NavContainer {...props}>
       <NavLogo />
       <MenuToggle toggle={toggle} isOpen={isOpen} />
       <MenuLinks isOpen={isOpen} children={[
-        <MenuItem color={tedxRed} to={link} visibility={ticketToggle ? 'visible' : 'hidden'}>Tickets</MenuItem>,
+        ticketLink,
         <MenuItem to="/">Home</MenuItem>,
         <MenuItem to="/about">About</MenuItem>,
         <MenuItem to="/blog">Blog</MenuItem>,
