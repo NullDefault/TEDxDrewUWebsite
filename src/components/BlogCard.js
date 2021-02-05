@@ -5,19 +5,66 @@ import {
   Text,
   useColorModeValue,
   Tag,
+  Button,
+  Center,
   HStack,
+  Image,
+  useDisclosure,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
 } from '@chakra-ui/react';
+import { tedxRed } from '../utils/tedxColors';
+import placeholder from '../assets/PNG/placeholder.png';
 
-const BlogCard = ({ slug, publishDate, summary, title }) => {
+export const BlogCard = ({ publishDate, summary, title, imgUrl, bodyText }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const pastedDate = publishDate.toDate();
+  const fallback = <Image borderRadius="xl" border="2px" borderColor={tedxRed} mb={'4vmin'} w='60%' h='60%'
+                          src={placeholder} />;
+
+
   return (
     <Box
       as="a"
+      onClick={onOpen}
       cursor="pointer"
       w="100%"
       transition="all 0.25s"
       transition-timing-function="spring(1 100 10 10)"
       _hover={{ transform: 'translateY(-4px)', shadow: 'sm' }}
     >
+
+      <Modal isOpen={isOpen} onClose={onClose} size="xl">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader color={tedxRed}>{title}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Center>
+              <Image borderRadius="xl" border="2px" fallback={fallback} borderColor={tedxRed} mb={'4vmin'}
+                     src={imgUrl} />
+            </Center>
+
+
+            <Text>
+              <div dangerouslySetInnerHTML={{ __html: bodyText }} />
+            </Text>
+
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="red" mr={3} onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
       <VStack
         align="start"
         p={4}
@@ -46,11 +93,9 @@ const BlogCard = ({ slug, publishDate, summary, title }) => {
           {summary}
         </Text>
         <Text fontSize="xs" color={useColorModeValue('gray.500', 'gray.400')}>
-          {publishDate.toString()}
+          {pastedDate.toDateString()}
         </Text>
       </VStack>
     </Box>
   );
 };
-
-export default BlogCard;

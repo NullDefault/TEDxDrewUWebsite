@@ -38,7 +38,7 @@ export const InterfaceItem = (props) => {
       return (
         <Box>
           {item.msgType === 'message'? <EmailIcon mr={2}/> : <StarIcon mr={2}/> }
-          {item.email} - {months[pastedDate.getUTCMonth()]} {pastedDate.getUTCDate()} | {pastedDate.getUTCHours()}:{pastedDate.getUTCMinutes()}
+          {item.email} - {item.sentAt.toDate().toDateString()}
         </Box>
       )
     }

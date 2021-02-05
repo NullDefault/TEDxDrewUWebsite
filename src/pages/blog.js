@@ -1,15 +1,32 @@
 import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
-import BlogCard from '../components/BlogCard';
 import { tedxRed } from '../utils/tedxColors';
+import { db } from '../firebase';
+import { useEffect, useState } from 'react';
+import { BlogDisplay } from '../components/BlogDisplay';
 
 export const Blog = () => {
   const color = useColorModeValue('black', 'white');
+  const [blogs, setBlogs] = useState([]);
+
+
+  const fetchBlogs = async () => {
+    const response = db.collection('blogs');
+    const data = await response.get();
+    data.docs.forEach(item => {
+      setBlogs(blogs => ([...blogs, item.data()]))
+    });
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <Box textAlign="left" fontSize="xl" bg="primary.600" color={color}>
       <VStack
         minH="100vh"
-        py='12vmin'
+        py='6vmin'
         px='10vmin'
         mx='auto'
         spacing={12}
@@ -17,24 +34,7 @@ export const Blog = () => {
         <Heading as="h1" size="3xl" color={tedxRed}>
           Blog
         </Heading>
-        <BlogCard
-          slug={'test'}
-          publishDate={new Date('December 26, 2021 03:24:00')}
-          summary={'My exploration into making this page work.'}
-          title={'Testing Blog Functionality'}
-        />
-        <BlogCard
-          slug={'test2'}
-          publishDate={new Date('December 1, 2021 05:14:00')}
-          summary={'What does it mean?'}
-          title={'Lorem Ipsum'}
-        />
-        <BlogCard
-          slug={'test3'}
-          publishDate={new Date('November 26, 2020 07:31:00')}
-          summary={'A classic or a cliche?'}
-          title={'Hello world!'}
-        />
+        <BlogDisplay data={blogs}/>
       </VStack>
     </Box>
   );
