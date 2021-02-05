@@ -21,7 +21,7 @@ import {
 import { tedxRed } from '../utils/tedxColors';
 import placeholder from '../assets/PNG/placeholder.png';
 
-export const BlogCard = ({ publishDate, summary, title, imgUrl, bodyText }) => {
+export const BlogCard = ({ publishDate, summary, title, imgUrl, bodyText, author }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const pastedDate = publishDate.toDate();
   const fallback = <Image borderRadius="xl" border="2px" borderColor={tedxRed} mb={'4vmin'} w='60%' h='60%'
@@ -57,7 +57,11 @@ export const BlogCard = ({ publishDate, summary, title, imgUrl, bodyText }) => {
 
           </ModalBody>
 
-          <ModalFooter>
+          <ModalFooter justifyContent="space-between">
+            <Box color={tedxRed}>
+              By: {author}
+            </Box>
+
             <Button colorScheme="red" mr={3} onClick={onClose}>
               Close
             </Button>

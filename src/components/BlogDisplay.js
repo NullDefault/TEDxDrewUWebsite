@@ -21,6 +21,7 @@ export const BlogDisplay = ({data}) => {
           title={item.title}
           imgUrl={item.imgUrl}
           bodyText={item.bodyText}
+          author={item.author}
         />
       ))
     );
