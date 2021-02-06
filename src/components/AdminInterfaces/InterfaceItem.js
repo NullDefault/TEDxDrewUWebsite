@@ -29,12 +29,9 @@ export const InterfaceItem = (props) => {
   const cancelRef = useRef();
 
   const parseItem = (item) => {
-    if (props.type === 'talks' || props.type === 'videos') {
+    if (props.type === 'talks' || props.type === 'videos' || props.type === 'blogs') {
       return item.title;
     } else if (props.type === 'inbox') { // for messages and applications
-      let pastedDate = new Date(item.sentAt * 1000);
-      const months = ['January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'];
       return (
         <Box>
           {item.msgType === 'message'? <EmailIcon mr={2}/> : <StarIcon mr={2}/> }
