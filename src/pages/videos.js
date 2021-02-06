@@ -28,7 +28,7 @@ export const Videos = () => {
 
   return (
     <Box bg="primary.600" textAlign="center" color={color}>
-      <VStack spacing={24} py='12vmin' mx='auto'>
+      <VStack spacing={24} pb="48px"  mx='auto'>
         <Heading as="h1" size="3xl" color={tedxRed}>
           Video Gallery
         </Heading>

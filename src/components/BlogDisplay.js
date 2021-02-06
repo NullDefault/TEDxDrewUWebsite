@@ -1,15 +1,19 @@
 import { BlogCard } from './BlogCard';
-import { Box, Skeleton, Stack } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
+import { tedxRed } from '../utils/tedxColors';
 
-export const BlogDisplay = ({data}) => {
+export const BlogDisplay = ({ data }) => {
   if (data.length === 0) {
     return (
-      <Box minH="90vh" w={['100%', '70%']}>
-        <Stack>
-          <Skeleton startColor="pink.500" endColor="orange.500" height="10vh" />
-          <Skeleton startColor="pink.500" endColor="orange.500" height="10vh" />
-          <Skeleton startColor="pink.500" endColor="orange.500" height="10vh" />
-        </Stack>
+      <Box minH="80vh">
+        <Spinner
+          mt="20vh"
+          thickness="10px"
+          speed="0.60s"
+          emptyColor={color}
+          color={tedxRed}
+          size="xl"
+        />
       </Box>
     );
   } else {
