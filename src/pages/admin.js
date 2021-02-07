@@ -1,14 +1,14 @@
 import {
-  Box,
-  useColorModeValue,
-  VStack,
-  Heading,
   Accordion,
-  AccordionItem,
   AccordionButton,
   AccordionIcon,
+  AccordionItem,
   AccordionPanel,
+  Box,
   Button,
+  Heading,
+  useColorModeValue,
+  VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { TalksInterface } from '../components/AdminInterfaces/TalksInterface';

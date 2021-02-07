@@ -2,7 +2,7 @@ import { VideoCard } from './VideoCard';
 import { Box, Spinner, useColorModeValue } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 
-export const VideoDisplay = ({data}) => {
+export const VideoDisplay = ({ data }) => {
   const color = useColorModeValue('black', 'white');
 
   if (data.length === 0) {

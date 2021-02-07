@@ -1,7 +1,7 @@
-import { Center, Container, Heading} from '@chakra-ui/react';
+import { Center, Container, Heading } from '@chakra-ui/react';
 import ReactPlayer from 'react-player';
 
-export const VideoCard = ({title, url}) => {
+export const VideoCard = ({ title, url }) => {
   return (
     <Center w='100%'>
       <Container>
@@ -14,5 +14,5 @@ export const VideoCard = ({title, url}) => {
           url={url} />
       </Container>
     </Center>
-  )
-}
+  );
+};

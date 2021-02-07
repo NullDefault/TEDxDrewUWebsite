@@ -5,17 +5,19 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogOverlay,
-  Button,
-  Stack,
-  IconButton, ListItem,
-  Modal,
   Box,
+  Button,
+  IconButton,
+  ListItem,
+  Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  Text, UnorderedList,
+  Stack,
+  Text,
+  UnorderedList,
 } from '@chakra-ui/react';
 import { DeleteIcon, EmailIcon, InfoIcon, StarIcon } from '@chakra-ui/icons';
 import { db } from '../../firebase';
@@ -34,20 +36,20 @@ export const InterfaceItem = (props) => {
     } else if (props.type === 'inbox') { // for messages and applications
       return (
         <Box>
-          {item.msgType === 'message'? <EmailIcon mr={2}/> : <StarIcon mr={2}/> }
+          {item.msgType === 'message' ? <EmailIcon mr={2} /> : <StarIcon mr={2} />}
           {item.email} - {item.sentAt.toDate().toDateString()}
         </Box>
-      )
+      );
     }
   };
 
   const deleteItem = async (item) => {
     console.log(item.id);
     let type;
-    if(props.type === 'inbox'){
+    if (props.type === 'inbox') {
       type = item.msgType + 's';
-    }else{
-      type = props.type
+    } else {
+      type = props.type;
     }
 
     const res = await db.collection(type).doc(item.id).delete();
@@ -143,7 +145,7 @@ export const InterfaceItem = (props) => {
       {
         (props.type === 'inbox') ? <IconButton onClick={() => {
           setModalOpen(true);
-        }} icon={<InfoIcon />} /> : <div/>
+        }} icon={<InfoIcon />} /> : <div />
       }
 
       <IconButton onClick={() => {

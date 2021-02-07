@@ -1,16 +1,5 @@
-import {
-  Box,
-  Divider,
-  Flex,
-  Icon,
-  Image,
-  Link,
-  Stack,
-  Text,
-  VStack,
-  IconButton
-} from '@chakra-ui/react';
-import {LockIcon} from '@chakra-ui/icons';
+import { Box, Divider, Flex, Icon, IconButton, Image, Link, Stack, Text, VStack } from '@chakra-ui/react';
+import { LockIcon } from '@chakra-ui/icons';
 import {
   AiFillFacebook,
   AiFillHome,

@@ -1,23 +1,25 @@
 import {
   Box,
-  useColorModeValue,
-  VStack,
-  HStack,
   Button,
   FormControl,
-  FormLabel,
-  Input,
   FormHelperText,
-  Textarea,
+  FormLabel,
   Heading,
-  useDisclosure,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
+  HStack,
+  Input,
+  ListItem,
+  Modal,
   ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Textarea,
   UnorderedList,
-  ListItem, ModalFooter, Modal
+  useColorModeValue,
+  useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { validateEmail } from '../utils/validateEmail';
@@ -42,31 +44,31 @@ export const Contact = () => {
       email: email,
       message: message,
       sentAt: new Date(Date.now()),
-    }).then(function(docRef){
+    }).then(function(docRef) {
       console.log(docRef);
       history.push('/success');
     }).catch(function(error) {
       console.error(error);
       history.push('/error');
-    })
+    });
 
     setName('');
     setPronouns('');
     setEmail('');
     setMessage('');
-  }
+  };
 
   const openModal = () => {
-    if(name === '' || pronouns === '' || !validateEmail(email) || message === ''){
+    if (name === '' || pronouns === '' || !validateEmail(email) || message === '') {
       // do nothing
-    }else{
+    } else {
       onOpen();
     }
-  }
+  };
 
   const cancel = () => {
     onClose();
-  }
+  };
 
   return (
     <Box textAlign="left" bg="primary.600" color={color}>
@@ -77,23 +79,24 @@ export const Contact = () => {
         <HStack w="100%">
           <FormControl id="name" isInvalid={name === ''}>
             <FormLabel>Name</FormLabel>
-            <Input type="name" value={name} onChange={e => setName(e.currentTarget.value)}/>
+            <Input type="name" value={name} onChange={e => setName(e.currentTarget.value)} />
             <FormHelperText>How you like to be called.</FormHelperText>
           </FormControl>
           <FormControl id="pronouns" isInvalid={pronouns === ''}>
             <FormLabel>Pronouns</FormLabel>
-            <Input type="pronouns" value={pronouns} onChange={e => setPronouns(e.currentTarget.value)}/>
+            <Input type="pronouns" value={pronouns} onChange={e => setPronouns(e.currentTarget.value)} />
             <FormHelperText>Your preferred pronouns.</FormHelperText>
           </FormControl>
         </HStack>
         <FormControl id="email" validate={validateEmail}>
           <FormLabel>Email address</FormLabel>
-          <Input type="email" value={email} onChange={e => setEmail(e.currentTarget.value)}/>
+          <Input type="email" value={email} onChange={e => setEmail(e.currentTarget.value)} />
           <FormHelperText>We'll never share your email.</FormHelperText>
         </FormControl>
         <FormControl id="message" pb={8}>
           <FormLabel>Your Message</FormLabel>
-          <Textarea placeholder="Your message to us" value={message} onChange={e => setMessage(e.currentTarget.value)}/>
+          <Textarea placeholder="Your message to us" value={message}
+                    onChange={e => setMessage(e.currentTarget.value)} />
         </FormControl>
         <Button
           loadingText="Submitting"
@@ -101,7 +104,7 @@ export const Contact = () => {
           variant="solid"
           size="lg"
           onClick={() => {
-            openModal()
+            openModal();
           }}
         >
           Submit

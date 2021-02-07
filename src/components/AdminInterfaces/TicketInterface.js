@@ -1,16 +1,16 @@
 import {
   Box,
+  Button,
+  Container,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Heading,
+  Input,
+  Link,
+  Text,
   useColorModeValue,
   VStack,
-  Text,
-  Heading,
-  Link,
-  Button,
-  FormControl,
-  Container,
-  FormLabel,
-  FormHelperText,
-  Input,
 } from '@chakra-ui/react';
 import { tedxRed } from '../../utils/tedxColors';
 import { useEffect, useState } from 'react';
@@ -49,7 +49,7 @@ export const TicketInterface = (props) => {
       });
     await fetchData();
     setUpdating(false);
-  }
+  };
 
   const toggleTicketSales = async () => {
     setUpdating(true);
@@ -83,7 +83,7 @@ export const TicketInterface = (props) => {
 
         </Text>
 
-        <FormControl id="nextLink" isInvalid={nextLink === ''} w={['80%', '50%']} pt={'8vmin'} >
+        <FormControl id="nextLink" isInvalid={nextLink === ''} w={['80%', '50%']} pt={'8vmin'}>
           <FormLabel>New Link</FormLabel>
           <Input value={nextLink} onChange={e => setNextLink(e.currentTarget.value)} />
           <FormHelperText>The link won't work unless it has the https:// part.</FormHelperText>
@@ -92,7 +92,7 @@ export const TicketInterface = (props) => {
           isLoading={updating}
           loadingText="Submitting"
           colorScheme="red"
-          onClick={()=>setNewLink()}
+          onClick={() => setNewLink()}
           mb={'8vmin'}
         >
           Set New Ticket Link
@@ -103,9 +103,9 @@ export const TicketInterface = (props) => {
           isLoading={updating}
           loadingText="Submitting"
           colorScheme="red"
-          onClick={()=>toggleTicketSales()}
+          onClick={() => toggleTicketSales()}
         >
-          {ticketToggle ? "Turn Off Ticket Sales" : "Enable Ticket Sales"}
+          {ticketToggle ? 'Turn Off Ticket Sales' : 'Enable Ticket Sales'}
         </Button>
       </VStack>
     </Box>

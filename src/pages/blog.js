@@ -13,7 +13,7 @@ export const Blog = () => {
     const response = db.collection('blogs');
     const data = await response.get();
     data.docs.forEach(item => {
-      setBlogs(blogs => ([...blogs, item.data()]))
+      setBlogs(blogs => ([...blogs, item.data()]));
     });
   };
 
@@ -34,7 +34,7 @@ export const Blog = () => {
         <Heading as="h1" size="3xl" color={tedxRed}>
           Blog
         </Heading>
-        <BlogDisplay data={blogs}/>
+        <BlogDisplay data={blogs} />
       </VStack>
     </Box>
   );

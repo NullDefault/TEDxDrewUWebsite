@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   FormControl,
@@ -6,22 +8,20 @@ import {
   FormLabel,
   Heading,
   Input,
-  Alert,
-  AlertIcon,
-  Textarea,
-  Text,
-  useColorModeValue,
-  VStack,
-  useDisclosure,
-  UnorderedList,
   ListItem,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
   ModalBody,
-  ModalFooter
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  Textarea,
+  UnorderedList,
+  useColorModeValue,
+  useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../../utils/tedxColors';
 import React, { useState } from 'react';
@@ -30,7 +30,7 @@ import { FirebaseDocumentList } from './FirebaseDocumentList';
 
 export const BlogInterface = () => {
   const color = useColorModeValue('black', 'white');
-  const [status, setStatus] = useState(<div/>);
+  const [status, setStatus] = useState(<div />);
   const [refreshTrigger, updateTrigger] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -49,20 +49,20 @@ export const BlogInterface = () => {
       bodyText: bodyText,
       author: author,
       publishDate: new Date(Date.now()),
-    }).then(function(docRef){
+    }).then(function(docRef) {
       let successAlert = <Alert status="success">
         <AlertIcon />
         Blog created with ID: {docRef.id}
-      </Alert>
+      </Alert>;
       setStatus(successAlert);
-      updateTrigger(refreshTrigger+1);
+      updateTrigger(refreshTrigger + 1);
     }).catch(function(error) {
       let successError = <Alert status="error">
         <AlertIcon />
         Error adding Blog: {error}
-      </Alert>
+      </Alert>;
       setStatus(successError);
-    })
+    });
     setTitle('');
     setSummary('');
     setImgUrl('');
@@ -72,13 +72,13 @@ export const BlogInterface = () => {
 
   const cancel = () => {
     onClose();
-  }
+  };
 
   const openModal = () => {
-    if(!(title === '' || imgUrl === '' || summary === '' || bodyText === '' || author === '')){
-      onOpen()
+    if (!(title === '' || imgUrl === '' || summary === '' || bodyText === '' || author === '')) {
+      onOpen();
     }
-  }
+  };
 
 
   return (
@@ -102,13 +102,15 @@ export const BlogInterface = () => {
 
         <FormControl id="imgUrl" isInvalid={imgUrl === ''}>
           <FormLabel>Link to blog image.</FormLabel>
-          <Input type="url" placeholder="https://<yourlink>/your-image.png" value={imgUrl} onChange={e => setImgUrl(e.currentTarget.value)} />
+          <Input type="url" placeholder="https://<yourlink>/your-image.png" value={imgUrl}
+                 onChange={e => setImgUrl(e.currentTarget.value)} />
           <FormHelperText> URL link to the image you would like to be a part of the blog post. </FormHelperText>
         </FormControl>
 
         <FormControl id="bodyText" isInvalid={bodyText === ''}>
           <FormLabel>Blog body.</FormLabel>
-          <Textarea placeholder="Main content of the post." value={bodyText} onChange={e => setBodyText(e.currentTarget.value)} />
+          <Textarea placeholder="Main content of the post." value={bodyText}
+                    onChange={e => setBodyText(e.currentTarget.value)} />
           <FormHelperText>Tip: You can format your text with html.</FormHelperText>
         </FormControl>
 
@@ -127,7 +129,7 @@ export const BlogInterface = () => {
           variant="solid"
           size="lg"
           onClick={() => {
-            openModal()
+            openModal();
           }}
         >
           Submit

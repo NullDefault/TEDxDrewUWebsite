@@ -6,7 +6,7 @@ export const SuccessPage = (props) => {
 
   return (
     <Box bg="primary.600" color={color} {...props}>
-      <VStack  py='12vmin' minH="100vh" textAlign="center">
+      <VStack py='12vmin' minH="100vh" textAlign="center">
         <Heading as="h1" size="4xl" color={tedxRed} pb={12} px={4}>
           We successfully received your submission!
         </Heading>
@@ -15,5 +15,5 @@ export const SuccessPage = (props) => {
         </Link>
       </VStack>
     </Box>
-  )
-}
+  );
+};

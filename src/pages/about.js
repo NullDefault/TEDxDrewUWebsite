@@ -1,4 +1,4 @@
-import { Box, useColorModeValue, Grid, Text, Heading, Link } from '@chakra-ui/react';
+import { Box, Grid, Heading, Link, Text, useColorModeValue } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 
 export const About = () => {

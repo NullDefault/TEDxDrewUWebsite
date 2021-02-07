@@ -1,8 +1,10 @@
 import { BlogCard } from './BlogCard';
-import { Box, Spinner } from '@chakra-ui/react';
+import { Box, Spinner, useColorModeValue } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 
 export const BlogDisplay = ({ data }) => {
+  const color = useColorModeValue('black', 'white');
+
   if (data.length === 0) {
     return (
       <Box minH="80vh">

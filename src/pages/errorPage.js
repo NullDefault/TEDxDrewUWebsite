@@ -6,7 +6,7 @@ export const ErrorPage = (props) => {
 
   return (
     <Box bg="primary.600" color={color} {...props}>
-      <VStack  py='12vmin' minH="100vh" textAlign="center">
+      <VStack py='12vmin' minH="100vh" textAlign="center">
         <Heading as="h1" size="4xl" color={tedxRed} pb={12} px={4}>
           We are having issues with our server :(
         </Heading>
@@ -18,5 +18,5 @@ export const ErrorPage = (props) => {
         </Link>
       </VStack>
     </Box>
-  )
-}
+  );
+};

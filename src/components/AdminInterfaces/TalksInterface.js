@@ -1,25 +1,26 @@
 import {
-  Box, Button,
+  Alert,
+  AlertIcon,
+  Box,
+  Button,
   FormControl,
   FormHelperText,
   FormLabel,
   Heading,
   Input,
-  Alert,
-  AlertIcon,
-  Text,
-  useColorModeValue,
-  VStack,
-  useDisclosure,
-  UnorderedList,
   ListItem,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
   ModalBody,
-  ModalFooter
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+  UnorderedList,
+  useColorModeValue,
+  useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../../utils/tedxColors';
 import { useState } from 'react';
@@ -28,7 +29,7 @@ import { FirebaseDocumentList } from './FirebaseDocumentList';
 
 export const TalksInterface = () => {
   const color = useColorModeValue('black', 'white');
-  const [status, setStatus] = useState(<div/>);
+  const [status, setStatus] = useState(<div />);
   const [refreshTrigger, updateTrigger] = useState(0);
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
@@ -40,35 +41,35 @@ export const TalksInterface = () => {
       title: title,
       url: url,
       addedAt: new Date(Date.now()),
-    }).then(function(docRef){
+    }).then(function(docRef) {
       let successAlert = <Alert status="success">
         <AlertIcon />
         Talk created with ID: {docRef.id}
-      </Alert>
+      </Alert>;
       setStatus(successAlert);
-      updateTrigger(refreshTrigger+1);
+      updateTrigger(refreshTrigger + 1);
     }).catch(function(error) {
       let successError = <Alert status="error">
         <AlertIcon />
         Error adding Talk: {error}
-      </Alert>
+      </Alert>;
       setStatus(successError);
-    })
+    });
     setTitle('');
     setUrl('');
   };
 
   const cancel = () => {
     onClose();
-  }
+  };
 
   const openModal = () => {
-    if(title === '' || url === ''){
+    if (title === '' || url === '') {
 
-    }else{
-      onOpen()
+    } else {
+      onOpen();
     }
-  }
+  };
 
 
   return (
@@ -96,7 +97,7 @@ export const TalksInterface = () => {
           variant="solid"
           size="lg"
           onClick={() => {
-            openModal()
+            openModal();
           }}
         >
           Submit

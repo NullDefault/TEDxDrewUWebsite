@@ -1,35 +1,36 @@
 import {
   Box,
-  useColorModeValue,
-  VStack,
-  HStack,
   Button,
-  FormControl,
-  FormLabel,
-  Input,
-  Text,
-  FormHelperText,
-  Select,
-  Textarea,
-  Stack,
-  Heading,
   Checkbox,
-  useDisclosure,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Heading,
+  HStack,
+  Input,
+  ListItem,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
   ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Select,
+  Stack,
+  Text,
+  Textarea,
   UnorderedList,
-  ListItem, ModalFooter,
+  useColorModeValue,
+  useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { db } from '../firebase';
 import { validateEmail } from '../utils/validateEmail';
-import {parseInterestIcon} from '../utils/parseInterestIcon';
+import { parseInterestIcon } from '../utils/parseInterestIcon';
 
 export const JoinUs = () => {
   const color = useColorModeValue('black', 'white');

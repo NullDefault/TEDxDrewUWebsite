@@ -1,4 +1,4 @@
-import { Box, Center, Text, VStack, Image, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, Center, Image, Link, Text, useColorModeValue, VStack } from '@chakra-ui/react';
 import fourOhFourArt from '../assets/SVG/404.svg';
 import { tedxRed } from '../utils/tedxColors';
 

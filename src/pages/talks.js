@@ -1,8 +1,4 @@
-import {
-  Box,
-  useColorModeValue,
-  Heading, VStack
-} from '@chakra-ui/react';
+import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { useEffect, useState } from 'react';
 import { db } from '../firebase';
@@ -17,7 +13,7 @@ export const Talks = () => {
     const response = db.collection('talks');
     const data = await response.get();
     data.docs.forEach(item => {
-      setTalks(talks => ([...talks, item.data()]))
+      setTalks(talks => ([...talks, item.data()]));
     });
   };
 
@@ -32,7 +28,7 @@ export const Talks = () => {
         <Heading as="h1" size="3xl" color={tedxRed}>
           Past Talks
         </Heading>
-        <VideoDisplay data={talks}/>
+        <VideoDisplay data={talks} />
       </VStack>
     </Box>
   );

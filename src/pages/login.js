@@ -1,15 +1,15 @@
 import {
   Box,
-  useColorModeValue,
-  VStack,
   Button,
   FormControl,
   FormLabel,
+  Heading,
   Input,
   Text,
-  Heading,
+  useColorModeValue,
+  VStack,
 } from '@chakra-ui/react';
-import {auth} from '../firebase';
+import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
 import { tedxRed } from '../utils/tedxColors';
 import { useEffect, useState } from 'react';
@@ -27,13 +27,13 @@ export const Login = () => {
     }).catch(err => {
       setError(err.toString());
     });
-  }
+  };
 
   useEffect(() => {
     auth.onAuthStateChanged(user => {
-      if (user) history.push('/admin')
-    })
-  }, [])
+      if (user) history.push('/admin');
+    });
+  }, []);
 
 
   return (

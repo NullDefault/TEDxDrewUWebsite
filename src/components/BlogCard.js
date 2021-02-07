@@ -1,15 +1,10 @@
 import React from 'react';
 import {
   Box,
-  VStack,
-  Text,
-  useColorModeValue,
-  Tag,
   Button,
   Center,
   HStack,
   Image,
-  useDisclosure,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -17,6 +12,11 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Tag,
+  Text,
+  useColorModeValue,
+  useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import placeholder from '../assets/PNG/placeholder.png';

@@ -1,8 +1,4 @@
-import {
-  Box,
-  useColorModeValue,
-  Heading, VStack
-} from '@chakra-ui/react';
+import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { VideoDisplay } from '../components/VideoDisplay';
 import { useEffect, useState } from 'react';
@@ -16,7 +12,7 @@ export const Videos = () => {
     const response = db.collection('videos').orderBy('addedAt');
     const data = await response.get();
     data.docs.forEach(item => {
-      setVideos(videos => ([...videos, item.data()]))
+      setVideos(videos => ([...videos, item.data()]));
     });
   };
 
@@ -28,11 +24,11 @@ export const Videos = () => {
 
   return (
     <Box bg="primary.600" textAlign="center" color={color}>
-      <VStack spacing={24} pb="48px"  mx='auto'>
+      <VStack spacing={24} pb="48px" mx='auto'>
         <Heading as="h1" size="3xl" color={tedxRed}>
           Video Gallery
         </Heading>
-        <VideoDisplay data={videos}/>
+        <VideoDisplay data={videos} />
       </VStack>
     </Box>
   );

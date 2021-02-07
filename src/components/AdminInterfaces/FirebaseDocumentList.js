@@ -1,6 +1,4 @@
-import {
-  VStack, Divider, Box
-} from '@chakra-ui/react';
+import { Box, Divider, VStack } from '@chakra-ui/react';
 import { db } from '../../firebase';
 import { useEffect, useState } from 'react';
 import { InterfaceItem } from './InterfaceItem';
@@ -12,7 +10,7 @@ export const FirebaseDocumentList = (props) => {
   const fetchData = async () => {
     setData([]);
     let data;
-    if(props.type === 'inbox'){
+    if (props.type === 'inbox') {
       const msgs_response = db.collection('messages');
       const apps_response = db.collection('applications');
 
@@ -34,7 +32,7 @@ export const FirebaseDocumentList = (props) => {
         itemData.msgType = 'application';
         setData(data => ([...data, itemData]));
       });
-    }else{
+    } else {
       const response = db.collection(props.type);
       data = await response.get();
       data.docs.forEach(item => {
@@ -56,8 +54,8 @@ export const FirebaseDocumentList = (props) => {
       {
         data.map((item, i) => (
           <Box>
-            <Divider mb={6}/>
-            <InterfaceItem type={props.type} item={item} index={i} fetchData={fetchData}/>
+            <Divider mb={6} />
+            <InterfaceItem type={props.type} item={item} index={i} fetchData={fetchData} />
           </Box>
         ))
       }

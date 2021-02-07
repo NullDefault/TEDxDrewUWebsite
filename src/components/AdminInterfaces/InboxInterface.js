@@ -13,11 +13,11 @@ export const InboxInterface = () => {
           Inbox
         </Heading>
         <Box textAlign="center" color={tedxRed} pb={2}>
-          <EmailIcon/> : messages <br/>
-          <StarIcon/> : team applications
+          <EmailIcon /> : messages <br />
+          <StarIcon /> : team applications
         </Box>
-        <FirebaseDocumentList type="inbox"/>
+        <FirebaseDocumentList type="inbox" />
       </VStack>
     </Box>
-  )
-}
+  );
+};

@@ -6,7 +6,7 @@ export const NavLogo = (props) => {
   return (
     <Box {...props}>
       <a href="/">
-        <Image w={'6vmin'} src={logo}/>
+        <Image w={'6vmin'} src={logo} />
       </a>
     </Box>
   );
