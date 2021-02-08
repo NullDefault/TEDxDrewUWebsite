@@ -2,7 +2,7 @@ import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { db } from '../firebase';
 import { useEffect, useState } from 'react';
-import { BlogDisplay } from '../components/BlogDisplay';
+import { BlogDisplay } from '../components/collectionDisplays/BlogDisplay';
 
 export const Blog = () => {
   const color = useColorModeValue('black', 'white');

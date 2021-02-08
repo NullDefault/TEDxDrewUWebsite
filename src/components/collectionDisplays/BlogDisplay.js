@@ -1,6 +1,6 @@
-import { BlogCard } from './BlogCard';
+import { BlogCard } from '../cards/BlogCard';
 import { Box, Spinner, useColorModeValue } from '@chakra-ui/react';
-import { tedxRed } from '../utils/tedxColors';
+import { tedxRed } from '../../utils/tedxColors';
 
 export const BlogDisplay = ({ data }) => {
   const color = useColorModeValue('black', 'white');

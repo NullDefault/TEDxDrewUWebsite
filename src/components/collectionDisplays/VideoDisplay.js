@@ -1,6 +1,6 @@
-import { VideoCard } from './VideoCard';
+import { VideoCard } from '../cards/VideoCard';
 import { Box, Spinner, useColorModeValue } from '@chakra-ui/react';
-import { tedxRed } from '../utils/tedxColors';
+import { tedxRed } from '../../utils/tedxColors';
 
 export const VideoDisplay = ({ data }) => {
   const color = useColorModeValue('black', 'white');

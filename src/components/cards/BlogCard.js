@@ -18,8 +18,8 @@ import {
   useDisclosure,
   VStack,
 } from '@chakra-ui/react';
-import { tedxRed } from '../utils/tedxColors';
-import placeholder from '../assets/PNG/placeholder.png';
+import { tedxRed } from '../../utils/tedxColors';
+import placeholder from '../../assets/PNG/placeholder.png';
 
 export const BlogCard = ({ publishDate, summary, title, imgUrl, bodyText, author }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

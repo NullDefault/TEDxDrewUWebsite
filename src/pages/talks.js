@@ -2,7 +2,7 @@ import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { useEffect, useState } from 'react';
 import { db } from '../firebase';
-import { VideoDisplay } from '../components/VideoDisplay';
+import { VideoDisplay } from '../components/collectionDisplays/VideoDisplay';
 
 
 export const Talks = () => {

@@ -11,14 +11,14 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { TalksInterface } from '../components/AdminInterfaces/TalksInterface';
+import { TalksInterface } from '../components/adminInterfaces/TalksInterface';
 import { useEffect } from 'react';
 import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
-import { VideosInterface } from '../components/AdminInterfaces/VideosInterface';
-import { InboxInterface } from '../components/AdminInterfaces/InboxInterface';
-import { TicketInterface } from '../components/AdminInterfaces/TicketInterface';
-import { BlogInterface } from '../components/AdminInterfaces/BlogInterface';
+import { VideosInterface } from '../components/adminInterfaces/VideosInterface';
+import { InboxInterface } from '../components/adminInterfaces/InboxInterface';
+import { TicketInterface } from '../components/adminInterfaces/TicketInterface';
+import { BlogInterface } from '../components/adminInterfaces/BlogInterface';
 
 export const Admin = () => {
   const color = useColorModeValue('black', 'white');
