@@ -2,6 +2,7 @@ import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
 import { db } from '../firebase';
 import { useEffect, useState } from 'react';
+import { TeamDisplay } from '../components/collectionDisplays/TeamDisplay';
 
 export const Team = () => {
   const color = useColorModeValue('black', 'white');
@@ -33,6 +34,7 @@ export const Team = () => {
         <Heading as="h1" size="3xl" color={tedxRed}>
           Our Team
         </Heading>
+        <TeamDisplay data={teamData}/>
       </VStack>
     </Box>
   );
