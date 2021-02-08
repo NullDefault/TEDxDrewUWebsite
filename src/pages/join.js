@@ -30,7 +30,7 @@ import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { db } from '../firebase';
 import { validateEmail } from '../utils/validateEmail';
-import { parseInterestIcon } from '../utils/parseInterestIcon';
+import { parseFeedbackIcon } from '../utils/parseFeedbackIcon';
 
 export const JoinUs = () => {
   const color = useColorModeValue('black', 'white');
@@ -258,22 +258,22 @@ export const JoinUs = () => {
                   Team Interest:
                   <UnorderedList spacing={3}>
                     <ListItem>
-                      Creative: {parseInterestIcon(teamInterest.creative)}
+                      Creative: {parseFeedbackIcon(teamInterest.creative)}
                     </ListItem>
                     <ListItem>
-                      Marketing: {parseInterestIcon(teamInterest.marketing)}
+                      Marketing: {parseFeedbackIcon(teamInterest.marketing)}
                     </ListItem>
                     <ListItem>
-                      Curation: {parseInterestIcon(teamInterest.curation)}
+                      Curation: {parseFeedbackIcon(teamInterest.curation)}
                     </ListItem>
                     <ListItem>
-                      Production: {parseInterestIcon(teamInterest.production)}
+                      Production: {parseFeedbackIcon(teamInterest.production)}
                     </ListItem>
                     <ListItem>
-                      Logistics: {parseInterestIcon(teamInterest.logistics)}
+                      Logistics: {parseFeedbackIcon(teamInterest.logistics)}
                     </ListItem>
                     <ListItem>
-                      Finance: {parseInterestIcon(teamInterest.finance)}
+                      Finance: {parseFeedbackIcon(teamInterest.finance)}
                     </ListItem>
                   </UnorderedList>
                 </ListItem>

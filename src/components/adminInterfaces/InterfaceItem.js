@@ -22,7 +22,7 @@ import {
 import { DeleteIcon, EmailIcon, InfoIcon, StarIcon } from '@chakra-ui/icons';
 import { db } from '../../firebase';
 import { useRef, useState } from 'react';
-import { parseInterestIcon } from '../../utils/parseInterestIcon';
+import { parseFeedbackIcon } from '../../utils/parseFeedbackIcon';
 
 export const InterfaceItem = (props) => {
   const [alertIsOpen, setAlertOpen] = useState(false);
@@ -113,22 +113,22 @@ export const InterfaceItem = (props) => {
                     Team Interest:
                     <UnorderedList spacing={3}>
                       <ListItem>
-                        Creative: {parseInterestIcon(props.item.teamInterest.creative)}
+                        Creative: {parseFeedbackIcon(props.item.teamInterest.creative)}
                       </ListItem>
                       <ListItem>
-                        Marketing: {parseInterestIcon(props.item.teamInterest.marketing)}
+                        Marketing: {parseFeedbackIcon(props.item.teamInterest.marketing)}
                       </ListItem>
                       <ListItem>
-                        Curation: {parseInterestIcon(props.item.teamInterest.curation)}
+                        Curation: {parseFeedbackIcon(props.item.teamInterest.curation)}
                       </ListItem>
                       <ListItem>
-                        Production: {parseInterestIcon(props.item.teamInterest.production)}
+                        Production: {parseFeedbackIcon(props.item.teamInterest.production)}
                       </ListItem>
                       <ListItem>
-                        Logistics: {parseInterestIcon(props.item.teamInterest.logistics)}
+                        Logistics: {parseFeedbackIcon(props.item.teamInterest.logistics)}
                       </ListItem>
                       <ListItem>
-                        Finance: {parseInterestIcon(props.item.teamInterest.finance)}
+                        Finance: {parseFeedbackIcon(props.item.teamInterest.finance)}
                       </ListItem>
                     </UnorderedList>
                   </ListItem>

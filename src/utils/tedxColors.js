@@ -1,1 +1,1 @@
-export const tedxRed = "#e62b1e";
+export const tedxRed = '#e62b1e';

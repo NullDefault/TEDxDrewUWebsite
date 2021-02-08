@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { tedxRed } from '../../utils/tedxColors';
 import { useEffect, useState } from 'react';
-import { parseInterestIcon } from '../../utils/parseInterestIcon';
+import { parseFeedbackIcon } from '../../utils/parseFeedbackIcon';
 import { db } from '../../firebase';
 
 export const TicketInterface = (props) => {
@@ -73,7 +73,7 @@ export const TicketInterface = (props) => {
           Ticket Sale Settings
         </Heading>
         <Text fontSize="xl">
-          Ticket sales enabled: {parseInterestIcon(ticketToggle)}
+          Ticket sales enabled: {parseFeedbackIcon(ticketToggle)}
         </Text>
         <Text fontSize="xl">
           Ticket sales url link:

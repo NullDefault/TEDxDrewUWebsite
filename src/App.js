@@ -1,9 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {
-  ChakraProvider,
-  theme,
-} from '@chakra-ui/react';
+import { ChakraProvider, theme } from '@chakra-ui/react';
 import { Landing } from './pages/landing';
 import { Footer } from './components/Footer';
 import { PageNotFound } from './pages/404';
@@ -19,6 +16,7 @@ import { Admin } from './pages/admin';
 import { Login } from './pages/login';
 import { SuccessPage } from './pages/successPage';
 import { ErrorPage } from './pages/errorPage';
+import { Team } from './pages/team';
 
 
 function App() {
@@ -56,6 +54,9 @@ function App() {
           </Route>
           <Route path="/success">
             <SuccessPage />
+          </Route>
+          <Route path="/team">
+            <Team />
           </Route>
           <Route path="/error">
             <ErrorPage />
