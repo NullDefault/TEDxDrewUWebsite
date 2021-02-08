@@ -41,6 +41,7 @@ export const TopNavBar = (props) => {
         <MenuItem to="/about">About</MenuItem>,
         <MenuItem to="/blog">Blog</MenuItem>,
         <MenuItem to="/videos">Videos</MenuItem>,
+        <MenuItem to="/team">Team</MenuItem>,
         colorSwitch,
       ]} />
     </NavContainer>

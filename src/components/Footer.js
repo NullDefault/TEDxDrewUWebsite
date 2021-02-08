@@ -17,9 +17,12 @@ import { NavLink } from './NavLink';
 import tedxTextLogo from '../assets/PNG/tedxDrewUTextLogo.png';
 import { tedxRed } from '../utils/tedxColors';
 
+// commented out for now:
+// <NavLink href="/sponsors">Sponsors <Icon as={RiMoneyDollarCircleFill} /></NavLink>
+
 export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="white" {...props}>
   <VStack spacing="24px">
-    <Image src={tedxTextLogo} w="60vmin" pb="4%" />
+    <Image src={tedxTextLogo} w="60vmin"/>
     <Stack direction={['column', 'row']} align="center">
       <VStack w={'50%'}>
         <Text pl="8%" fontSize="lg">
@@ -46,7 +49,6 @@ export const Footer = (props) => <Flex as="footer" py="8rem" bg="black" color="w
 
         <NavLink href="/videos">Videos <Icon as={AiFillVideoCamera} /></NavLink>
         <NavLink href="/talks">Talks <Icon as={MdGroup} /></NavLink>
-        <NavLink href="/sponsors">Sponsors <Icon as={RiMoneyDollarCircleFill} /></NavLink>
 
         <Box h="12px" />
 
