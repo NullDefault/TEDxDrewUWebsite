@@ -47,6 +47,7 @@ export const TicketInterface = (props) => {
         link: nextLink,
         toggle: ticketToggle,
       });
+    console.log(response);
     await fetchData();
     setUpdating(false);
   };
@@ -60,6 +61,7 @@ export const TicketInterface = (props) => {
         link: link,
         toggle: newToggle,
       });
+    console.log(response);
     await fetchData();
     setUpdating(false);
   };

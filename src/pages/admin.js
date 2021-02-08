@@ -19,6 +19,7 @@ import { VideosInterface } from '../components/adminInterfaces/VideosInterface';
 import { InboxInterface } from '../components/adminInterfaces/InboxInterface';
 import { TicketInterface } from '../components/adminInterfaces/TicketInterface';
 import { BlogInterface } from '../components/adminInterfaces/BlogInterface';
+import { SponsorInterface } from '../components/adminInterfaces/SponsorInterface';
 
 export const Admin = () => {
   const color = useColorModeValue('black', 'white');
@@ -101,10 +102,7 @@ export const Admin = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
+              <SponsorInterface />
             </AccordionPanel>
           </AccordionItem>
 

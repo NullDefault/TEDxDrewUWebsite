@@ -31,15 +31,15 @@ export const InterfaceItem = (props) => {
   const cancelRef = useRef();
 
   const parseItem = (item) => {
-    if (props.type === 'talks' || props.type === 'videos' || props.type === 'blogs') {
-      return item.title;
-    } else if (props.type === 'inbox') { // for messages and applications
+    if (props.type === 'inbox') { // for messages and applications
       return (
         <Box>
           {item.msgType === 'message' ? <EmailIcon mr={2} /> : <StarIcon mr={2} />}
           {item.email} - {item.sentAt.toDate().toDateString()}
         </Box>
       );
+    } else {
+      return item.title;
     }
   };
 

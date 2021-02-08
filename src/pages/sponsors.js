@@ -1,6 +1,5 @@
-import { Box, Heading, SimpleGrid, useColorModeValue, VStack } from '@chakra-ui/react';
+import { Box, Heading, useColorModeValue, VStack } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { SponsorCard } from '../components/cards/SponsorCard';
 import { useEffect, useState } from 'react';
 import { db } from '../firebase';
 import { SponsorDisplay } from '../components/collectionDisplays/SponsorDisplay';
@@ -29,8 +28,7 @@ export const Sponsors = () => {
         <Heading as="h1" size="3xl" color={tedxRed} pb={12}>
           Our Sponsors
         </Heading>
-
-        <SponsorDisplay data={sponsors}/>
+        <SponsorDisplay data={sponsors} />
       </VStack>
     </Box>
   );
