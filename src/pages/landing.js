@@ -11,7 +11,7 @@ export const Landing = () => {
         <VStack spacing={4}>
           <Logo h="40vmin" pointerEvents="none" />
           <Heading as="h1" size="2xl" color={tedxRed} pb={12}>
-            Coming Soon
+            Event News Coming Soon
           </Heading>
         </VStack>
       </Grid>

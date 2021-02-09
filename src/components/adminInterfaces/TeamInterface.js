@@ -6,9 +6,8 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
-  Heading,
+  Heading, Image,
   Input,
-  Image,
   ListItem,
   Modal,
   ModalBody,
@@ -29,46 +28,45 @@ import React, { useState } from 'react';
 import { db } from '../../firebase';
 import { FirebaseDocumentList } from './FirebaseDocumentList';
 
-export const BlogInterface = () => {
+export const TeamInterface = () => {
   const color = useColorModeValue('black', 'white');
   const [status, setStatus] = useState(<div />);
   const [refreshTrigger, updateTrigger] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const [title, setTitle] = useState('');
-  const [summary, setSummary] = useState('');
+  const [name, setName] = useState('');
+  const [bio, setBio] = useState('');
   const [imgUrl, setImgUrl] = useState('');
-  const [bodyText, setBodyText] = useState('');
-  const [author, setAuthor] = useState('');
+  const [team, setTeam] = useState('');
+  const [year, setYear] = useState('');
 
   const postBlog = () => {
     onClose();
-    db.collection('blogs').add({
-      title: title,
-      summary: summary,
-      imgUrl: imgUrl,
-      bodyText: bodyText,
-      author: author,
-      publishDate: new Date(Date.now()),
+    db.collection('team').add({
+      name: name,
+      bio: bio,
+      picUrl: imgUrl,
+      team: team.toLowerCase(),
+      year: year,
     }).then(function(docRef) {
       let successAlert = <Alert status="success">
         <AlertIcon />
-        Blog created with ID: {docRef.id}
+        Team member added with the ID: {docRef.id}
       </Alert>;
       setStatus(successAlert);
       updateTrigger(refreshTrigger + 1);
     }).catch(function(error) {
       let successError = <Alert status="error">
         <AlertIcon />
-        Error adding Blog: {error}
+        Error adding team member: {error}
       </Alert>;
       setStatus(successError);
     });
-    setTitle('');
-    setSummary('');
+    setName('');
+    setBio('');
     setImgUrl('');
-    setBodyText('');
-    setAuthor('');
+    setTeam('');
+    setYear('');
   };
 
   const cancel = () => {
@@ -76,7 +74,7 @@ export const BlogInterface = () => {
   };
 
   const openModal = () => {
-    if (!(title === '' || imgUrl === '' || summary === '' || bodyText === '' || author === '')) {
+    if (!(name === '' || imgUrl === '' || bio === '' || team === '' || year === '')) {
       onOpen();
     }
   };
@@ -86,39 +84,40 @@ export const BlogInterface = () => {
     <Box p={6} borderRadius="xl" textAlign="left" color={color} border="2px" borderColor="gray.300">
       <VStack>
         <Heading as="h1" size="lg" color={tedxRed} pb={4}>
-          Add New Blog
+          Add New Team Member
         </Heading>
 
-        <FormControl id="title" isInvalid={title === ''}>
-          <FormLabel>Title</FormLabel>
-          <Input value={title} onChange={e => setTitle(e.currentTarget.value)} />
-          <FormHelperText>Blog title.</FormHelperText>
+        <FormControl id="title" isInvalid={name === ''}>
+          <FormLabel>Name</FormLabel>
+          <Input value={name} onChange={e => setName(e.currentTarget.value)} />
+          <FormHelperText>Member full name.</FormHelperText>
         </FormControl>
 
-        <FormControl id="summary" isInvalid={summary === ''}>
-          <FormLabel>Blog summary.</FormLabel>
-          <Input value={summary} onChange={e => setSummary(e.currentTarget.value)} />
-          <FormHelperText>Short summary of the blog post.</FormHelperText>
+        <FormControl id="summary" isInvalid={team === ''}>
+          <FormLabel>Team</FormLabel>
+          <Input value={team} onChange={e => setTeam(e.currentTarget.value)} />
+          <FormHelperText>Team they belong to.</FormHelperText>
+        </FormControl>
+
+
+        <FormControl id="author" isInvalid={year === ''}>
+          <FormLabel>Year</FormLabel>
+          <Input type="number" value={year} onChange={e => setYear(e.currentTarget.value)} />
+          <FormHelperText>Their graduating year.</FormHelperText>
         </FormControl>
 
         <FormControl id="imgUrl" isInvalid={imgUrl === ''}>
-          <FormLabel>Link to blog image.</FormLabel>
-          <Input placeholder="https://<yourlink>/your-image.png" value={imgUrl}
+          <FormLabel>Link to member picture</FormLabel>
+          <Input type="url" placeholder="https://<yourlink>/your-image.png" value={imgUrl}
                  onChange={e => setImgUrl(e.currentTarget.value)} />
-          <FormHelperText> URL link to the image you would like to be a part of the blog post. </FormHelperText>
+          <FormHelperText> URL link to the profile picture of the team member. </FormHelperText>
         </FormControl>
 
-        <FormControl id="bodyText" isInvalid={bodyText === ''}>
-          <FormLabel>Blog body.</FormLabel>
-          <Textarea placeholder="Main content of the post." value={bodyText}
-                    onChange={e => setBodyText(e.currentTarget.value)} />
-          <FormHelperText>Tip: You can format your text with html.</FormHelperText>
-        </FormControl>
-
-        <FormControl id="author" isInvalid={author === ''}>
-          <FormLabel>Author of this blog.</FormLabel>
-          <Input type="text" value={author} onChange={e => setAuthor(e.currentTarget.value)} />
-          <FormHelperText>Your name / team.</FormHelperText>
+        <FormControl id="bodyText" isInvalid={bio === ''}>
+          <FormLabel>Member short bio</FormLabel>
+          <Textarea placeholder="Main content of the post." value={bio}
+                    onChange={e => setBio(e.currentTarget.value)} />
+          <FormHelperText>Make it welcoming and playful!</FormHelperText>
         </FormControl>
 
         <Text pb={4}>
@@ -141,26 +140,26 @@ export const BlogInterface = () => {
             <ModalHeader>Are you sure?</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              Please confirm you would like to create a new blog with the following data:
+              Please confirm you would like to add a new team member with the following data:
               <UnorderedList ml='12%' mt='4%'>
                 <ListItem>
-                  Title: {title}
+                  Name: {name}
                 </ListItem>
                 <ListItem>
-                  Summary: {summary}
+                  Team: {team}
                 </ListItem>
                 <ListItem>
-                  Image:
+                  Year: {year}
                 </ListItem>
-                <Image src={imgUrl} />
                 <ListItem>
-                  BodyText:
+                  Profile picture:
+                </ListItem>
+                <Image src={imgUrl}/>
+                <ListItem>
+                  Bio:
                   <p>
-                    <div dangerouslySetInnerHTML={{ __html: bodyText }} />
+                    {bio}
                   </p>
-                </ListItem>
-                <ListItem>
-                  Author: {author}
                 </ListItem>
               </UnorderedList>
             </ModalBody>
@@ -174,9 +173,9 @@ export const BlogInterface = () => {
         </Modal>
 
         <Heading as="h1" size="lg" color={tedxRed} py={8}>
-          Existing Blogs
+          Current Team Members
         </Heading>
-        <FirebaseDocumentList type="blogs" key={refreshTrigger} />
+        <FirebaseDocumentList type="team" key={refreshTrigger} />
       </VStack>
     </Box>
   );

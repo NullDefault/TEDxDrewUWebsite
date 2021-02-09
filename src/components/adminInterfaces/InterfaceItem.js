@@ -38,7 +38,10 @@ export const InterfaceItem = (props) => {
           {item.email} - {item.sentAt.toDate().toDateString()}
         </Box>
       );
-    } else {
+    } else if (props.type === 'team'){
+      return item.name + ' | ' + item.team;
+    }
+    else {
       return item.title;
     }
   };
@@ -48,7 +51,8 @@ export const InterfaceItem = (props) => {
     let type;
     if (props.type === 'inbox') {
       type = item.msgType + 's';
-    } else {
+    }
+    else {
       type = props.type;
     }
 

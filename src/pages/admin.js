@@ -11,13 +11,14 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { tedxRed } from '../utils/tedxColors';
-import { TalksInterface } from '../components/adminInterfaces/TalksInterface';
 import { useEffect } from 'react';
 import { auth } from '../firebase';
 import { useHistory } from 'react-router-dom';
+import { TalksInterface } from '../components/adminInterfaces/TalksInterface';
 import { VideosInterface } from '../components/adminInterfaces/VideosInterface';
 import { InboxInterface } from '../components/adminInterfaces/InboxInterface';
 import { TicketInterface } from '../components/adminInterfaces/TicketInterface';
+import { TeamInterface } from '../components/adminInterfaces/TeamInterface';
 import { BlogInterface } from '../components/adminInterfaces/BlogInterface';
 import { SponsorInterface } from '../components/adminInterfaces/SponsorInterface';
 
@@ -114,10 +115,7 @@ export const Admin = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
+              <TeamInterface/>
             </AccordionPanel>
           </AccordionItem>
 
