@@ -1,5 +1,7 @@
 import { Box, Image, Stack, Text } from '@chakra-ui/react';
 import { MdAccountBalanceWallet, MdBook, MdBrush, MdCameraEnhance, MdLoyalty, MdRecordVoiceOver } from 'react-icons/md';
+import placeholder from '../../assets/PNG/placeholder.png';
+import React from 'react';
 
 const teamColors = {
   'creative': 'purple.500',
@@ -21,12 +23,18 @@ const teamIcons = {
 
 
 export const TeamMemberCard = ({ name, bio, url, team, year }) => {
-
-
+  const fallback = <Image src={placeholder}
+                          borderRadius={['', 'full']}
+                          border='2px'
+                          m={['', '3%']}
+                          borderWidth={['4px', '8px']}
+                          borderColor={teamColors[team]}
+                          boxSize={['100%', '30vh']} />;
   return (
     <Stack borderWidth="1px" borderRadius="lg" shadow="md" direction={['column', 'row']}>
       <Image
         m={['', '3%']}
+        fallback={fallback}
         src={url}
         alt={name}
         borderRadius={['', 'full']}
