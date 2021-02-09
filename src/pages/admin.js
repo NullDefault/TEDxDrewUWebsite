@@ -115,7 +115,7 @@ export const Admin = () => {
               <AccordionIcon />
             </AccordionButton>
             <AccordionPanel pb={4}>
-              <TeamInterface/>
+              <TeamInterface />
             </AccordionPanel>
           </AccordionItem>
 

@@ -17,7 +17,9 @@ import { useEffect, useState } from 'react';
 import { parseFeedbackIcon } from '../../utils/parseFeedbackIcon';
 import { db } from '../../firebase';
 
-export const TicketInterface = (props) => {
+const documentId = '04AySeIdnaNag5ZRQ10L';
+
+export const TicketInterface = () => {
   const color = useColorModeValue('black', 'white');
   const [ticketToggle, setTicketToggle] = useState(false);
   const [updating, setUpdating] = useState(false);
@@ -42,7 +44,7 @@ export const TicketInterface = (props) => {
   const setNewLink = async () => {
     setUpdating(true);
     const response = db.collection('ticketData')
-      .doc('04AySeIdnaNag5ZRQ10L')
+      .doc(documentId)
       .update({
         link: nextLink,
         toggle: ticketToggle,
@@ -56,7 +58,7 @@ export const TicketInterface = (props) => {
     setUpdating(true);
     const newToggle = !ticketToggle;
     const response = db.collection('ticketData')
-      .doc('04AySeIdnaNag5ZRQ10L')
+      .doc(documentId)
       .update({
         link: link,
         toggle: newToggle,

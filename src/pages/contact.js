@@ -79,12 +79,12 @@ export const Contact = () => {
         <HStack w="100%">
           <FormControl id="name" isInvalid={name === ''}>
             <FormLabel>Name</FormLabel>
-            <Input type="name" value={name} onChange={e => setName(e.currentTarget.value)} />
+            <Input value={name} onChange={e => setName(e.currentTarget.value)} />
             <FormHelperText>How you like to be called.</FormHelperText>
           </FormControl>
           <FormControl id="pronouns" isInvalid={pronouns === ''}>
             <FormLabel>Pronouns</FormLabel>
-            <Input type="pronouns" value={pronouns} onChange={e => setPronouns(e.currentTarget.value)} />
+            <Input value={pronouns} onChange={e => setPronouns(e.currentTarget.value)} />
             <FormHelperText>Your preferred pronouns.</FormHelperText>
           </FormControl>
         </HStack>
