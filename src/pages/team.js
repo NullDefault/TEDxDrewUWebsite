@@ -10,7 +10,7 @@ export const Team = () => {
 
 
   const fetchTeamData = async () => {
-    const response = db.collection('team');
+    const response = db.collection('team').orderBy('team');
     const data = await response.get();
     data.docs.forEach(item => {
       setTeamData(teamData => ([...teamData, item.data()]));
