@@ -6,7 +6,8 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
-  Heading, Image,
+  Heading,
+  Image,
   Input,
   ListItem,
   Modal,
@@ -25,7 +26,7 @@ import {
 } from '@chakra-ui/react';
 import { tedxRed } from '../../utils/tedxColors';
 import React, { useState } from 'react';
-import { db } from '../../firebase';
+import { db, storage } from '../../firebase';
 import { FirebaseDocumentList } from './FirebaseDocumentList';
 
 export const TeamInterface = () => {
@@ -36,12 +37,28 @@ export const TeamInterface = () => {
 
   const [name, setName] = useState('');
   const [bio, setBio] = useState('');
-  const [imgUrl, setImgUrl] = useState('');
+  const [img, setImg] = useState('');
+  const [imgUrl, setUrl] = useState('');
   const [team, setTeam] = useState('');
   const [year, setYear] = useState('');
 
+  const handleUpload = () => {
+    const uploadTask = storage.ref(`/team/${img.name}`).put(img);
+    uploadTask.on('state_changed', console.log, console.error, () => {
+      storage
+        .ref('team')
+        .child(img.name)
+        .getDownloadURL()
+        .then((url) => {
+          setImg('');
+          setUrl(url);
+        });
+    });
+  };
+
   const postBlog = () => {
     onClose();
+    handleUpload();
     db.collection('team').add({
       name: name,
       bio: bio,
@@ -64,7 +81,7 @@ export const TeamInterface = () => {
     });
     setName('');
     setBio('');
-    setImgUrl('');
+    setImg('');
     setTeam('');
     setYear('');
   };
@@ -74,7 +91,7 @@ export const TeamInterface = () => {
   };
 
   const openModal = () => {
-    if (!(name === '' || imgUrl === '' || bio === '' || team === '' || year === '')) {
+    if (!(name === '' || img === '' || bio === '' || team === '' || year === '')) {
       onOpen();
     }
   };
@@ -106,12 +123,15 @@ export const TeamInterface = () => {
           <FormHelperText>Their graduating year.</FormHelperText>
         </FormControl>
 
-        <FormControl id="imgUrl" isInvalid={imgUrl === ''}>
-          <FormLabel>Link to member picture</FormLabel>
-          <Input type="url" placeholder="https://<yourlink>/your-image.png" value={imgUrl}
-                 onChange={e => setImgUrl(e.currentTarget.value)} />
-          <FormHelperText> URL link to the profile picture of the team member. </FormHelperText>
-        </FormControl>
+        <Box w="100%">
+          <FormLabel>Picture</FormLabel>
+          <input type="file" onChange={e => {
+            const image = e.currentTarget.files[0];
+            setImg(image);
+          }} />
+        </Box>
+
+
 
         <FormControl id="bodyText" isInvalid={bio === ''}>
           <FormLabel>Member short bio</FormLabel>
@@ -154,7 +174,7 @@ export const TeamInterface = () => {
                 <ListItem>
                   Profile picture:
                 </ListItem>
-                <Image src={imgUrl}/>
+                <Image src={img} />
                 <ListItem>
                   Bio:
                   <p>

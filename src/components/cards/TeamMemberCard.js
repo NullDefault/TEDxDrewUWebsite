@@ -41,7 +41,8 @@ export const TeamMemberCard = ({ name, bio, url, team, year }) => {
         border='2px'
         borderWidth={['4px', '8px']}
         borderColor={teamColors[team]}
-        boxSize={['100%', '30vh']}
+        objectFit="scale-dowm"
+        boxSize={['30vh']}
       />
       <Stack w="100%" direction='column' p={['8%', '4%']}>
         <Text
